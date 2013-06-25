@@ -1,0 +1,76 @@
+<%= @parent_cat['name'] %> - <%= @parent_cat['parent'] %> 
+<% if @catalogs.size > 0 %>
+<h2>Subcategories in <%= @category['name'] %></h2> 
+<% if @parent_cat.id != 1 %>
+<%= link_to "<span class='btn btn-primary btn-large'>Back</span>".html_safe, category_path(@parent_cat)%>
+<% end %>
+<table class="table table-bordered" >
+
+<% @catalogs.each do |cat| %>
+<tr><td>
+	<div class='row-fluid'>
+	<div class='span2'><%= link_to cat[:id], category_path(cat) %></div>
+	<div class='span8'><%= link_to cat[:name], category_path(cat) %></div>
+	<div class='span2'><%= cat.ads.count %></div>
+	</div>
+</td></tr>
+<% end %>
+</table>
+<% end %>
+
+<% if @ads.size > 0 %>
+<h3>Ads in <%= @category['name'] %>  </h3>
+<form>
+<% if @category.options %>
+<% @category.options.each do |option| %>
+<% if params[:filter] %>
+<%=   %>
+<%= select_tag "filter[#{option.id}]", options_from_collection_for_select(option.variants, "id", "value",params["filter"]["#{option.id}"]), :include_blank => false, :prompt  => option.name %>
+<% else %>
+<%= select_tag "filter[#{option.id}]", options_from_collection_for_select(option.variants, "id", "value"), :include_blank => false, :prompt  => option.name %>
+<% end %>
+<% end %>
+<input type='submit' value='Filter'>
+<% end %>
+
+</form>
+<% if @parent_cat[:parent]  %>
+<%= link_to "<span class='btn btn-primary btn-large'>Back</span>".html_safe, category_path(@parent_cat)%>
+<% end %>
+<table class="table table-hover" >
+<% @ads.each do |ad| %>
+<tr><td>
+
+<div class='row-fluid'>
+<div class='span1'><%= time_ago_in_words( ad.created_at ).gsub(/about/,"") %> ago</div>
+<div class='span1'>
+	<% if ad.image %>
+		<%= link_to image_tag(ad.image.image.url(:thumb)), ad_path(ad.state, ad.city, ad.category, ad) %>
+	<% end %>
+</div>
+<div class='span9'><p><%= link_to ad.detail.name , ad_path(ad.state, ad.city, ad.category, ad) if ad.detail %></p><br>
+<%= ad.city.name %>, <%= ad.state.name %>
+
+</div>
+<div class='span1'>
+	<%=  link_to ad[:price],ad_path(ad.state, ad.city, ad.category, ad) %>
+</div>
+
+</div>
+
+	
+	
+	
+	
+	
+	
+	</td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @ads, renderer: BootstrapPagination::Rails %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

@@ -1,0 +1,33 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+
+development:
+  adapter: jdbcmysql
+  encoding: utf8
+  reconnect: false
+  database: jualo_rails
+  pool: 100
+  username: jualo
+  password: jua352013$
+
+test:
+  adapter: jdbcmysql
+  encoding: utf8
+  reconnect: false
+  database: jualo_rails_test
+  pool: 5
+  username: jualo
+  password: jua352013$
+
+production:
+  adapter: jdbcmysql
+  encoding: utf8
+  reconnect: false
+  database: jualo_rails
+  pool: 100
+  username: jualo
+  password: jua352013$
+

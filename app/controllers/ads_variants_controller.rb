@@ -1,0 +1,2 @@
+class AdsVariantsController < ApplicationController
+end

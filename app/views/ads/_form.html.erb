@@ -1,0 +1,74 @@
+<%= javascript_tag do %>
+  window.subcategories = <%= raw @subcategories.to_json %>;
+  window.options = <%= raw @options.to_json %>;
+  window.cities = <%= raw @cities.to_json %>;
+<% end %>
+
+  <%= form_for @ad, :html => { :class => 'form-horizontal' } do |f| %>
+   <%= form_for :detail do |ff| %>
+    <div class="control-group">
+     <%= ff.label :name, "Product Title", :class => 'control-label' %>
+    <div class="controls">
+      <%= ff.text_field :name, :class => 'number_field', :placeholder => "Enter a title for your product *" %>
+    </div> 
+  </div>
+  <% end %>
+ 
+    <div class="control-group">
+    <%= f.label :ad_type_id, "Product Type", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:ad_type_id, options_from_collection_for_select(AdType.all, "id", "name") , :class => 'number_field', :prompt => "Please Select") %>
+    </div>
+  </div> 
+  <div class="control-group">
+    <%= f.label :category_id, "Category" , :class => 'control-label' %>
+    <div class="controls">
+       <%= f.select(:category_id, options_from_collection_for_select(Category.where('parent = 1').all, "id", "name"), :class => 'number_field', :prompt => "Please Select") %>
+    </div>
+  </div>
+
+  <div class="control-group" id='subcategory' style='display:none'>
+   </div>
+
+  <div class="control-group" id='options' style='display:none'>
+   </div>
+
+
+   <%= form_for :detail do |ff| %>
+    <div class="control-group">
+     <%= ff.label :description, "Desciption", :class => 'control-label' %>
+    <div class="controls">
+      <%= ff.text_area :description, :class => 'text_area', :placeholder => "Enter a description here *" %>
+    </div> 
+  </div> 
+  <% end %>
+
+
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:currency_id, options_from_collection_for_select(Currency.all, "id", "code")) %>
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :state_id, "Province", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:state_id, options_from_collection_for_select(State.all, "id", "name") , :prompt => 'Please select') %>
+    </div>
+  </div>
+
+  <div class="control-group" id='cities' style='display:none'>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :user_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

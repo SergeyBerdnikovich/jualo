@@ -1,0 +1,50 @@
+<%- model_class = Ad -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:ad_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:ad_condition_id) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:main_image_id) %></th>
+      <th><%= model_class.human_attribute_name(:city_id) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= link_to ad.id, ad_path(ad) %></td>
+        <td><%= ad.category_id %></td>
+        <td><%= ad.ad_type_id %></td>
+        <td><%= ad.ad_condition_id %></td>
+        <td><%= ad.price %></td>
+        <td><%= ad.main_image_id %></td>
+        <td><%= ad.city_id %></td>
+        <td><%= ad.state_id %></td>
+        <td><%= ad.user_id %></td>
+        <td><%=l ad.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ad_path(ad), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      ad_path(ad),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ad_path,
+            :class => 'btn btn-primary' %>

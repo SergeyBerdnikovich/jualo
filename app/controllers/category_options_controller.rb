@@ -1,0 +1,2 @@
+class CategoryOptionsController < ApplicationController
+end

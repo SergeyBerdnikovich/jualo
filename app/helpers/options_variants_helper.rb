@@ -1,0 +1,2 @@
+module OptionsVariantsHelper
+end

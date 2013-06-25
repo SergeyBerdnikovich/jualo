@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @static_page.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @static_page.content %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @static_page.locale_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_static_page_path(@static_page) %> |
+<%= link_to 'Back', static_pages_path %>

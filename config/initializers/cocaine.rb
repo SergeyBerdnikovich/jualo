@@ -1,0 +1,1 @@
+Cocaine::CommandLine.runner = Cocaine::CommandLine::BackticksRunner.new

@@ -1,0 +1,10 @@
+<%- model_class = Image -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Image:</strong></dt>
+  <dd><%= image_tag @image.image.url %></dd>
+
+</div>
