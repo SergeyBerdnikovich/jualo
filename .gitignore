@@ -6,3 +6,6 @@
 
 log/
 public/
+
+/tmp
+tmp/

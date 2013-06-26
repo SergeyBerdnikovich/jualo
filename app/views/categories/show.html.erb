@@ -48,8 +48,8 @@
 		<%= link_to image_tag(ad.image.image.url(:thumb)), ad_path(ad.state, ad.city, ad.category, ad) %>
 	<% end %>
 </div>
-<div class='span9'><p><%= link_to ad.detail.name , ad_path(ad.state, ad.city, ad.category, ad) if ad.detail %></p><br>
-<%= ad.city.name %>, <%= ad.state.name %>
+<div class='span9'><p><%= link_to ad.detail.try(:name) , ad_path(ad.state, ad.city, ad.category, ad) if ad.detail %></p><br>
+<%= ad.city.try(:name) %>, <%= ad.state.try(:name) %>
 
 </div>
 <div class='span1'>

@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-	attr_accessible :ad_id, :title, :url, :need_download, :image
+	attr_accessible :ad_id, :title, :url, :need_download, :image, :image_attributes
 	has_attached_file :image,:whiny => true, :styles => { :medium => "300x300>", :thumb => "95x95>" }, :default_url => "/images/:style/missing.png"
 
 	belongs_to :ad

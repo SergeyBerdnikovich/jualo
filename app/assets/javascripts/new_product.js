@@ -1,5 +1,36 @@
 //$(document).ready(function(){
 
+function add_image(image_id, image_address){
+	html = ""
+	html += '<div class="image_block" id="image_'+image_id+'">'
+	html += '<table width="100%" height="100%" align="center" valign="center">'
+   	html += '<tr><td><center class="nohover">'
+	html += '<img src="'+image_address+'"><input type="hidden" name="image_ids[]" value="'+image_id+'"></center>'
+	html += '<i class="icon-remove-circle" onclick=\'$("#image_'+image_id+'").remove()\'></i>'
+ 	html += '</td></tr>'
+   	html += '</table>'
+	html += '</div>'
+	$('#images').append(html)
+
+}
+
+$('#choose_image').change(function() { 
+    if ($('#choose_image').val().length > 10){
+    $("#submit_image").click()
+	}
+})
+
+function upload_image(){
+
+	$("#choose_image").click()
+
+};
+	
+	
+
+
+
+
 
 	$("#ad_category_id").change(function(){
 		ad_category_id = $("#ad_category_id").val()
@@ -18,6 +49,7 @@
 			$("#subcategory").html(html)
 			$("#subcategory").show()
 		}else{
+			$("#subcategory").html('')
 			$("#subcategory").hide()
 		}
 
@@ -40,6 +72,7 @@
 			$("#options").html(html)
 			$("#options").show()
 		}else{
+			$("#options").html("")
 			$("#options").hide()
 		}
 
@@ -64,11 +97,11 @@ $("#ad_state_id").change(function(){
 			$("#cities").html(html)
 			$("#cities").show()
 		}else{
+			$("#cities").html("")
 			$("#cities").hide()
 		}
 
 })
-
 
 //})
 
