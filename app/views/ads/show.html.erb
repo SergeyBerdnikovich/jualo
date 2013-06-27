@@ -20,7 +20,7 @@
 <div class='row top-buffer'>
   <div class="span8">
   <p>
-  <% if @ad.images %>
+  <% if @ad.images.size > 0 %>
   <center><%= image_tag @ad.images.first.image.url %></center>
   <br>
   <% @ad.images.each do |img|  %>
@@ -36,8 +36,12 @@
   <div class='span4'>
 <h4>Price: Rp <%= @ad.price %></h4>
 <p>
+  <% if @ad.user %>
 User: <%= @ad.user.name %><br>
 Member Since: <%= @ad.user.created_at.strftime("%d-%m-%Y") %> </p><br>
+<% else %>
+User: Anonimous<br>
+<% end %>
 <a href=""> <h5>Send mail</h5> </a><br>
 <p>
 <img src="http://maps.google.com/maps/api/staticmap?size=255x305&maptype=roadmap&sensor=false&markers=color:blue|label:A|<%= @ad.city.name %>,<%= @ad.state.name %>, Indonesia&markers=color:purple|" alt="Static, Marked Map of Chicago, Illinois and Hammond, Indiana with no Center and Zoom"><p>

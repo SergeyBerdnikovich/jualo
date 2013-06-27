@@ -1,6 +1,9 @@
 Jualo::Application.routes.draw do
 
+  resources :attach_tokens
 
+
+  devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :currencies
 
@@ -25,7 +28,7 @@ Jualo::Application.routes.draw do
 
   resources :static_pages
 
-
+   match "users/register" => "users#register"
   resources :users
 
 

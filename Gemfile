@@ -2,8 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem "friendly_id", "~> 4.0.9"
- gem 'activeadmin'
-  gem "meta_search",    '>= 1.1.0.pre'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'remotipart', '~> 1.0'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

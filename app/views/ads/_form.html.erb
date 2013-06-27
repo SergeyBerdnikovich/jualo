@@ -1,11 +1,29 @@
-<%= javascript_tag do %>
-  window.subcategories = <%= raw @subcategories.to_json %>;
-  window.options = <%= raw @options.to_json %>;
-  window.cities = <%= raw @cities.to_json %>;
+<%= form_for Image.new, :html => {:style=>"display:none",:class => 'form-horizontal', :multipart => true }, :remote => true do |f| %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, :id=>"choose_image" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :id=>"submit_image" %>
+  </div>
 <% end %>
 
+
   <%= form_for @ad, :html => { :class => 'form-horizontal' } do |f| %>
-   <%= form_for :detail do |ff| %>
+
+  <div id='images' class='image_bar'>
+<div class='image_block'>
+<table width="100%" height="100%" align="center" valign="center">
+   <tr><td><center class='nohover'>
+    <a href="#" onclick='upload_image()'>Add image</a>
+</center>
+ </td></tr>
+  </table>
+</div>
+   </div>
+
+
+   <%= f.fields_for :detail do |ff| %>
     <div class="control-group">
      <%= ff.label :name, "Product Title", :class => 'control-label' %>
     <div class="controls">
@@ -34,7 +52,8 @@
    </div>
 
 
-   <%= form_for :detail do |ff| %>
+
+   <%= f.fields_for :detail do |ff| %>
     <div class="control-group">
      <%= ff.label :description, "Desciption", :class => 'control-label' %>
     <div class="controls">
@@ -61,14 +80,43 @@
   <div class="control-group" id='cities' style='display:none'>
   </div>
 
-  <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
+
+<%= fields_for @user do |ff| %>
+    <div class="control-group">
+    <%= ff.label :name, "Your name", :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :user_id, :class => 'number_field' %>
+      <%= ff.text_field :name, :class => 'number_field' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= ff.label :phone, "Your phone number", :class => 'control-label' %>
+    <div class="controls">
+      <%= ff.text_field :phone, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= ff.label :email , "Your email", :class => 'control-label' %>
+    <div class="controls">
+      <%= ff.text_field :email, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= ff.label :blackberry_pin , "Your blackberry pin", :class => 'control-label' %>
+    <div class="controls">
+      <%= ff.text_field :blackberry_pin, :class => 'number_field' %>
+    </div>
+  </div>
+
+<% end %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
+<% end %>
+
+<%= javascript_tag do %>
+  window.subcategories = <%= raw @subcategories.to_json %>;
+  window.options = <%= raw @options.to_json %>;
+  window.cities = <%= raw @cities.to_json %>;
 <% end %>
