@@ -14,7 +14,8 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-
+  require "omniauth-facebook"
+  config.omniauth :facebook, "534939866541136", "746447ccc5be70a3ebda3dc7a8444b5c"
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -86,7 +87,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "1410e059f52e0b865d9850fa882ee8d889e46671b01567aaa806de0a433d7f8bcf50b0bae2efa910f28d08b21df392dbc2eaec483e377f1586c99d95dba9486a"
+  # config.pepper = "5b1f2bfb79621f18a7df45a9011e412e5fd32510545f783561a88b5f472ed4ed387f52dfd82b52d4a383f962e095230bd016b14463ffbdda6108aff206f80126"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -192,11 +193,11 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+   config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  # config.default_scope = :user
+   config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.

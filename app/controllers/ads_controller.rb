@@ -56,6 +56,11 @@ class AdsController < ApplicationController
         @cities[state.id] =  Array.new if @cities[state.id] == nil
         @cities[state.id] = state.cities.select('id, name')
       end
+      if current_user
+      @user = current_user
+      else
+      @user = User.new()
+      end
 
     end
 
@@ -74,6 +79,7 @@ class AdsController < ApplicationController
   # POST /ads
   # POST /ads.json
   def create
+
     if params[:ad][:subcategory_id]
       params[:ad][:category_id] = params[:ad][:subcategory_id]
       params[:ad].delete(:subcategory_id)
@@ -84,12 +90,24 @@ class AdsController < ApplicationController
       params[:ad].delete(:options)
     end
 
-
     @ad = Ad.new(params[:ad])
 
+    if current_user  #if user doesn't exist don't make slug yet
+      @ad.user = current_user
+    else
+      @ad.slug = nil
+    end
 
     respond_to do |format|
       if @ad.save
+
+        unless current_user  #if user not logged in or register create attach token to attach this ad to a user later
+          require 'securerandom'
+          @tok = AttachToken.new(:ad_id => @ad.id, :token => SecureRandom.hex(32))
+          @tok.save
+          session['attach_token'] = @tok.token
+        end
+
         if params[:image_ids]
           params[:image_ids].each do |value|
             @ad.image_id = value if @ad.image_id == nil
@@ -99,17 +117,27 @@ class AdsController < ApplicationController
 
         if variants
           begin
-          variants.each do |val|
-#            raise val.inspect.to_s
-            @ad.variants << Variant.find(val[1])
+            variants.each do |val|
+              @ad.variants << Variant.find(val[1])
+            end
+          end
+        end
+
+        format.html {
+          if current_user
+            redirect_to ad_path(@ad.state, @ad.city, @ad.category,@ad), notice: 'Ad was successfully created.'
+          else
+            user_exist = User.where('email = ?', params[:user][:email]).first
+            session[:user] = params[:user]
+
+            if user_exist
+              redirect_to new_user_session_path(:user => {:email => params[:user][:email]}), notice: "Please log in to post your ad"
+            else
+             redirect_to users_register_path(), notice: 'Ad was successfully created.'
+            end
           end
 
-          #rescue 
-          #  raise variants.inspect.to_s
-          end
-      end
-
-        format.html { redirect_to ad_path(@ad.state, @ad.city, @ad.category,@ad), notice: 'Ad was successfully created.' }
+        }
         format.json { render json: @ad, status: :created, location: @ad }
       else
         format.html { render action: "new" }

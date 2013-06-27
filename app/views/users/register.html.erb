@@ -1,0 +1,22 @@
+<h2>Please register before to continue</h2>
+ 
+<% resource_name = "user" %>
+Before you will be able to post ads you need to log register.
+<br>
+ <%= link_to "<h3>Sign in with Facebook</h3>".html_safe, user_omniauth_authorize_path(:facebook) %>
+<p>
+ or make an account:
+
+ <p>
+
+<%= form_for @user,:url => registration_path(@user) do |f| %>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password, :autofocus => true  %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+

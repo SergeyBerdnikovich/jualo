@@ -10,6 +10,7 @@
   <dd><%= @user.phone %></dd>
 </dl>
 
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               users_path, :class => 'btn'  %>
@@ -21,3 +22,44 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:ad_type_id) %></th>
+
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:main_image_id) %></th>
+      <th><%= model_class.human_attribute_name(:city_id) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.ads.each do |ad| %>
+      <tr>
+        <td><%= link_to ad.detail.try(:name), ad_path(ad) %></td>
+        <td><%= ad.category.name %></td>
+        <td><%= ad.ad_type.name %></td>
+        <td><%= ad.price %></td>
+        <td><%= image_tag(ad.image.image.url(:thumb)) if ad.image %></td>
+        <td><%= ad.city.name %></td>
+        <td><%= ad.state.name %></td>
+        <td><%=l ad.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ad_path(ad), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      ad_path(ad),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

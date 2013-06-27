@@ -1,0 +1,2 @@
+class AttachTokensController < ApplicationController
+end

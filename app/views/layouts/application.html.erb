@@ -38,8 +38,13 @@
     <div class="container left_shadow">
     <div class="container right_shadow">
 
-      <div class="row ">
-        <div class="span12 orange_line">
+      <div class="row-fluid ">
+        <div class="span12 orange_line pullright">
+           <% if current_user == nil %>          
+                  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+                  <% else %>
+                  Welcome <%= current_user.name %>! <%= link_to "My account", user_path(current_user) %> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> 
+                  <% end %>
         </div>
       </div>
 
@@ -50,8 +55,8 @@
        <div class="span9">
           <div class="row top-margin">
              <div class="span2 offset2 top-margin">
-                  <b>Language:</b>              
-              </div>
+                  <b>Language:</b>    
+              </div> 
               <div class="span2 offset3">
                 <div style='width:100%'> 
                   <div class="btn-group  pullright">

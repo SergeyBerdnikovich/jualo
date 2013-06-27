@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+
   def index
     @users = User.all
 
@@ -23,6 +24,20 @@ class UsersController < ApplicationController
 
   # GET /users/new
   # GET /users/new.json
+
+  def register
+    unless session[:user]
+      redirect_to root_path and return false
+    end
+
+    @user = User.new(session[:user])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @user }
+    end
+  end
+
   def new
     @user = User.new
 
@@ -40,6 +55,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
     @user = User.new(params[:user])
 
     respond_to do |format|
