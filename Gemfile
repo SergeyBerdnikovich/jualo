@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem "friendly_id", "~> 4.0.9" 
+gem "friendly_id", "~> 4.0.9"
  gem 'activeadmin'
   gem "meta_search",    '>= 1.1.0.pre'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'puma'
-#if defined?(JRUBY_VERSION) 
-  gem 'activerecord-jdbc-adapter'#, '=1.1.3'
-  gem 'jdbc-mysql'#, '5.1.13'
-  gem 'activerecord-jdbcmysql-adapter'#, '=1.1.3'
+#if defined?(JRUBY_VERSION)
+#  gem 'activerecord-jdbc-adapter'#, '=1.1.3'
+#  gem 'jdbc-mysql'#, '5.1.13'
+#  gem 'activerecord-jdbcmysql-adapter'#, '=1.1.3'
 #else
-  #gem 'mysql2'
+  gem 'mysql2'
 #end
 gem "twitter-bootstrap-rails"
 gem "paperclip", "~> 3.0"
