@@ -1,17 +1,308 @@
-<h2>Sign in</h2>
-
+<div style='background:url("/assets/html.png") repeat scroll 0 0 transparent;'>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="bodycontent_head">
+    <div class="bodycontent_head_inner">
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+            <header class="title">
+              <h1 style='text-align:center;width:75%;margin:10px auto;'><b>Login to Jualo</b></h1>
+            </header>
+      <div id="ctl00_mainContent_panelLogin" class="dc-login" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_mainContent_btnLogin')">
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+        <div class="contentpanel">
+          <br />
+          <table style="width:100%">
+            <tr valign="top">
+              <td style="width:380px">
+                <table style="width:100%" cellpadding="2">
+                  <tr>
+                      <td colspan="2">
+                          <h4>Login with your Jualo account:</h4>
+                       </td>
+                  </tr>
+                  <tr >
 
-<%= render "users/shared/links" %>
+                    <td style="width: 70px">
+                      Email
+                    </td>
+                    <td>
+                      <!-- <input name="ctl00$mainContent$txtUsername" type="text" id="ctl00_mainContent_txtUsername" tabindex="1" class="largetextfield" style="width:230px;" /> -->
+                      <div><%= f.email_field :email %><br />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 70px">
+                      Password
+                    </td>
+                    <td>
+                      <!-- <input name="ctl00$mainContent$txtPassword" type="password" id="ctl00_mainContent_txtPassword" tabindex="2" class="largetextfield" onkeypress="javascript:return clickButton(event,'ctl00_mainContent_btnLogin');" style="width:230px;" /> -->
+                      <%= f.password_field :password %></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    </td>
+                    <td>
+                      <div style="margin-top: 5px">
+                        <a id="ctl00_mainContent_lnkForgotPassword" tabindex="5" href="http://www.designcrowd.com/forgot-password.aspx">Forgot your password?</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    </td>
+                    <td>
+                      <br />
+                      <table>
+                        <tr>
+                          <td>
+                            <!-- <input type="submit" name="ctl00$mainContent$btnLogin" value="Login" id="ctl00_mainContent_btnLogin" tabindex="3" class="btn" style="font-weight:bold;" /> -->
+                            <%= f.submit "Sign in", :class => 'btn2' %>
+                          </td>
+                          <td>
+                            <span style="padding-left: 7px;">
+                              <!-- <input id="ctl00_mainContent_chkRememberMe" type="checkbox" name="ctl00$mainContent$chkRememberMe" tabindex="4" /> -->
+                              <% if devise_mapping.rememberable? -%><%= f.check_box :remember_me if devise_mapping.rememberable? %>
+                              <label for="ctl00_mainContent_chkRememberMe">Remember me</label><% end -%>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="line-height: 1.5">
+                                 <div id="ctl00_mainContent_FaceBookLogin1_pnlFacebookLogin" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_mainContent_FaceBookLogin1_btnRegister')">
+
+    <style>
+        .title b {
+            background: url("/assets/html.png") repeat scroll 0 0 transparent;
+            display: inline-block;
+            font-weight: 900;
+            padding: 0 10px;
+        }
+
+        .bodycontent_head_inner h1 {
+            color: #177BA4;
+            margin: 15px 0 0;
+            padding: 0 0 5px;
+        }
+        .title h1, .title h2, .title h3 {
+            background: url("/assets/title.png") repeat-x scroll 50% 50% transparent;
+        }
+
+        .contentpanel {
+            background-clip: padding-box;
+            border: 1px solid #BABABA;
+            border-radius: 4px 4px 4px 4px !important;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+            color: #333333;
+            width: 70%;
+            margin: 0 auto;
+        }
+        .contentpanel {
+            background-color: #FFFFFF;
+            background-image: url("/assets/container_panel_shadow.png");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            border-color: #DCDCDC #E2E2E2 #E6E6E6 #DCDCDC;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 3px 3px 7px #C9C9C9;
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            padding: 25px 29px;
+        }
+        .bodycontent_head_inner h1 {
+            color: #177BA4;
+        }
+        .bodycontent_head_inner a {
+          color: #1F8CBE;
+          text-decoration: none;
+        }
+        .bodycontent_head_inner a.btn.btn-facebook {
+          color: white;
+          text-decoration: none;
+        }
+        .btn2 {
+            background-clip: padding-box;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: -moz-linear-gradient(center bottom , rgba(140, 140, 140, 0.5) 0%, rgba(204, 204, 204, 0.5) 100%);
+            background-repeat: repeat-x;
+            border: 1px solid #D5D5D5;
+            border-radius: 4px 4px 4px 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+            color: #333333;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: normal;
+            line-height: 20px;
+            margin-bottom: 0;
+            padding: 4px 14px;
+            text-align: center;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+            vertical-align: middle;
+        }
+        .btn2:hover {
+            background-color: #E6E6E6;
+            color: #333333;
+            text-decoration: none;
+        }
+        .btn-facebook:hover, .btn-facebook:active, .btn-facebook.active, .btn-facebook.disabled, .btn-facebook[disabled]
+        {
+            color:#c3dbff;
+        }
+        .btn-facebook,.btn-facebook:hover,.btn-facebook:active,.btn-facebook.disabled,.btn-facebook[disabled]
+        {
+            color: #ffffff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+            border-color: #273c6d;
+            padding: 10px 20px 7px 50px;
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            background-image: url("http://cdn.designcrowd.com.s3.amazonaws.com/images/icon-facebook.png");
+            background-repeat: no-repeat;
+            background-position: 0 50%; /*background-size:260px auto;*/
+        }
+
+        h4
+        {
+            font-family: "museo-sans" , Arial, sans-serif;
+            letter-spacing: -0.04em;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .vert em
+        {
+            display: inline-block;
+            background: #fff url("http://cdn.designcrowd.com.s3.amazonaws.com/images/circle.png") no-repeat 0 0;
+            padding: 10px 12px;
+            font-style: normal;
+            color: #808080;
+        }
+
+        .vert
+        {
+            background-image: url("http://cdn.designcrowd.com.s3.amazonaws.com/images/border-vert.png");
+            background-position: center center;
+            background-repeat: repeat-y;
+            text-align: center;
+            padding: 96px 0;
+            margin-bottom: -25px;
+        }
+
+        label
+        {
+            display: inline !important;
+        }
+    </style>
+    <div id="ctl00_mainContent_FaceBookLogin1_loadingGraphic" class="contentpanel content_panel" style="margin: -35px 0px 0px -35px;
+        display: none; z-index: 9999; width: 70px; height: 70px; text-align: center;
+        padding: 10px; position: fixed; top: 50%; left: 50%;">
+
+        <div style="font-size: 10px; color: #555555; padding-top: 9px; padding-bottom: 10px;">
+            Processing ...</div>
+        <img src="http://images.designcrowd.com/loading_circle.gif" />
+
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="vert">
+                    <em>Or</em>
+                </div>
+            </td>
+            <td align="center" style="width: 300px; padding-bottom: 20px; text-align: center;
+                padding-left: 50px;">
+                <table style="text-align: left">
+                    <tr>
+                        <td>
+                            <h4 style="font-size: 19px;">
+                                Login / Sign up using Facebook
+
+                            </h4>
+                            <a href="#" onclick="login()" class="btn btn-facebook" style="width: 210px;
+                                height: auto; font-size: 17px;">
+                                Connect with Facebook
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div id="fb-root">
+    </div>
+    <div id="ctl00_mainContent_FaceBookLogin1_upLoginFB">
+            <div id="fbModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true" style="display: none">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">
+                        ×</button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td style="width: 180px; text-align: center">
+                                <img id="ctl00_mainContent_FaceBookLogin1_imgFbProfile" alt="profile image" src="" style="border-width:0px;" />
+                            </td>
+                            <td>
+
+                                <input name="ctl00$mainContent$FaceBookLogin1$txtVerification" type="password" id="ctl00_mainContent_FaceBookLogin1_txtVerification" />
+                                <br />
+                                <div id="ctl00_mainContent_FaceBookLogin1_radioButtons">
+
+                                    <input type="radio" name="Category" value="customer" checked="checked"><b style="font-size:13px; padding-left:4px">I'm a Customer:</b>
+                                    I want to purchase designs<br />
+                                    <input type="radio" name="Category" value="designer"><b style="font-size:13px; padding-left:4px">I'm a Designer:</b> I want
+                                    to submit designs
+
+      </div>
+                                <br />
+                                <span Visbile="false"><input id="ctl00_mainContent_FaceBookLogin1_chkTermsAndConditions" type="checkbox" name="ctl00$mainContent$FaceBookLogin1$chkTermsAndConditions" /><label for="ctl00_mainContent_FaceBookLogin1_chkTermsAndConditions">I agree to DesignCrowd's <a href='http://www.designcrowd.com/user-agreement' target='_blank'>User Agreement</a> and <a href='http://www.designcrowd.com/privacy' target='_blank'>Privacy Policy</a>.</label></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+
+
+
+                    <a href="#" class="btn" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <triggers>
+            <asp:PostBackTrigger ControlID="btnLoginFB"/>
+        </triggers>
+
+    </div>
+
+  </div>
+
+              </td>
+            </tr>
+          </table>
+<br /><br />
+
+</div>
+
+      <input type="hidden" name="ctl00$mainContent$hdnUserType" id="ctl00_mainContent_hdnUserType" />
+      <input type="hidden" name="ctl00$mainContent$hdnUserId" id="ctl00_mainContent_hdnUserId" />
+      <br />
+    </div>
+  </div>
+  <% end %></div>
+
+
+
+
+  </div>
+</div>
+</div>

@@ -37,14 +37,14 @@ Jualo::Application.routes.draw do
       resources :cities do
 
           resources :categories  do
-        
+
           end
 
       end
 
 
   end
-    
+
   resources :ads
 
  resources :categories
@@ -55,7 +55,7 @@ Jualo::Application.routes.draw do
   resources :details
 
 
-  
+
 
 
 
@@ -64,7 +64,7 @@ Jualo::Application.routes.draw do
 
  match "export_categories" => "categories#export_categories"
  match "export_products" => "categories#export_products"
- 
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -129,5 +129,5 @@ devise_for :admin_users, ActiveAdmin::Devise.config
 
 
 
-  match '/(:state)(/:city)(/:category)(/:id)' => 'ads#show', :as => :ad 
+  match '/(:state)(/:city)(/:category)(/:id)' => 'ads#show', :as => :ad
 end
