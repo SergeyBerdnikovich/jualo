@@ -14,18 +14,18 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
   def show
-    @ad = Ad.find(params[:id])
-    @category = Category.find(@ad.category_id)
-    begin
-      @parent_category = Category.find(@category.parent)
-    rescue
-      @parent_category = nil
-    end
+    # @ad = Ad.find(params[:id])
+    # @category = Category.find(@ad.category_id)
+    # begin
+    #   @parent_category = Category.find(@category.parent)
+    # rescue
+    #   @parent_category = nil
+    # end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @ad }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @ad }
+    # end
   end
 
   # GET /ads/new
