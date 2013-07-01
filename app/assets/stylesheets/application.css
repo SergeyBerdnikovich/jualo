@@ -1003,3 +1003,104 @@ div.view-top .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
     color: #C09853;
     width: 90%;
 }
+
+
+/*map*/
+.map-container {
+    height: 363px;
+    left: 0;
+    margin: 0;
+    overflow: visible;
+    position: relative;
+}
+
+.map-side-img {
+    background: url("/assets/banner-side-img.png") no-repeat scroll 0 0 transparent;
+    bottom: 17px;
+    height: 351px;
+    position: absolute;
+    right: -26px;
+    text-indent: -9999em;
+    width: 191px;
+    z-index: 101;
+}
+
+div#area_image, #area_map {
+    float: left !important;
+    height: 315px !important;
+    width: 826px !important;
+}
+.sprite_index_map_map_s1c_blue {
+    background: url("/assets/indo-map.png") no-repeat scroll 0 0 transparent;
+    height: 273px;
+    width: 723px;
+}
+.map {
+    position: relative;
+    z-index: 102;
+}
+#area_image img {
+    position: absolute;
+}
+div#area_image, #area_map {
+    float: left !important;
+    height: 315px !important;
+    width: 826px !important;
+}
+
+.fb_home {
+    position: absolute;
+    top: 288px;
+    width: 300px;
+}
+.fb_edge_widget_with_comment {
+    position: relative;
+}
+.fb_iframe_widget {
+    display: inline-block;
+    position: relative;
+}
+.fb_iframe_widget span {
+    display: inline-block;
+    position: relative;
+    text-align: justify;
+}
+.fb_iframe_widget iframe {
+    position: absolute;
+}
+
+
+
+.map{position:relative;z-index:102;}
+.map-grid{background:url('/assets/grid-img.png') repeat 0 0;text-indent:-9999em;width:1040px;height:425px;position:absolute;left:0;top:0;z-index:100;}
+.map-side-img{position:absolute;background:url('/assets/banner-side-img.png') no-repeat 0 0;width:191px;height:351px;z-index:101;right:77px;bottom:17px;text-indent:-9999em;}
+.map-container{overflow:visible;height:363px;position:relative;left:0;margin:0;}
+div#area_image,#area_map{float:left!important;height:315px!important;width:826px!important;}
+#area_image img{position:absolute;}
+.sprite_index_map_map_s1c_blue{width:723px;height:273px;background:url('/assets/indo-map.png') no-repeat 0 0;}
+.sprite_index_map_map_12_blue{background:url('/assets/indo-map.png') no-repeat -1176px -102px;height:87px;margin-left:1px;margin-top:1px;width:70px;}
+.sprite_index_map_map_20_blue{background:url('/assets/indo-map.png') no-repeat -865px -215px;height:101px;margin-left:36px;margin-top:39px;width:75px;}
+.sprite_index_map_map_18_blue{background:url('/assets/indo-map.png') no-repeat -1284px -116px;height:88px;margin-left:62px;margin-top:101px;width:62px;}
+.sprite_index_map_map_15_blue{background:url('/assets/indo-map.png') no-repeat -1292px -212px;height:114px;margin-left:89px;margin-top:37px;width:154px;}
+.sprite_index_map_map_6_blue{background:url('/assets/indo-map.png') no-repeat -1081px -221px;height:40px;margin-left:112px;margin-top:130px;width:61px;}
+.sprite_index_map_map_19_blue{background:url('/assets/indo-map.png') no-repeat -1163px -20px;height:76px;margin-left:125px;margin-top:140px;width:116px;}
+.sprite_index_map_map_3_blue{background:url('/assets/indo-map.png') no-repeat -1350px -111px;height:65px;margin-left:105px;margin-top:156px;width:60px;}
+.sprite_index_map_map_11_blue{background:url('/assets/indo-map.png') no-repeat -1107px -266px;height:45px;margin-left:156px;margin-top:185px;width:42px;}
+.sprite_index_map_map_2_blue{background:url('/assets/indo-map.png') no-repeat -1454px -128px;height:25px;margin-left:181px;margin-top:221px;width:33px;}
+.sprite_index_map_map_5_blue{background:url('/assets/indo-map.png') no-repeat -1681px -300px;height:14px;margin-left:206px;margin-top:220px;width:9px;}
+.sprite_index_map_map_7_blue{background:url('/assets/indo-map.png') no-repeat -1376px -175px;height:43px;margin-left:200px;margin-top:220px;width:54px;}
+.sprite_index_map_map_8_blue{background:url('/assets/indo-map.png') no-repeat -947px -221px;height:41px;margin-left:239px;margin-top:230px;width:65px;}
+.sprite_index_map_map_9_blue{background:url('/assets/indo-map.png') no-repeat -998px -268px;height:46px;margin-left:284px;margin-top:235px;width:71px;}
+.sprite_index_map_map_4_blue{background:url('/assets/indo-map.png') no-repeat -1246px -129px;height:13px;margin-left:267px;margin-top:253px;width:17px;}
+.sprite_index_map_map_1_blue{background:url('/assets/indo-map.png') no-repeat -1421px -93px;height:19px;margin-left:347px;margin-top:258px;width:27px;}
+.sprite_index_map_map_13_blue{background:url('/assets/indo-map.png') no-repeat -1278px -12px;height:74px;margin-left:373px;margin-top:240px;width:225px;}
+.sprite_index_map_map_10_blue{background:url('/assets/indo-map.png') no-repeat -1451px -153px;height:162px;margin-left:230px;margin-top:35px;width:207px;}
+.sprite_index_map_map_17_blue{background:url('/assets/indo-map.png') no-repeat -1518px -8px;height:140px;margin-left:440px;margin-top:34px;width:138px;}
+.sprite_index_map_map_16_blue{background:url('/assets/indo-map.png') no-repeat -1175px -193px;height:126px;margin-left:413px;margin-top:130px;width:109px;}
+.sprite_index_map_map_14_blue{background:url('/assets/indo-map.png') no-repeat -840px 10px;height:229px;margin-left:523px;margin-top:49px;width:303px;}
+div.region-list-block{padding:25px 0 0;}
+.RegionList{float:left;}
+.map-region-block{color:#F58220;}
+.map-region-block .RegionBox{width:235px;}
+.map-region-block .RegionBox a{background:url('/assets/home-category-bullet.png') no-repeat 10px 14px;display:block;float:left;font-size:15px;padding:8px 10px 8px 25px;}
+.map-region-block .RegionBox a:hover{text-decoration:none!important;background:url('/assets/home-category-bullet.png') no-repeat 10px 14px #fbf1d3;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
