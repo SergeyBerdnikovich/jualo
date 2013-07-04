@@ -1,0 +1,115 @@
+@media (min-width:767px) and (max-width:980px) { /*For highier resolution like all PC, everything smaller like for tablets and phones*/
+	.layout_search_field_1{
+    float:left;
+    margin:0 2px 0 0;
+    padding: 5px;
+    width:33%;
+    min-width:100px;
+}
+input{
+      border: 1px solid #d97620 !important;
+      border-radius: 3px !important;
+}
+
+.layout_search_field_2{
+float:left;
+padding: 0 0 0 5px;
+height:36px;
+width:24%;
+min-width:100px;
+margin:5px 3px 0 1px  !important;
+border: 1px solid #d97620 !important;
+border-radius: 3px !important;
+}
+
+.layout_search_field_3{
+
+float:left;
+padding: 0 0 0 5px;
+height:36px;
+width:24%;
+min-width:100px;
+margin:5px 3px 0 0  !important;
+border: 1px solid #d97620 !important;
+      border-radius: 3px !important;
+}
+
+
+    .home_page_main_div{
+    background: url('/assets/home-map-bg.png') repeat-x scroll center -140px #FFFFFF;
+    }
+.map_container{
+    margin-left: 0px;
+    width: 720px;
+    overflow: hidden;
+} 
+.layout_sell_button{
+    width: 44px !important;
+    min-width: 44px !important;
+    padding: 0px 0px 0px 0px !important;
+    margin: 5px 0px 0px 0px !important;
+}
+
+.map-side-img{
+  display:none;
+}
+
+
+	 .dotted_limiter{
+ 	background-color: #FFFFFF;
+ 	border-width: 1px;
+ 	border-color: #CCCCCC;
+ 	border-style:dashed none dashed none;
+ 	margin: 10px 0px 10px;
+ 	color: white;
+ 	height:3px;
+	width: -moz-calc(100% + 40px);
+	width: -webkit-calc(100% + 40px);
+	width: -o-calc(100% + 40px);
+	width: calc(100% + 40px);
+ 	padding: 0px -25px 0px -25px !important;
+ 	margin-left:-20px !important;
+ }
+
+
+
+.left_shadow{
+
+padding: 0px 25px 0px 25px;
+-webkit-box-shadow: -5px 0px 5px rgba(156, 159, 156, 0.75);
+-moz-box-shadow:    -5px 0px 5px rgba(156, 159, 156, 0.75);
+box-shadow:         -5px 0px 5px rgba(156, 159, 156, 0.75);
+}
+
+
+	.right_shadow{
+padding: 0px 25px 0px 0px;
+-webkit-box-shadow: 5px 0px 5px rgba(156, 159, 156, 0.75);
+-moz-box-shadow:    5px 0px 5px rgba(156, 159, 156, 0.75);
+box-shadow:         5px 0px 5px rgba(156, 159, 156, 0.75);
+}
+
+
+
+
+
+	.search_button_layout
+	{
+		width:100%;
+		height:35px;
+	}
+
+	.search_input_text
+	{
+		width:100%;
+		height:25px !important;
+	}
+
+	.search_input
+	{
+		width:109%;
+		height:35px !important;
+	}
+
+
+}

@@ -1,0 +1,144 @@
+
+.popup_text
+{
+	position: absolute;
+	display: table;
+	z-index: 10001;
+	width: 90px;
+	padding-top: 1px;
+	padding-left: 1px;
+	height: 37px !important;
+	display:none; 
+	font-size: 14px;
+	font-weight: 700;
+}
+.popup_text table {
+height: 100%;
+}
+.popup_text table tr {
+height: 100%;
+}
+
+
+.popup 
+{
+display: none;
+position: absolute;
+opacity: 0.7;
+z-index: 10000;
+width: 90px;
+height: 37px;
+padding: 0px;
+background: #FFFFFF;
+border: #FF6B00 solid 2px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+}
+
+.popup_arrow_down:after 
+{
+content: "";
+position: absolute;
+bottom: -12px;
+left: 10px;
+border-style: solid;
+border-width: 12px 12px 0 0;
+border-color: #FFFFFF transparent transparent transparent;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.popup_arrow_down:before 
+{
+content: "";
+position: absolute;
+top: 37px;
+left: 8px;
+border-style: solid;
+border-width: 15px 18px 0 0;
+border-color: #FF6B00 transparent transparent transparent;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+.popup_arrow_up:after 
+{
+content: "";
+position: absolute;
+bottom: 36px;
+left: 65px;
+border-style: solid;
+border-width:  0 0 12px 12px;
+border-color: transparent transparent #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.popup_arrow_up:before 
+{
+content: "";
+position: absolute;
+top: -15px;
+left: 63px;
+border-style: solid;
+border-width:  0 0 15px 16px;
+border-color: transparent transparent #FF6B00 transparent;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+.popup2 {
+	left: -1000px;
+	z-index: 10000;
+	top: -1000px;
+	position:absolute;	
+	padding:15px;
+	margin:1em 0 3em;
+	border:5px solid #EC8021 ;
+	color:#EC8021 ;
+	background-color:rgba(255,255,255,0.3);
+	/* css3  236,128,33*/
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;	
+}
+.popup2:before {
+    display:block; 
+    width:0;
+        background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 119deg ) skew( -35deg );
+        -moz-transform:    rotate( 119deg ) skew( -35deg );
+        -ms-transform:     rotate( 119deg ) skew( -35deg );
+        -o-transform:      rotate( 119deg ) skew( -35deg );
+        -webkit-transform: rotate( 119deg ) skew( -35deg );
+    width:  20px;
+}
+
+
+	
+
+
+.1popup:after {
+	content:"";
+	z-index: 10000;
+	opacity: 0.5;
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:20px; /* controls horizontal position */
+	border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#EC8021 ; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}

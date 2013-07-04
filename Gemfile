@@ -13,11 +13,11 @@ gem 'omniauth-facebook'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'puma'
 #if defined?(JRUBY_VERSION)
-#  gem 'activerecord-jdbc-adapter'#, '=1.1.3'
-#  gem 'jdbc-mysql'#, '5.1.13'
-#  gem 'activerecord-jdbcmysql-adapter'#, '=1.1.3'
+  gem 'activerecord-jdbc-adapter'#, '=1.1.3'
+  gem 'jdbc-mysql'#, '5.1.13'
+  gem 'activerecord-jdbcmysql-adapter'#, '=1.1.3'
 #else
-  gem 'mysql2'
+#  gem 'mysql2'
 #end
 gem "twitter-bootstrap-rails"
 gem "paperclip", "~> 3.0"

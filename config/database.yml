@@ -10,8 +10,9 @@ development:
   reconnect: false
   database: jualo_rails
   pool: 100
-  username: root
-  password: gfcrfkm
+  username: jualo
+  password: jua352013$
+
 
 test:
   adapter: jdbcmysql
