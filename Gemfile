@@ -17,7 +17,7 @@ gem 'puma'
   gem 'jdbc-mysql'#, '5.1.13'
   gem 'activerecord-jdbcmysql-adapter'#, '=1.1.3'
 #else
-#  gem 'mysql2'
+  #gem 'mysql2'
 #end
 gem "twitter-bootstrap-rails"
 gem "paperclip", "~> 3.0"

@@ -41,10 +41,10 @@
         </div>
       <div class="row top-margin ">
         <div class="span2 offset0 nohover logo_image_div">
-          <%= link_to image_tag("logo.png", :class => "logo_image"), root_path() %> 
+          <%= link_to image_tag("logo.png", :class => "logo_image"), root_path() %>
         </div>
        <div class="span9 layout_upper_div" >
- 
+
                 <div class='upper_buttons_layout_div' style='z-index:1'>
                 <span class='custom_top_button'>
                  <% if current_user == nil %>
@@ -53,13 +53,13 @@
                   Welcome <%= current_user.name %>! <%= link_to "My account", user_path(current_user) %> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                   <% end %>
                 </span>
-               
+
                   <span class='custom_top_button'>
                     <a href="#" class='new_button_bg button_small' >
                       <span>
                         Pasang iklan Gratis
                         <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0;' %>
-                        <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-3.5px;' %>
+                        <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
                       </span>
                     </a>
                   </span>
@@ -67,7 +67,7 @@
                 </div>
 
         <div class="row-fluid search_box" style='float:right;max-width:710px;min-height:45px;padding:3px;'>
-          <center  class='seach_icon'style='margin:14px 5px 0 8px;float:left;width:10px !important'><i class="icon-search"></i></center>
+          <center style='margin:12px 1px 0;float:left;'><%= image_tag '/assets/lupa.png', :style => 'height:23px;' %></center>
           <p class='layout_search_field_1'><%= text_field_tag  "keyword", nil, :placeholder => "Start searching",:class => '', :style => 'height:28px;width:95%;margin:0;' %></p>
           <p class='layout_search_field_2 styled-select2'><%= select_tag "state", options_from_collection_for_select(State.all, "id", "name"), :prompt  => "Select province",:class => '', :style => 'outline: none;margin:0;' %></p>
           <p class='layout_search_field_3 styled-select2'><%= select_tag "category", options_from_collection_for_select(Category.where('parent = 1'), "id", "name"), :prompt  => "Select category",:class => 'my_select', :style => 'outline: none;margin:0;' %></p>
@@ -75,7 +75,7 @@
         </div>
 
 
- 
+
         </div>
 
       </div>
