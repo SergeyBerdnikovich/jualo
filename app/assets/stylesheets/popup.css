@@ -8,7 +8,7 @@
 	padding-top: 1px;
 	padding-left: 1px;
 	height: 37px !important;
-	display:none; 
+	display:none;
 	font-size: 14px;
 	font-weight: 700;
 }
@@ -20,7 +20,7 @@ height: 100%;
 }
 
 
-.popup 
+.popup
 {
 display: none;
 position: absolute;
@@ -30,13 +30,13 @@ width: 90px;
 height: 37px;
 padding: 0px;
 background: #FFFFFF;
-border: #FF6B00 solid 2px;
+border: #91E842 solid 2px;
 -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
 }
 
-.popup_arrow_down:after 
+.popup_arrow_down:after
 {
 content: "";
 position: absolute;
@@ -50,7 +50,7 @@ width: 0;
 z-index: 1;
 }
 
-.popup_arrow_down:before 
+.popup_arrow_down:before
 {
 content: "";
 position: absolute;
@@ -58,13 +58,13 @@ top: 37px;
 left: 8px;
 border-style: solid;
 border-width: 15px 18px 0 0;
-border-color: #FF6B00 transparent transparent transparent;
+border-color: #91E842 transparent transparent transparent;
 display: block;
 width: 0;
 z-index: 0;
 }
 
-.popup_arrow_up:after 
+.popup_arrow_up:after
 {
 content: "";
 position: absolute;
@@ -78,7 +78,7 @@ width: 0;
 z-index: 1;
 }
 
-.popup_arrow_up:before 
+.popup_arrow_up:before
 {
 content: "";
 position: absolute;
@@ -86,7 +86,7 @@ top: -15px;
 left: 63px;
 border-style: solid;
 border-width:  0 0 15px 16px;
-border-color: transparent transparent #FF6B00 transparent;
+border-color: transparent transparent #91E842 transparent;
 display: block;
 width: 0;
 z-index: 0;
@@ -96,7 +96,7 @@ z-index: 0;
 	left: -1000px;
 	z-index: 10000;
 	top: -1000px;
-	position:absolute;	
+	position:absolute;
 	padding:15px;
 	margin:1em 0 3em;
 	border:5px solid #EC8021 ;
@@ -105,10 +105,10 @@ z-index: 0;
 	/* css3  236,128,33*/
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
-	border-radius:10px;	
+	border-radius:10px;
 }
 .popup2:before {
-    display:block; 
+    display:block;
     width:0;
         background-color: #F2F2F2;
     content: "\00a0";
@@ -125,7 +125,7 @@ z-index: 0;
 }
 
 
-	
+
 
 
 .1popup:after {
@@ -137,8 +137,8 @@ z-index: 0;
 	left:20px; /* controls horizontal position */
 	border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
 	border-style:solid;
-	border-color:#EC8021 ; 
+	border-color:#91E842 ;
     /* reduce the damage in FF3.0 */
-    display:block; 
+    display:block;
     width:0;
 }

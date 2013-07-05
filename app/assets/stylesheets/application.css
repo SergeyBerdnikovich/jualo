@@ -28,6 +28,7 @@
     float: right;
     margin-top: 0px !important;
     margin-left: -140px;
+    margin-right: 5px;
 
 }
 
@@ -1296,3 +1297,11 @@ div.region-list-block{padding:25px 0 0;}
 .map-region-block .RegionBox{width:235px;}
 .map-region-block .RegionBox a{background:url('/assets/home-category-bullet.png') no-repeat 10px 14px;display:block;float:left;font-size:15px;padding:8px 10px 8px 25px;}
 .map-region-block .RegionBox a:hover{text-decoration:none!important;background:url('/assets/home-category-bullet.png') no-repeat 10px 14px #fbf1d3;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
+
+.home-new-block, .home-hot-block {
+  max-height: 110px;
+  overflow: hidden;
+}
+ul.home-new-list li, ul.home-hot-list li {
+  margin-bottom: 20px;
+}
