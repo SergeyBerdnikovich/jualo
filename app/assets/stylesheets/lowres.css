@@ -1,4 +1,8 @@
 @media (min-width:767px) and (max-width:980px) { /*For highier resolution like all PC, everything smaller like for tablets and phones*/
+	.layout_upper_div{
+    width: 554px !important;
+}
+
 	.layout_search_field_1{
     float:left;
     margin:0 2px 0 0;

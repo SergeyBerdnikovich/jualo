@@ -1,10 +1,32 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div class='popup'>
 
 </div>
 <div class='popup_text'><table height=100% width=100%><tr height=100% width=100%><td width=100% valign=middle><center id='popup_text_val' >Test</center></td></tr></table></div>
 <div class='home_page_main_div'>
+    <span class='oranges_boxes'>
+      <div class='home_small_orange_box'>
+            <%= image_tag ("sale.png")%> <div class='upper_row'>214.231<div class='bottom_row'>Iklan aktif</div></div>
+      </div>
+      <br>
+      <div class='home_small_orange_box'>
+            <%= image_tag ("cart.png")%> <div class='upper_row'>Rp 8.42m<div class='bottom_row'>jumlah transaksi</div></div>
+      </div>
+  </span>
+
+
 <div style='margin:0 auto;text-align:center;' class='main_page_header'>
-  <h1>Jual Dalam 1 Menit</h1>
+  <h2>Jual Dalam 1 Menit</h2>
+   <div class='cuma_img'></div>
   <a id="new_button_bg" style="padding: 15px 10px 15px 10px; margin: 5px 0;box-shadow: 0 3px 5px rgba(0,0,0,0.5);" href="#">
     <span style='font-size:150%;'>
       Pasang iklan Gratis
@@ -15,6 +37,41 @@
 </div>
 <div class='map_container'>
   <%= render 'map' %>
+</div>
+
+<div class='home_products_div'>
+<!-- New Post Starts -->
+              <div class="home-new-block clearfix">
+                <span class="new-tag">New</span>
+                <ul class="home-new-list fix_home-new-list">
+                  <li>1 Minute ago</li>
+                  <%  @new.each do |ad| %>
+                         <li>
+                          <span class='sqr_image_block nohover'>
+                         <%= link_to image_tag(ad.image.image.url(:thumb), :class => "sqr_image "), ad_path(ad.state, ad.city, ad.category, ad) %> 
+                          </span>
+                         </li>
+                  <% end %>
+                        </ul>
+              </div>
+              <!-- New Post Ends -->  
+
+  <!-- Hot Post Starts -->
+                    <div class="home-hot-block clearfix">
+          <span class="hot-tag">Hot</span>
+            <ul class="home-hot-list clearfix fix_home-new-list">
+                        <li>Today</li>
+                                <%  @hot.each do |ad| %>
+                         <li>
+                          <span class='sqr_image_block nohover'>
+                         <%= link_to image_tag(ad.image.image.url(:thumb), :class => "sqr_image "), ad_path(ad.state, ad.city, ad.category, ad) %> 
+                          </span>
+                         </li>
+                  <% end %>
+                            </ul>
+          </div>
+                    <!-- Hot Post Ends -->
+
 </div>
 
 <div class="home-category-block map-region-block clearfix" style='padding:0 25px;'>

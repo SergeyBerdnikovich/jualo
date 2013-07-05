@@ -90,7 +90,8 @@ class CategoriesController < ApplicationController
 
     @states = State.all
 
-    @new = Ad.where('image_id > 1').order("created_at DESC").limit(9)
+    @new = Ad.where('image_id > 1').order("created_at DESC").limit(7)
+    @hot = Ad.where('image_id > 1').order("created_at ASC").limit(7)
 
     @categories = Category.where('parent = 1')
 

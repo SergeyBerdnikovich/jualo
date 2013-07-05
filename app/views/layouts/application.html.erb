@@ -43,7 +43,7 @@
         <div class="span2 offset0 nohover logo_image_div">
           <%= link_to image_tag("logo.png", :class => "logo_image"), root_path() %> 
         </div>
-       <div class="span9" style='float: right'>
+       <div class="span9 layout_upper_div" >
  
                 <div class='upper_buttons_layout_div' style='z-index:1'>
                 <span class='custom_top_button'>
@@ -53,6 +53,7 @@
                   Welcome <%= current_user.name %>! <%= link_to "My account", user_path(current_user) %> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                   <% end %>
                 </span>
+               
                   <span class='custom_top_button'>
                     <a href="#" class='new_button_bg button_small' >
                       <span>
