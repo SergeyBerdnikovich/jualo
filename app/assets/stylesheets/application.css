@@ -11,9 +11,7 @@
 *= require_self
 *= require_tree .
 */
-
 .fb_home{width:300px;position:absolute;top:288px; height: 40px; z-index: 99999; margin-left: 30px}
-
 
 .cuma_img{
     background:url('../assets/cuma.png')  repeat-x left top;
@@ -350,12 +348,6 @@ margin-top:5px;
     display: none;
 }
 .nohover a:hover { background-color: transparent; }
-
-
-
-
-
-
 
 
 #footer {
@@ -1059,9 +1051,7 @@ ol.list li {
     background: url("/assets/list-top-line.png") repeat-x scroll 0 0 transparent;
     display: block;
 }
-ol.list li div.list-inner {
-    padding: 23px 0;
-}
+
 .time_left_block {
     background: url("/assets/timer-icon.png") no-repeat scroll 50% 25px transparent;
     float: left;
@@ -1106,19 +1096,10 @@ div.product-img {
     margin-left: 0 !important;
 }
 
-ol.list li div.list-inner h3 {
-    font-size: 18px;
-    line-height: 22px;
-}
-div.product-description-right-block h3 {
-    padding: 0 0 10px;
-}
 ol.list li div.list-inner h3 a {
     color: #333333;
 }
-div.other-items-outer {
-    font-size: 11px;
-}
+
 ul.item-location-block li {
     background: none repeat scroll 0 0 transparent;
     border: medium none;
@@ -1126,16 +1107,12 @@ ul.item-location-block li {
     float: left;
     padding: 10px 10px 10px 15px;
 }
-ul.item-location-block li.item-loc {
-    background: url("/assets/location1-icon.png") no-repeat scroll left 8px transparent;
-}
+
 ul.item-location-block li {
     color: #838385;
 }
 
-ul.item-location-block li.item-type {
-    background: url("/assets/second-icon.png") no-repeat scroll left 7px transparent;
-}
+
 p.item-amount-block {
     color: #FF7800;
     float: left;
@@ -1304,4 +1281,52 @@ div.region-list-block{padding:25px 0 0;}
 }
 ul.home-new-list li, ul.home-hot-list li {
   margin-bottom: 20px;
+}
+
+/*products show*/
+ol.list li div.list-inner {
+  padding: 23px 0;
+}
+ol.list.add-list.clearfix {
+  width: 95%;
+  margin: 0 auto;
+}
+.product-description-right-block.grid_5.omega.alpha {
+  width: 55%;
+  padding-right: 20px;
+}
+div.product-description-right-block h3 {
+  padding: 0;
+  margin: 0;
+}
+ul.item-location-block {
+  margin: 0;
+}
+ul.item-location-block li.item-loc {
+  background: url("/assets/location1-icon.png") no-repeat scroll left 12px transparent;
+}
+ul.item-location-block li.item-type {
+  background: url("/assets/second-icon.png") no-repeat scroll left 13px transparent;
+}
+div.list-inner:hover {
+  background-color: #FFF5EC;
+  border-top: 1px solid #FF805A;
+  border-bottom: 1px solid #FF805A;
+}
+div#products {
+  font-family: arial, sans-serif;
+}
+ol.list li div.list-inner h3 {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: arial, sans-serif;
+}
+ol.list li div.list-inner h3 a:hover {
+  background: none;
+  text-decoration: none;
+}
+div.other-items-outer {
+  font-size: 11px inherit!;
+  line-height: 20px;
+  font-family: arial, sans-serif;
 }
