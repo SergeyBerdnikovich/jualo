@@ -15,11 +15,11 @@
 <div class='home_page_main_div'>
     <span class='oranges_boxes hidden-phone'>
       <div class='home_small_orange_box'>
-            <%= image_tag ("sale.png")%> <div class='upper_row'>214.231<div class='bottom_row'>Iklan aktif</div></div>
+        <%= image_tag ("sale.png")%> <div class='upper_row'><%= @ads_count %><div class='bottom_row'>Iklan aktif</div></div>
       </div>
       <br>
       <div class='home_small_orange_box'>
-            <%= image_tag ("cart.png")%> <div class='upper_row'>Rp 8.42m<div class='bottom_row'>jumlah transaksi</div></div>
+        <%= image_tag ("cart.png")%> <div class='upper_row'>Rp 8.42m<div class='bottom_row'>jumlah transaksi</div></div>
       </div>
   </span>
 
@@ -74,7 +74,7 @@
 
 </div>
 
-<div class="home-category-block map-region-block clearfix" style='padding:0 25px;'>
+<div class="home-category-block map-region-block clearfix" style='padding:0 25px;margin: 20px 0 0 0;'>
                       <div class="sub-heading-block clearfix">
                         <h2 class="main-province-title">Pilih Lokasi</h2>
                         <div class="clearfix"> <span class="more-categories-block"> <a href="javascript:;" id="view_more_provinces" >See all Provinces</a> </span> </div>
@@ -122,12 +122,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="home-category-block clearfix" style='padding:0 25px;'>
+                    <div class="home-category-block clearfix" style='padding:0 25px;margin:0;'>
                   <div class="sub-heading-block clearfix">
                     <h2 class="main-province-title">Pilih Kategori</h2>
                                 <span class="more-categories-block"> <a href="javascript:;" id="view_more_category" >See all Categories</a> </span>
                     </div>
-                  <ul class="home-category-list clearfix">
+                  <ul class="home-category-list clearfix" id='block2'>
                                         <li> <div><a href="products/c:59">
                       <img src="/assets/422.83bcfd2db0d894c07b2ee6f6486d674d.jpg" class="upload-avatar" alt="[Image: mobile-icon.png]" title="mobile-icon.png" width="90" height="90" /> </a>
                       <h3>Car</h3></div>
@@ -176,8 +176,7 @@
                       <img src="/assets/459.15ebd9f9028f249ce6d90ad687ca7913.jpg" class="upload-avatar" alt="[Image: movies.png]" title="movies.png" width="90" height="90" /> </a>
                       <h3>Movies</h3></div>
                     </li>
-                                      </ul>
-                  <span id='more_Categories' style='display:none'><ul class='clearfix'> <li><div> <a href="products/c:74">
+                    <li><div> <a href="products/c:74">
                     <img src="/assets/453.79075e5d9ee67b78c1f7693c6a89715e.jpg" class="upload-avatar" alt="[Image: garden.png]" title="garden.png" width="90" height="90" /> </a>
                     <h3>Construction & Garden</h3></div>
                   </li>
@@ -277,7 +276,7 @@
                     <img src="/assets/461.d29cad7166e02d7c9b525b5270478613.jpg" class="upload-avatar" alt="[Image: others.png]" title="others.png" width="90" height="90" /> </a>
                     <h3>Others</h3></div>
                   </li>
-                  </ul></span> </div>
+                  </ul> </div>
 
 
 </div>

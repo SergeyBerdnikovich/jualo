@@ -1,93 +1,113 @@
-<div id='products' style='padding:20px 0;'>
+<div id='products'>
   <div class="product-info-block product-add-block clearfix">
-<form id="ProductsIndexForm" method="post" action="/products"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="769f2ba3ff0d0c2be39b3a2713096a2142435014" id="Token1898118217" /></fieldset>  <div class="view-top clearfix">
-    <div class="list clearfix">
-    <div class="js-tabs view-top-list-block">
-      <ul class="item-location-block clearfix"><li><a href="#" id="count_all" href="javascript:void(0)" rel="">All listed <span>19660</span></a></li><li><a href="#" id="count_new" href="javascript:void(0)" rel="1">New <span>3998</span></a></li><li><a href="#" id="count_second" href="javascript:void(0)" rel="2">Second <span>15584</span></a></li><li><a href="#" id="count_searched" href="javascript:void(0)" rel="3">Searched <span>78</span></a></li></ul>    </div>
+<form id="ProductsIndexForm" method="post" action="/products"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="769f2ba3ff0d0c2be39b3a2713096a2142435014" id="Token1898118217" /></fieldset>
+  <div class="view-top clearfix" style='height:45px;'>
+    <div class="list clearfix" style='margin-bottom:-0.5px;'>
+      <div class="js-tabs view-top-list-block">
+        <ul class="item-location-block clearfix">
+          <li class='selected'><a href="#" id="count_all" href="javascript:void(0)" rel="">All listed <span>19660</span></a></li>
+          <li><a href="#" id="count_new" href="javascript:void(0)" rel="1">New <span>3998</span></a></li>
+          <li><a href="#" id="count_second" href="javascript:void(0)" rel="2">Second <span>15584</span></a></li>
+          <li><a href="#" id="count_searched" href="javascript:void(0)" rel="3">Searched <span>78</span></a></li>
+        </ul>
+      </div>
 
-    <div class="add-pic-block"><div class="input checkbox"><input type="hidden" name="data[Products][Ad with Pictures]" id="filter_by_pictures_" value="0" /><input type="checkbox" name="data[Products][Ad with Pictures]" id="filter_by_pictures"  value="1" /><label for="filter_by_pictures">Ad With Pictures</label></div></div>
+      <div class="add-pic-block">
+        <div class="input checkbox">
+          <input type="hidden" name="data[Products][Ad with Pictures]" id="filter_by_pictures_" value="0" />
+          <input type="checkbox" name="data[Products][Ad with Pictures]" id="filter_by_pictures"  value="1" />
+          <label for="filter_by_pictures" style='font-size:11px;'>Ad With Pictures</label>
+        </div>
+      </div>
 
     </div>
 
     <div class="sort-block">
-    <div class="input select"><label for="sort_products">Sort </label><select name="data[Products][Sort ]" id="sort_products">
-<option value="0">Select</option>
-<option value="1">A-&gt;Z</option>
-<option value="2">Z-&gt;A</option>
-<option value="3">Price Low to High</option>
-<option value="4">Price High to Low</option>
-</select></div>    </div>
-    <div class="display-block">
-    <h5>Display</h5>
-    <ul class="display-list">
-    <li class = 'active'><a href="#" title="View products in list view" id="view_in_list">list view</a></li>
-    <li class="grid-view "><a href="#" title="View products in grid view" id="view_in_grid">grid view</a></li>
-    </ul>
+      <div class="input select">
+        <label for="sort_products">Sort </label>
+        <select name="data[Products][Sort ]" id="sort_products">
+          <option value="0">Select</option>
+          <option value="1">A-&gt;Z</option>
+          <option value="2">Z-&gt;A</option>
+          <option value="3">Price Low to High</option>
+          <option value="4">Price High to Low</option>
+        </select>
+      </div>
     </div>
-
+    <div class="display-block">
+      <h5>Display</h5>
+      <ul class="display-list" style='margin: 5px 0 1px 25px;'>
+        <li class = 'active'><a href="#" title="View products in list view" id="view_in_list">list view</a></li>
+        <li class="grid-view "><a href="#" title="View products in grid view" id="view_in_grid">grid view</a></li>
+      </ul>
+    </div>
   </div>
-
   <div class="dollar clearfix">
      <!-- Bread Crumb Starts-->
-     <h2 class="links">
-        <a href='http://jualo.com/'>Home</a><a href='javascript:;' onclick='breadcrumb_filter(40,0)'><span class="c">Property</span></a>      </h2>
+    <h2 class="links">
+      <a href='http://jualo.com/'>Home</a>
+      <a href='javascript:;' onclick='breadcrumb_filter(40,0)'><span id='link_arrow' class="c">Property</span></a>
+    </h2>
       <!-- Bread Crumb ends-->
-
-      <div class="paging_counter-block">
+    <div class="paging_counter-block">
       <p class="page-counter">
-Page 1 of 983, showing 20 records out of 19660 total, starting on record 1, ending on 20
-</p>
-      </div>
-
-</div>
-
- <ol class="list add-list clearfix">
-        <li>
+        Page 1 of 983, showing 20 records out of 19660 total, starting on record 1, ending on 20
+      </p>
+    </div>
+  </div>
+  <ol class="list add-list clearfix">
+    <li>
       <div class="list-inner clearfix">
-        <div class="time_left_block">
-          2 weeks ago        </div>
+        <div class="time_left_block">2 weeks ago</div>
         <div class="product-description-left-block">
           <div class="product-img">
-                        <a href="/product/Villa-Samudra-Raya"><img src="/img/medium_thumb/ProductPhoto/446627.48af94b46be3ce72c450401720a4887c.jpg" class="" alt="[Image: Villa Samudra Raya]" title="Villa Samudra Raya" width="90" height="90" /></a>                      </div>
+            <a href="/product/Villa-Samudra-Raya">
+              <img src="/img/medium_thumb/ProductPhoto/446627.48af94b46be3ce72c450401720a4887c.jpg" class="" alt="[Image: Villa Samudra Raya]" title="Villa Samudra Raya" width="90" height="90" />
+            </a>
+          </div>
         </div>
         <div class="product-description-right-block grid_5 omega alpha">
           <h3><a href="/product/Villa-Samudra-Raya"><span class="c">Villa Samudra Raya</span></a></h3>
           <div class="clearfix other-items-outer">
             <ul class="item-location-block clearfix">
               <li class="item-loc"><span class="c">Bali, Indonesia</span></li>
-                            <li class="item-type">Second Hand</li>
-                          </ul>
-
-                      </div>
+              <li class="item-type">Second Hand</li>
+            </ul>
+          </div>
         </div>
-        <p class="item-amount-block"> <span class="c cr" title="zero dollars">Rp0</span> </p>
-        <div class="item-sold-block clearfix">
-              </div>
+        <p class="item-amount-block"><span class="c cr" title="zero dollars">Rp0</span></p>
+        <div class="item-sold-block clearfix"></div>
       </div>
     </li>
-        <li>
+    <li>
       <div class="list-inner clearfix">
-        <div class="time_left_block">
-          2 weeks ago        </div>
-        <div class="product-description-left-block">
-          <div class="product-img">
-                        <a href="/product/Kost-di-BSD-Alam-Sutera---Penginapan-keluarga-di-BSD-Alam-Sutera---Hp-08180-6565-190"><img src="/assets/123.jpg" class="" alt="[Image: Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190]" title="Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190" width="90" height="90" /></a>                      </div>
+        <div class="time_left_block">2 weeks ago</div>
+          <div class="product-description-left-block">
+            <div class="product-img">
+              <a href="/product/Kost-di-BSD-Alam-Sutera---Penginapan-keluarga-di-BSD-Alam-Sutera---Hp-08180-6565-190">
+                <img src="/assets/123.jpg" class="" alt="[Image: Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190]" title="Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190" width="90" height="90" />
+              </a>
+            </div>
+          </div>
+          <div class="product-description-right-block grid_5 omega alpha">
+            <h3>
+              <a href="/product/Kost-di-BSD-Alam-Sutera---Penginapan-keluarga-di-BSD-Alam-Sutera---Hp-08180-6565-190">
+                <span class="c">Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190</span>
+              </a>
+            </h3>
+            <div class="clearfix other-items-outer">
+              <ul class="item-location-block clearfix">
+                <li class="item-loc"><span class="c">Serpong, Banten, Indonesia</span></li>
+                <li class="item-type">Second Hand</li>
+              </ul>
+            </div>
+          </div>
+          <p class="item-amount-block">
+            <span class="c cr" title="one million two hundred thousand dollars">Rp1.200.000</span>
+          </p>
+          <div class="item-sold-block clearfix"></div>
         </div>
-        <div class="product-description-right-block grid_5 omega alpha">
-          <h3><a href="/product/Kost-di-BSD-Alam-Sutera---Penginapan-keluarga-di-BSD-Alam-Sutera---Hp-08180-6565-190"><span class="c">Kost di BSD Alam Sutera - Penginapan keluarga di BSD Alam Sutera - Hp.08180.6565.190</span></a></h3>
-          <div class="clearfix other-items-outer">
-            <ul class="item-location-block clearfix">
-              <li class="item-loc"><span class="c">Serpong, Banten, Indonesia</span></li>
-                            <li class="item-type">Second Hand</li>
-                          </ul>
-
-                      </div>
-        </div>
-        <p class="item-amount-block"> <span class="c cr" title="one million two hundred thousand dollars">Rp1.200.000</span> </p>
-        <div class="item-sold-block clearfix">
-              </div>
-      </div>
-    </li>
+      </li>
         <li>
       <div class="list-inner clearfix">
         <div class="time_left_block">

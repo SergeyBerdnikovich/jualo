@@ -11,7 +11,7 @@
 *= require_self
 *= require_tree .
 */
-.fb_home{width:300px;position:absolute;top:288px; height: 40px; z-index: 99999; margin-left: 30px}
+.fb_home{width:300px;position:absolute;top:288px; height: 40px; z-index: 99999; margin-left: -5px;}
 
 .cuma_img{
     background:url('../assets/cuma.png')  repeat-x left top;
@@ -286,7 +286,7 @@ margin-top:5px;
 
 @media (min-width:1200px) { /* For larges displays */
     .oranges_boxes{
-        margin-right: 70px;
+        margin-right: 45px;
     }
 
     .layout_upper_div{
@@ -317,7 +317,7 @@ margin-top:5px;
 @media (min-width:980px) and (max-width:1200px) { /* For regular displays */
 
     .oranges_boxes{
-        margin-right: 50px;
+        margin-right: 5px;
     }
 
         .layout_upper_div{
@@ -377,7 +377,7 @@ div.footer-inner {
     line-height: 18px;
     margin: 0 auto;
     /*width: 1040px;*/
-    max-width: 1170px;
+    max-width: 1030px;
     padding: 5px;
     /*width: 71.5%;*/
 }
@@ -593,48 +593,52 @@ a#view_more_provinces:focus {
     padding: 0 10px;
 }
 .more-categories-block {
-    background: url("/assets/dropdown-bg-l.png") repeat-x scroll left top transparent;
+    /*background: url("/assets/dropdown-bg-l.png") repeat-x scroll left top transparent;*/
+    border: 1px solid gray;
+    border-radius: 3px;
     float: right;
     margin: 5px 0 0;
     padding: 0 0 0 5px;
     min-width: 123px;
     font-size: 75%;
+    background-color: #FEFAEC;
 }
-
+.more-categories-block:hover {
+    background-color: #FEFAEC;
+}
 .more-categories-block a {
-    background: url("/assets/dropdown-bg-r.png") no-repeat scroll right top transparent;
+    /*background: url("/assets/dropdown-bg-r.png") no-repeat scroll right top transparent;*/
+    background: url("/assets/dropdown-bg.png") no-repeat scroll right 2px #FEFAEC;
     display: block;
     padding: 7px 30px 7.5px 2px;
 }
-.more-categories-block:hover {
-    background-position: left bottom;
+.more-categories-block:hover a {
+    background-position: right -30px;
+    color: #999999;
+    background-color: #FEFAEC;
 }
 .more-categories-block a.up-arrow {
-    background: url("/assets/up-bg-r.png") no-repeat scroll right top transparent;
+    background: url("/assets/up-bg.png") no-repeat scroll right 5px #FEFAEC;
 }
 .more-categories-block a.up-arrow:hover {
-    background: url("/assets/up-bg-r.png") no-repeat scroll right bottom transparent;
+    background: url("/assets/up-bg.png") no-repeat scroll right -27px #FEFAEC;
 }
-.more-categories-block:hover a {
-    background-position: right bottom;
-    color: #999999;
-}
+
 .home-category-block {
     margin: 20px 0;
     padding: 0 10px;
 }
 .home-category-block ul {
-    margin: 25px 0 0;
+    margin: 0 0 10px;
 }
 .home-category-block li {
     border: 1px solid transparent;
     border-radius: 4px 4px 4px 4px;
     float: left;
     margin: 0 8px 0 5px;
-    min-height: 156px;
-    padding: 5px;
+    min-height: 142px;
     text-align: center;
-    width: 120px;
+    width: 121px;
     line-height: 20px;
 }
 #more_Categories li a:hover {
@@ -653,7 +657,7 @@ a#view_more_provinces:focus {
     outline: none;
 }
 .home-category-block li div {
-    padding: 5px;
+    padding-bottom: 5px;
 }
 .home-category-block li div:hover {
     border: 1px solid #CCCCCC;
@@ -964,17 +968,14 @@ div.add-pic-block {
 div.view-top div.sort-block {
     background: url("/assets/big-sep.png") no-repeat scroll left 0 transparent;
     float: right;
-    padding: 11px 0 5px 20px;
+    padding: 6px 0 0 20px;
 }
 
 div.view-top div.sort-block div.input {
     float: left;
 }
 
-div.sort-block div.select label {
-    font-size: 12px;
-    padding: 0 5px 0 0;
-}
+
 div.sort-block div.select select {
     background: url("/assets/select-bg.png") repeat-x scroll 0 0 transparent;
     border: 1px solid #CACACA;
@@ -987,7 +988,7 @@ div.sort-block div.select select {
 div.display-block {
     background: url("/assets/big-sep.png") no-repeat scroll left 0 transparent;
     float: right;
-    padding: 15px 20px 5px;
+    padding: 6px 20px 0px;
 }
 div.item-sold-block, div.view-top div.list, ul.display-list, ul.display-list li {
     float: left;
@@ -1026,7 +1027,6 @@ div.dollar h2.links a {
 }
 
 div.dollar h2.links a, div.dollar h2.links span {
-    background: url("/assets/link-bullet.png") no-repeat scroll left 5px transparent;
     color: #42ACE9;
     font-size: 12px;
     line-height: 15px;
@@ -1046,10 +1046,6 @@ div.product-info-block ol.list {
 ol.add-list li {
     margin: 0;
     padding: 2px 0 0;
-}
-ol.list li {
-    background: url("/assets/list-top-line.png") repeat-x scroll 0 0 transparent;
-    display: block;
 }
 
 .time_left_block {
@@ -1105,7 +1101,7 @@ ul.item-location-block li {
     border: medium none;
     color: #838385;
     float: left;
-    padding: 10px 10px 10px 15px;
+    padding: 10px 6px 10px 12px;
 }
 
 ul.item-location-block li {
@@ -1308,11 +1304,6 @@ ul.item-location-block li.item-loc {
 ul.item-location-block li.item-type {
   background: url("/assets/second-icon.png") no-repeat scroll left 13px transparent;
 }
-div.list-inner:hover {
-  background-color: #FFF5EC;
-  border-top: 1px solid #FF805A;
-  border-bottom: 1px solid #FF805A;
-}
 div#products {
   font-family: arial, sans-serif;
 }
@@ -1329,4 +1320,93 @@ div.other-items-outer {
   font-size: 11px inherit!;
   line-height: 20px;
   font-family: arial, sans-serif;
+}
+.dollar.clearfix {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+}
+div.dollar span#link_arrow {
+  background: url("/assets/link-bullet.png") no-repeat scroll left 5px transparent;
+}
+ol.list li {
+    border-top: 1px solid gray;
+    display: block;
+}
+ol.list li:hover {
+  background-color: #FFF5EC;
+  border-top: 1px solid #FF805A;
+  border-bottom: 1px solid #FF805A;
+}
+ul.item-location-block li {
+  border: none;
+}
+ul.item-location-block li:hover {
+  border: none;
+}
+div.add-pic-block {
+    float: left;
+    margin: 15px 0 0 10px;
+    font-size: 11px;
+}
+
+.js-tabs.view-top-list-block {
+  background: url("/assets/big-sep.png") no-repeat scroll right 0 transparent;
+  float: left;
+  padding: 4px 0 0;
+}
+div.sort-block div.select label {
+  font-size: 12px;
+  padding: 5px 5px 0 0;
+  float: left;
+  width: 25px;
+}
+.display-block h5 {
+    width: 50px;
+    float: left;
+    font-size: 12px;
+}
+a#view_in_list {
+    width: 27px;
+    height: 27px;
+    text-indent: -9999em;
+    display: block;
+}
+a#view_in_grid {
+    background: url("/assets/display-sprite-active.png") no-repeat scroll left bottom transparent;
+    width: 27px;
+    height: 27px;
+    text-indent: -9999em;
+    display: block;
+    background-position: -30px 1px;
+}
+
+.item-location-block.clearfix li a {
+    background: none repeat scroll 0 0 transparent;
+    color: #333333;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 10px 20px 10px 10px;
+}
+.item-location-block.clearfix li a  span {
+    color: #FF7800;
+}
+.view-top.clearfix {
+    font-size: 11px;
+}
+ul.home-category-list.clearfix {
+    height: 290px;
+    overflow: hidden;
+}
+ul.home-category-list.clearfix.full {
+    height: auto;
+}
+.js-tabs ul li.selected {
+    background-color: white;
+    border-top: 1px solid #DBDFE7;
+    border-left: 1px solid #DBDFE7;
+    border-right: 1px solid #DBDFE7;
+    border-bottom: 1px solid white;
+    border-radius: 5px 5px 0px 0px;
 }

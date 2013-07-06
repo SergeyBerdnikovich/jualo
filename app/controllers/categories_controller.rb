@@ -95,6 +95,8 @@ class CategoriesController < ApplicationController
 
     @categories = Category.where('parent = 1')
 
+    @ads_count = Ad.all.count
+
   end
 
   def index
@@ -110,7 +112,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])    
+    @category = Category.find(params[:id])
     @catalogs = Category.where("parent = ?", @category.id)
     begin
     @parent_cat = Category.find(@category.parent)
@@ -118,7 +120,7 @@ class CategoriesController < ApplicationController
      @parent_cat = Category.find(1)
     end
 
-    
+
     if params[:filter]
       filters = ""
       params[:filter].each do |filter|
@@ -126,7 +128,7 @@ class CategoriesController < ApplicationController
         filters += " id IN (SELECT ad_id AS id FROM ads_variants WHERE variant_id = #{filter[1]})"
       end
       @ads = @category.ads.where(filters).order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
-    else 
+    else
       @ads = @category.ads.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
     end
     respond_to do |format|
