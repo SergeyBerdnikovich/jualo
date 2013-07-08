@@ -1,76 +1,91 @@
-<%= @parent_cat['name'] %> - <%= @parent_cat['parent'] %> 
-<% if @catalogs.size > 0 %>
-<h2>Subcategories in <%= @category['name'] %></h2> 
-<% if @parent_cat.id != 1 %>
-<%= link_to "<span class='btn btn-primary btn-large'>Back</span>".html_safe, category_path(@parent_cat)%>
-<% end %>
-<table class="table table-bordered" >
+<div id='products'>
+  <div class="product-info-block product-add-block clearfix">
+<form id="ProductsIndexForm" method="post" action="/products"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="769f2ba3ff0d0c2be39b3a2713096a2142435014" id="Token1898118217" /></fieldset>
+  <div class="view-top clearfix" style='height:45px;'>
+    <div class="list clearfix" style='margin-bottom:-0.5px;'>
+      <div class="js-tabs view-top-list-block">
+        <ul class="item-location-block clearfix">
+          <li <% if @ad_type == nil %> class='selected' <% end %> ><a  id="count_all" href="<%= current_url(:ad_type => "all") %>" rel="">All listed <span>19660</span></a></li>
+          <li <% if @ad_type == 1 %> class='selected' <% end %>><a  id="count_new" href="<%= current_url(:ad_type => "new") %>" rel="1">New <span>3998</span></a></li>
+          <li <% if @ad_type == 2 %> class='selected' <% end %>><a  id="count_second" href="<%= current_url(:ad_type => "second") %>" rel="2">Second <span>15584</span></a></li>
+          <li <% if @ad_type == 3 %> class='selected' <% end %>><a  id="count_searched" href="<%= current_url(:ad_type => "searched") %>" rel="3">Searched <span>78</span></a></li>
+        </ul>
+      </div>
 
-<% @catalogs.each do |cat| %>
-<tr><td>
-	<div class='row-fluid'>
-	<div class='span2'><%= link_to cat[:id], category_path(cat) %></div>
-	<div class='span8'><%= link_to cat[:name], category_path(cat) %></div>
-	<div class='span2'><%= cat.ads.count %></div>
-	</div>
-</td></tr>
-<% end %>
-</table>
-<% end %>
+      <div class="add-pic-block">
+        <div class="input checkbox">
+          <input type="hidden" name="data[Products][Ad with Pictures]" id="filter_by_pictures_" value="0" />
+          <input type="checkbox" name="data[Products][Ad with Pictures]" id="filter_by_pictures"  value="1" />
+          <label for="filter_by_pictures" style='font-size:11px;'>Ad With Pictures</label>
+        </div>
+      </div>
 
-<% if @ads.size > 0 %>
-<h3>Ads in <%= @category['name'] %>  </h3>
-<form>
-<% if @category.options %>
-<% @category.options.each do |option| %>
-<% if params[:filter] %>
-<%=   %>
-<%= select_tag "filter[#{option.id}]", options_from_collection_for_select(option.variants, "id", "value",params["filter"]["#{option.id}"]), :include_blank => false, :prompt  => option.name %>
-<% else %>
-<%= select_tag "filter[#{option.id}]", options_from_collection_for_select(option.variants, "id", "value"), :include_blank => false, :prompt  => option.name %>
-<% end %>
-<% end %>
-<input type='submit' value='Filter'>
-<% end %>
+    </div>
 
-</form>
-<% if @parent_cat[:parent]  %>
-<%= link_to "<span class='btn btn-primary btn-large'>Back</span>".html_safe, category_path(@parent_cat)%>
-<% end %>
-<table class="table table-hover" >
-<% @ads.each do |ad| %>
-<tr><td>
-
-<div class='row-fluid'>
-<div class='span1'><%= time_ago_in_words( ad.created_at ).gsub(/about/,"") %> ago</div>
-<div class='span1'>
-	<% if ad.image %>
-		<%= link_to image_tag(ad.image.image.url(:thumb)), ad_path(ad.state, ad.city, ad.category, ad) %>
-	<% end %>
+    <div class="sort-block">
+      <div class="input select">
+        <label for="sort_products">Sort </label>
+        <select name="data[Products][Sort ]" id="sort_products">
+          <option value="0">Select</option>
+          <option value="1">A-&gt;Z</option>
+          <option value="2">Z-&gt;A</option>
+          <option value="3">Price Low to High</option>
+          <option value="4">Price High to Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="display-block">
+      <h5>Display</h5>
+      <ul class="display-list" style='margin: 5px 0 1px 25px;'>
+        <li class = '<% if @view == "table" %> active <% end %>'><a href="<%= current_url(:ad_type => "table") %>" title="View products in list view" id="view_in_list">list view</a></li>
+        <li class="grid-view <% if @view == "grid" %> ' active<% end %>"><a href="<%= current_url(:view => "grid") %>" title="View products in grid view" id="view_in_grid">grid view</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="dollar clearfix">
+     <!-- Bread Crumb Starts-->
+    <h2 class="links">
+      <a href='http://jualo.com/'>Home</a>
+      <a href='javascript:;' onclick='breadcrumb_filter(40,0)'><span id='link_arrow' class="c">Property</span></a>
+    </h2>
+      <!-- Bread Crumb ends-->
+    <div class="paging_counter-block">
+      <p class="page-counter">
+        Page 1 of 983, showing 20 records out of 19660 total, starting on record 1, ending on 20
+      </p>
+    </div>
+  </div>
+  <ol class="list add-list clearfix">
+    <% if @view == "table" %>
+  <%= render '/categories/table_view', :ads => @ads %>
+  <% else %>
+  <%= render '/categories/grid_view', :ads => @ads %>
+  <% end %>
+      </ol>
+  <div class="js-pagination"><div class="paging">
+<span class="prev">&laquo; Sebelumnya</span>
+<span class="current">1</span>
+<span><a href="/products/page:2/c:40">2</a></span>
+<span><a href="/products/page:3/c:40">3</a></span><span class="skip">&hellip;.</span>
+<span><a href="/products/page:982/c:40">982</a></span>
+<span><a href="/products/page:983/c:40">983</a></span>
+<a href="/products/page:2/c:40" class="next">Lanjut &raquo;</a>
 </div>
-<div class='span9'><p><%= link_to ad.detail.try(:name) , ad_path(ad.state, ad.city, ad.category, ad) if ad.detail %></p><br>
-<%= ad.city.try(:name) %>, <%= ad.state.try(:name) %>
+</div>
+  <p class="view-page-info"> View this page in    <a href="/products/c:40.rss" target="_blank">RSS
+</a>  </p>
+  <fieldset style="display:none;"><input type="hidden" name="data[_Token][fields]" value="fae2161f6dc738488587895730584d85f08a4af6%3An%3A0%3A%7B%7D" id="TokenFields1630198109" /></fieldset></form>
+                                  </div>
+                                <!--   -->
+
+
+
+
+
+
 
 </div>
-<div class='span1'>
-	<%=  link_to ad[:price],ad_path(ad.state, ad.city, ad.category, ad) %>
-</div>
 
 </div>
-
-	
-	
-	
-	
-	
-	
-	</td>
-</tr>
-<% end %>
-</table>
-<%= will_paginate @ads, renderer: BootstrapPagination::Rails %>
-<% end %>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+</div>
+</div>

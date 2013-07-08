@@ -1,6 +1,25 @@
 /*@media (min-width:400px) and (max-width:767px) { /* For small resulution, like for tablets, when input fields not fit into one line*/
   @media (max-width:767px) {
 
+.about li{
+display: inline-block;
+margin-top: 0px !important;
+}
+ 
+.contact-links li{
+display: inline-block;
+margin: 0 10px 0 0 !important;
+}
+
+.twitter{
+margin: 0 0 10px 0 !important;  
+padding: 0 !important;
+
+}
+
+h6{
+margin-top: 0px !important;
+}
 
   .main_page_header{
     display: none;

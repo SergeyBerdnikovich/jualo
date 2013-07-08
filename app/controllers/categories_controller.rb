@@ -111,26 +111,51 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   # GET /categories/1.json
+
+
+
   def show
-    @category = Category.find(params[:id])
-    @catalogs = Category.where("parent = ?", @category.id)
-    begin
-    @parent_cat = Category.find(@category.parent)
-    rescue
-     @parent_cat = Category.find(1)
-    end
 
 
-    if params[:filter]
-      filters = ""
-      params[:filter].each do |filter|
-        filters += " AND " if filters != ""
-        filters += " id IN (SELECT ad_id AS id FROM ads_variants WHERE variant_id = #{filter[1]})"
-      end
-      @ads = @category.ads.where(filters).order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
-    else
-      @ads = @category.ads.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
-    end
+  #  @category = Category.find(params[:id])
+  #  @catalogs = Category.where("parent = ?", @category.id)
+  #  begin
+  #  @parent_cat = Category.find(@category.parent)
+  #  rescue
+  #   @parent_cat = Category.find(1)
+  #  end
+
+
+#    if params[:filter]
+#      filters = ""
+#      params[:filter].each do |filter|
+#        filters += " AND " if filters != ""
+#        filters += " id IN (SELECT ad_id AS id FROM ads_variants WHERE variant_id = #{filter[1]})"
+#      end
+#      @ads = @category.ads.where(filters).order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+#    else
+#      @ads = @category.ads.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+#    end
+@ad_type = nil
+case params[:ad_type]
+when "new"
+  @ad_type = 1 
+when "second"
+@ad_type = 2
+when "searched"
+  @ad_type = 3
+end
+
+@view = nil
+case params[:view]
+when "grid"
+@view = "grid"
+else
+@view = "table"
+end
+
+
+  @ads = Ad.limit(20).offset(10000)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
