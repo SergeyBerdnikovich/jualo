@@ -73,7 +73,7 @@
 .sqr_image_block{
     max-height:90px;
     height:auto !important;
-    height:90px; 
+    height:90px;
     max-width: 90px !important;
     overflow: hidden !important;
     display: inline-block;
@@ -425,9 +425,6 @@ background: url("/assets/footer-nav-bullet.png") no-repeat scroll 0 4px transpar
 color: #797878;
 padding: 0 0 0 12px;
 }
-ul.twitter {
-padding: 8px 0 48px 0;
-}
 
 ul.twitter li {
 float: left;
@@ -447,7 +444,8 @@ background: url("/assets/footer-share-img.png") no-repeat scroll left -126px tra
 }
 
 ul.about li {
-padding: 4px 0 0 4px;
+padding: 0 0 0 4px;
+line-height: 12px;
 }
 
 ul.about li a {
@@ -604,29 +602,29 @@ border-radius: 3px;
 float: right;
 margin: 5px 0 0;
 padding: 0 0 0 5px;
-min-width: 123px;
 font-size: 75%;
 background-color: #FEFAEC;
+width: 131px;
 }
 .more-categories-block:hover {
 background-color: #FEFAEC;
 }
 .more-categories-block a {
 /*background: url("/assets/dropdown-bg-r.png") no-repeat scroll right top transparent;*/
-background: url("/assets/dropdown-bg.png") no-repeat scroll right 2px #FEFAEC;
+background: url("/assets/dropdown-bg.png") no-repeat scroll 106px 2px #FEFAEC;
 display: block;
 padding: 7px 30px 7.5px 2px;
 }
 .more-categories-block:hover a {
-background-position: right -30px;
+background-position: 106px -30px;
 color: #999999;
 background-color: #FEFAEC;
 }
 .more-categories-block a.up-arrow {
-background: url("/assets/up-bg.png") no-repeat scroll right 5px #FEFAEC;
+background: url("/assets/up-bg.png") no-repeat scroll 106px  5px #FEFAEC;
 }
 .more-categories-block a.up-arrow:hover {
-background: url("/assets/up-bg.png") no-repeat scroll right -27px #FEFAEC;
+background: url("/assets/up-bg.png") no-repeat scroll 106px -27px #FEFAEC;
 }
 
 .home-category-block {
@@ -1068,7 +1066,7 @@ line-height: 15px;
 padding: 60px 5px 20px;
 text-align: center;
 width: 100px;
-} 
+}
 
 div.product-description-left-block {
 display: inline;
@@ -1422,4 +1420,8 @@ border-left: 1px solid #DBDFE7;
 border-right: 1px solid #DBDFE7;
 border-bottom: 1px solid white;
 border-radius: 5px 5px 0px 0px;
+}
+
+.home-category-list.clearfix {
+  padding-top: 10px;
 }

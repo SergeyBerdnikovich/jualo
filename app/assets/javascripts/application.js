@@ -42,7 +42,7 @@ function override_hide_image(id,not_necessary){
 
 	$('area').mouseover(function(){
 		cursor_on_area = true
-		
+
 		var position = $(this).attr('coords').split(',');
 		var x = 0;
 		var y = 0;
@@ -50,7 +50,7 @@ function override_hide_image(id,not_necessary){
 		var	fix_x = 0
 		var	fix_y = 0
 
-		var title = $(this).attr("title")
+		var title = $(this).attr("alt_disable")
 
 		if (title.length > 15){ //defining state by "title" attribute. There is generally state:cities... format but 2 small cities specified with ":" thus making an exception
 			var patt=/.*?(?=:)/g;
@@ -66,7 +66,7 @@ function override_hide_image(id,not_necessary){
 			} else {
 				x += parseInt(value)
 			}
-		}); 
+		});
 		//it's not working well always and unable to decide when switch arrows
 		// thus making knowing exceptions
 		switch(state)
@@ -74,57 +74,57 @@ function override_hide_image(id,not_necessary){
 			case "SUMBAR":
 			popup_arrow_up = true
 			fix_x = -68
-			fix_y = 60			
+			fix_y = 60
     		break;
 
 			case "RIAU":
 			popup_arrow_up = false
 			fix_x = -35
-			fix_y = 10			
+			fix_y = 10
     		break;
 
 
 			case "DKI: Jakarta":
 			popup_arrow_up = false
 			fix_x = -2
-			fix_y = 0	
+			fix_y = 0
     		break;
 
     		case "BENGKULU":
 			popup_arrow_up = true
 			fix_x = -74
-			fix_y = 58			
+			fix_y = 58
     		break;
 
     		case "SULBAR":
 			popup_arrow_up = true
 			fix_x = -74
-			fix_y = 58			
+			fix_y = 58
     		break;
 
 
 			case "DIY: Yogyakarta":
 			popup_arrow_up = true
 			fix_x = -72
-			fix_y = 70			
+			fix_y = 70
     		break;
 
 			case "SUMSEL":
 			popup_arrow_up = false
 			fix_x = 0
-			fix_y = -10			
+			fix_y = -10
     		break;
 
     		case "NAD":
 			popup_arrow_up = false
 			fix_x = 0
-			fix_y = -20			
+			fix_y = -20
     		break;
 
     		case "SUMUT":
 			popup_arrow_up = false
 			fix_x = 0
-			fix_y = -25			
+			fix_y = -25
     		break;
 
     		case "SULUT":
@@ -137,13 +137,13 @@ function override_hide_image(id,not_necessary){
 			case "KALBAR":
 			popup_arrow_up = false
 			fix_x = -15
-			fix_y = -20			
+			fix_y = -20
     		break;
 
 			case "MALUT":
 			popup_arrow_up = true
 			fix_x = -60
-			fix_y = 60  			
+			fix_y = 60
     		break;
 
 
@@ -158,13 +158,13 @@ function override_hide_image(id,not_necessary){
 
 		x = ((x / position.length) * 2) + map_position.left - 8 + fix_x
 		y = ((y / position.length) * 1.9) + map_position.top - 43 + fix_y
-		
+
 
 
 		$('.popup').show()
 		if (popup_arrow_up){
 			$('.popup').attr("class",'popup popup_arrow_up')
-			
+
 		} else{
 			$('.popup').attr("class",'popup popup_arrow_down')
 		}
