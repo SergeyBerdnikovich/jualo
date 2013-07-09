@@ -1433,6 +1433,7 @@ width: 25px;
 width: 50px;
 float: left;
 font-size: 12px;
+font-weight: normal;
 }
 a#view_in_list {
 width: 27px;
@@ -1451,14 +1452,20 @@ background-position: -30px 1px;
 
 .item-location-block.clearfix li a {
 background: none repeat scroll 0 0 transparent;
-color: #333333;
+color: #C1C1C1;
 cursor: pointer;
-font-size: 11px;
+font-size: 12px;
 font-weight: 700;
 padding: 10px 20px 10px 10px;
 }
+.item-location-block.clearfix li.selected a {
+    color: black;
+}
 .item-location-block.clearfix li a  span {
-color: #FF7800;
+color: #F2AC1E;
+}
+.item-location-block.clearfix li.selected a  span {
+  color: #FF7800;
 }
 .view-top.clearfix {
 font-size: 11px;
