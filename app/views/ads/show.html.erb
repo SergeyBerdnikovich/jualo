@@ -1,7 +1,7 @@
 
 <div class='row'><div class='span12'><h3>
   <% if @parent_category  %>
-  <%= link_to @parent_category['name'], category_path(@parent_category) %> - 
+  <%= link_to @parent_category['name'], category_path(@parent_category) %> -
   <% end %>
 
   <%= link_to @category['name'], category_path(@category) %> </h3></div></div>
@@ -9,7 +9,7 @@
 <div class='row top-buffer'><div class='span12'><h4><%= @ad.detail.name %></h4></div></div>
 <div class='row'>
   <div class="span4">
-  <%= @ad.city.name %>,<%= @ad.state.name %>
+  <%= @ad.city.try(:name) %>,<%= @ad.state.try(:name) %>
   </div>
   <div class='span2'><%= time_ago_in_words( @ad.created_at ).gsub(/about/,"") %> ago</div>
    <div class='span3'>Number Advertisement: <% @ad.id %> </div>
@@ -44,9 +44,9 @@ User: Anonimous<br>
 <% end %>
 <a href=""> <h5>Send mail</h5> </a><br>
 <p>
-<img src="http://maps.google.com/maps/api/staticmap?size=255x305&maptype=roadmap&sensor=false&markers=color:blue|label:A|<%= @ad.city.name %>,<%= @ad.state.name %>, Indonesia&markers=color:purple|" alt="Static, Marked Map of Chicago, Illinois and Hammond, Indiana with no Center and Zoom"><p>
+<img src="http://maps.google.com/maps/api/staticmap?size=255x305&maptype=roadmap&sensor=false&markers=color:blue|label:A|<%= @ad.city.try(:name) %>,<%= @ad.state.try(:name) %>, Indonesia&markers=color:purple|" alt="Static, Marked Map of Chicago, Illinois and Hammond, Indiana with no Center and Zoom"><p>
 
-<a href="https://maps.google.com/maps?q=<%= @ad.city.name %>,<%= @ad.state.name %>, Indonesia&hl=en&sll=,&hnear=Yogyakarta, Yogyakarta, Indonesia&z=14" class="" target="_blank">View big map</a> </p>
+<a href="https://maps.google.com/maps?q=<%= @ad.city.try(:name) %>,<%= @ad.state.try(:name) %>, Indonesia&hl=en&sll=,&hnear=Yogyakarta, Yogyakarta, Indonesia&z=14" class="" target="_blank">View big map</a> </p>
 
 share links blog will be here...
 

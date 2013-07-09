@@ -59,7 +59,7 @@
                       <span>
                         Pasang iklan Gratis
                         <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0;' %>
-                        <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
+                        <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
                       </span>
                     </a>
                   </span>
@@ -69,8 +69,8 @@
         <div class="row-fluid search_box" style='float:right;max-width:710px;min-height:45px;padding:3px;'>
           <center style='margin:12px 1px 0;float:left;'><%= image_tag '/assets/lupa.png', :style => 'height:23px;' %></center>
           <p class='layout_search_field_1'><%= text_field_tag  "keyword", nil, :placeholder => "Start searching",:class => '', :style => 'height:28px;width:95%;margin:0;' %></p>
-          <p class='layout_search_field_2 styled-select2'><%= select_tag "state", options_from_collection_for_select(State.all, "id", "name"), :prompt  => "Select province",:class => '', :style => 'outline: none;margin:0;' %></p>
-          <p class='layout_search_field_3 styled-select2'><%= select_tag "category", options_from_collection_for_select(Category.where('parent = 1'), "id", "name"), :prompt  => "Select category",:class => 'my_select', :style => 'outline: none;margin:0;' %></p>
+          <p class='layout_search_field_2 styled-select2'><%= select_tag "state", options_from_collection_for_select(State.all, "id", "name"), :prompt  => "Select province",:class => '', :style => 'outline: none;' %></p>
+          <p class='layout_search_field_3 styled-select2'><%= select_tag "category", options_from_collection_for_select(Category.where('parent = 1'), "id", "name"), :prompt  => "Select category",:class => 'my_select', :style => 'outline: none;' %></p>
           <button class="btn layout_sell_button" id='new_button_bg' type="button" >Cari</button>
         </div>
 
@@ -103,47 +103,47 @@
         <div class="footer-inner container_12 clearfix">
           <div class="clearfix">
             <div class="row-fluid">
-            <div class="span4">
-              <h6>About Us</h6>
-                <p><p style="text-align: left;">Jualo.com adalah pusat jual beli online termudah dan tercepat di Indonesia. Pasang iklan di Jualo hanya perlu 1 menit saja dan iklan anda langsung online.a. Pasang iklan di Jualo hanya perlu 1 menit saja a. Pasang iklan di Jualo hanya perlu 1 menit saja </p></p>
-            </div>
-            <div class="span2">
-              <h6>Navigation</h6>
-              <ul class="about">
-                <li><a href="/" title="Home">Home</a></li>
-                <li><a href="/page/about" title="Tentang Kami">Tentang Kami</a></li>
-                <li><a href="/page/services" title="Services">Services</a></li>
-                <li><a href="/page/sitemap" title="Sitemap">Sitemap</a></li>
-                <li><a href="/contact" class="js-thickbox" title="Hubungi Kami">Hubungi Kami</a></li>
-              </ul>
-            </div>
-            <div class="span2">
-              <h6>Follow us on</h6>
-              <ul class="twitter clearfix" style='margin: 0 0 10px 20px;'>
-                <li class="face"><a href="http://facebook.com/jualocom" target="_blank" title="Ikuti saya di Facebook">Facebook</a></li>
-                <li class="twit"><a href="http://twitter.com/productmicropay" target="_blank" title="Ikuti saya di Twitter">Twitter</a></li>
-              </ul>
-              <h6>Other links</h6>
-              <ul class="about" style='margin: 0 0 10px 20px;'>
-                <li><a href="/page/terms" title="Term">Term</a></li>
-                <li><a href="/page/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div class="span2">
-              <h6>Contact Us</h6>
-              <ul class="contact-links clearfix" style='margin: 0 0 10px 20px;'>
-                <!-- <li class="phone"><a href="#" title="1-875-216-9212">1-875-216-9212</a></li> -->
-                <li class="mail"><a href="mailto:contact@jualo.com" title="contact@jualo.com">contact@jualo.com</a></li>
-              </ul>
-            </div>
-            <div class="span2">
-              <div style ='width:90%;max-width:160px;'>
-                <h6 class="footer-logo" style='margin-top: -10px;'><a href="/" title="  Jual dalam 1 menit" class=""><%= image_tag '/assets/footer-logo.png'%></a></h6>
-                <div class="clearfix" id="agriya">
-                  <p>&copy;2013 <a href="http://jualo.com/" title="Jualo">jualo.com</a>. <br />All rights reserved.</p>
+              <div class="span4 hidden-phone">
+                <h6>About Us</h6>
+                  <p><p style="text-align: left;">Jualo.com adalah pusat jual beli online termudah dan tercepat di Indonesia. Pasang iklan di Jualo hanya perlu 1 menit saja dan iklan anda langsung online.a. Pasang iklan di Jualo hanya perlu 1 menit saja a. Pasang iklan di Jualo hanya perlu 1 menit saja </p></p>
+              </div>
+              <div class="span2 hidden-phone">
+                <h6>Navigation</h6>
+                <ul class="about">
+                  <li><a href="/" title="Home">Home</a></li>
+                  <li><a href="/page/about" title="Tentang Kami">Tentang Kami</a></li>
+                  <li><a href="/page/services" title="Services">Services</a></li>
+                  <li><a href="/page/sitemap" title="Sitemap">Sitemap</a></li>
+                  <li><a href="/contact" class="js-thickbox" title="Hubungi Kami">Hubungi Kami</a></li>
+                </ul>
+              </div>
+              <div class="span2">
+                <h6>Follow us on</h6>
+                <ul class="twitter clearfix" style='margin: 0 0 10px 20px;'>
+                  <li class="face"><a href="http://facebook.com/jualocom" target="_blank" title="Ikuti saya di Facebook">Facebook</a></li>
+                  <li class="twit"><a href="http://twitter.com/productmicropay" target="_blank" title="Ikuti saya di Twitter">Twitter</a></li>
+                </ul>
+                <h6 class='hidden-phone'>Other links</h6>
+                <ul class="about hidden-phone" style='margin: 0 0 10px 20px;'>
+                  <li><a href="/page/terms" title="Term">Term</a></li>
+                  <li><a href="/page/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                </ul>
+              </div>
+              <div class="span2">
+                <h6>Contact Us</h6>
+                <ul class="contact-links clearfix" style='margin: 0 0 10px 20px;'>
+                  <!-- <li class="phone"><a href="#" title="1-875-216-9212">1-875-216-9212</a></li> -->
+                  <li class="mail"><a href="mailto:contact@jualo.com" title="contact@jualo.com">contact@jualo.com</a></li>
+                </ul>
+              </div>
+              <div class="span2">
+                <div style ='width:90%;max-width:160px;'>
+                  <h6 class="footer-logo" style='margin-top: -10px;'><a href="/" title="  Jual dalam 1 menit" class=""><%= image_tag '/assets/footer-logo.png'%></a></h6>
+                  <div class="clearfix" id="agriya">
+                    <p>&copy;2013 <a href="http://jualo.com/" title="Jualo">jualo.com</a>. <br />All rights reserved.</p>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

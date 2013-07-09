@@ -1,9 +1,9 @@
-	
+
   <ol class="list add-list clearfix">
     <% ads.each do |ad| %>
     <li>
       <div class="list-inner clearfix ">
-        <div class="time_left_block hidden-phone"><%=time_ago_in_words(ad.created_at) %></div>
+        <div class="time_left_block hidden-phone"><%= time_ago_in_words(ad.created_at) %></div>
         <div class="product-description-left-block">
           <div class="product-img">
           	<div class='sqr_image_block nohover'>
@@ -15,8 +15,8 @@
           <h3><%= link_to "<span class='c'>#{ad.name}</span>".html_safe, ad_path(ad.state, ad.city, ad.category, ad) %></h3>
           <div class="clearfix other-items-outer">
             <ul class="item-location-block clearfix">
-              <li class="item-loc"><span class="c"><%= ad.city.name %>, <%= ad.state.name %> </span></li>
-              <li class="item-type"><%= ad.ad_type.name %></li>
+              <li class="item-loc"><span class="c"><%= ad.city.try(:name) %>, <%= ad.state.try(:name) %> </span></li>
+              <li class="item-type"><%= ad.ad_type.try(:name) %></li>
             </ul>
           </div>
         <div class="visible-phone clearfix mobile_date">

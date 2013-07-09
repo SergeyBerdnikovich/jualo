@@ -233,15 +233,18 @@ ul.home-new-list li,ul.home-hot-list li{float:left;height:90px;text-align:center
 .styled-select2 select {
     background: transparent;
     width: 115%;
-
+    font-family: arial,helvetica,sans-serif;
+    line-height: 20px;
+    margin-top: 9px;
     padding: 0;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1;
     border: 0;
-    margin: 0;
     border-radius: 0;
     height: 36px;
     -webkit-appearance: none;
+    vertical-align: middle;
+    color: #B2B2B2;
 }
 select:focus {
     outline: none;
@@ -320,7 +323,7 @@ input{
         float: left !important;
         margin: 0 0 0 0px !important;
         padding: 0 !important;
-        display: inline-block !important; 
+        display: inline-block !important;
     }
     .oranges_boxes{
         margin-right: 45px;
@@ -509,17 +512,17 @@ line-height: 18px;
 }
 
 ul.contact-links li {
-font-size: 80%;
+font-size: 130%;
 line-height: 19px;
 }
 div#footer a:hover {
 color: #FF7800;
 }
 ul.contact-links li.mail a {
-background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 -62px transparent;
+background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 -69px transparent;
 }
 ul.contact-links li.mail a:hover {
-background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 -192px transparent;
+background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 -200px transparent;
 }
 ul.contact-links li.phone a {
 background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 0px transparent;
@@ -529,7 +532,7 @@ background: url("/assets/contact-link-sprite.png") no-repeat scroll 0 -132px tra
 }
 ul.contact-links li a {
 display: block;
-padding: 5px 0 8px 25px;
+padding: 7px 0 8px 25px;
 }
 
 div.footer-inner h6 {
@@ -589,9 +592,7 @@ font-size: 20px;
 font-weight: 400;
 padding: 0 0 0 20px;
 }
-div.region-list-block {
-padding: 25px 0 0;
-}
+
 .RegionList {
 float: left;
 }
@@ -691,6 +692,9 @@ text-align: center;
 width: 121px;
 line-height: 20px;
 }
+.home-category-block li div {
+    padding: 3px;
+}
 #more_Categories li a:hover {
 background: none;
 text-decoration: none;
@@ -708,6 +712,7 @@ outline: none;
 }
 .home-category-block li div {
 padding-bottom: 5px;
+border: 1px solid white;
 }
 .home-category-block li div:hover {
 border: 1px solid #CCCCCC;
@@ -1018,7 +1023,7 @@ margin: 17px 0 0 10px;
 div.view-top div.sort-block {
 background: url("/assets/big-sep.png") no-repeat scroll left 0 transparent;
 float: right;
-padding: 6px 0 0 20px;
+padding: 6px 0 0 1.5%;
 }
 
 div.view-top div.sort-block div.input {
@@ -1038,7 +1043,7 @@ width: 120px;
 div.display-block {
 background: url("/assets/big-sep.png") no-repeat scroll left 0 transparent;
 float: right;
-padding: 6px 20px 0px;
+padding: 6px 1.2% 0px;
 }
 div.item-sold-block, div.view-top div.list, ul.display-list, ul.display-list li {
 float: left;
@@ -1159,7 +1164,7 @@ background: none repeat scroll 0 0 transparent;
 border: medium none;
 color: #838385;
 float: left;
-padding: 20px 6px 20px 12px;
+padding: 20px 1px 10px 7px;
 }
 
 ul.item-location-block li {
@@ -1322,7 +1327,10 @@ div#area_image,#area_map{;height:315px!important;}
 .sprite_index_map_map_17_blue{background:url('/assets/indo-map.png') no-repeat -1518px -8px;height:140px;margin-left:440px;margin-top:34px;width:138px;}
 .sprite_index_map_map_16_blue{background:url('/assets/indo-map.png') no-repeat -1175px -193px;height:126px;margin-left:413px;margin-top:130px;width:109px;}
 .sprite_index_map_map_14_blue{background:url('/assets/indo-map.png') no-repeat -840px 10px;height:229px;margin-left:523px;margin-top:49px;width:303px;}
-div.region-list-block{padding:25px 0 0;}
+div.region-list-block {
+  padding:15px 0 15px 0;
+  margin-left: 40px;
+}
 .RegionList{float:left;}
 .map-region-block{color:#F58220;}
 .map-region-block .RegionBox{width:235px;}
@@ -1339,7 +1347,7 @@ margin-bottom: 20px;
 
 /*products show*/
 ol.list li div.list-inner {
-padding: 23px 0;
+padding: 23px 0 0;
 }
 ol.list.add-list.clearfix {
 width: 95%;
@@ -1358,9 +1366,11 @@ margin: 0;
 }
 ul.item-location-block li.item-loc {
 background: url("/assets/location1-icon.png") no-repeat scroll left 12px transparent;
+padding: 18px 15px;
 }
 ul.item-location-block li.item-type {
 background: url("/assets/second-icon.png") no-repeat scroll left 13px transparent;
+padding: 18px 15px;
 }
 div#products {
 font-family: arial, sans-serif;
@@ -1388,8 +1398,8 @@ div.dollar span#link_arrow {
 background: url("/assets/link-bullet.png") no-repeat scroll left 5px transparent;
 }
 ol.list li {
-border-top: 1px solid gray;
-display: inline-block;
+    border-top: 1px solid #C1C1C1;
+    border-bottom: 1px solid white;
 }
 ol.list li:hover {
 background-color: #FFF5EC;
@@ -1404,14 +1414,14 @@ border: none;
 }
 div.add-pic-block {
 float: left;
-margin: 15px 0 0 10px;
+margin: 15px 0 0 5px;
 font-size: 11px;
 }
 
 .js-tabs.view-top-list-block {
 background: url("/assets/big-sep.png") no-repeat scroll right 0 transparent;
 float: left;
-padding: 4px 0 0;
+padding-top: 10px;
 }
 div.sort-block div.select label {
 font-size: 12px;
@@ -1467,8 +1477,20 @@ border-left: 1px solid #DBDFE7;
 border-right: 1px solid #DBDFE7;
 border-bottom: 1px solid white;
 border-radius: 5px 5px 0px 0px;
+
+background: rgb(229,229,229); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(255,255,255,1) 13%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(13%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(255,255,255,1) 13%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(255,255,255,1) 13%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(255,255,255,1) 13%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,255,255,1) 13%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .home-category-list.clearfix {
   padding-top: 10px;
+}
+.more-categories-block a:focus {
+    color: black;
 }

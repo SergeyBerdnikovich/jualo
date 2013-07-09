@@ -1,3 +1,13 @@
+@media (min-width:1000px) and (max-width:1200px) {
+  div.region-list-block {
+    margin-left: 80px !important;
+  }
+}
+@media (min-width:1200px) and (max-width:1500px) {
+  div.region-list-block {
+    margin-left: 40px;
+  }
+}
 @media (min-width:767px) and (max-width:980px) { /*For highier resolution like all PC, everything smaller like for tablets and phones*/
 
 	.home-category-list{
@@ -120,6 +130,10 @@ box-shadow:         5px 0px 5px rgba(156, 159, 156, 0.75);
 		width:109%;
 		height:35px !important;
 	}
+
+  div.region-list-block {
+    margin-left: 100px;
+  }
 
 
 }

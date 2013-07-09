@@ -8,7 +8,7 @@
 
     .item-location-block li a{
   margin: 0 !important;
-  padding: 10px 5px 0 5px !important;  
+  padding: 10px 5px 0 5px !important;
   }
 
 .links , .links a{
@@ -32,7 +32,7 @@
   background: url("/assets/medium-price-icon.png") no-repeat scroll 0 10px transparent !important;
 }
 
-.item-type{ 
+.item-type{
   margin: 0 5px 0 0 !important;
   padding: 10px 5px 0 10px !important;
 }
@@ -49,20 +49,19 @@
 }
 
 
-.display-block
-{
-  margin: 10px !important;
-  padding: 0 !important;
+.display-block{
+  padding: 9px 5px !important;
+  float: left !important;
 }
 
 .page-counter{
  margin: 0 0 5px !important;
- padding: 0 !important; 
+ padding: 0 !important;
 }
 
 .list-inner{
  margin: 0 !important;
-  padding: 0 !important; 
+  padding: 0 !important;
 }
 
 .paging_counter-block
@@ -85,14 +84,14 @@
 display: inline-block;
 margin-top: 0px !important;
 }
- 
+
 .contact-links li{
 display: inline-block;
 margin: 0 10px 0 0 !important;
 }
 
 .twitter{
-margin: 0 0 10px 0 !important;  
+margin: 0 0 10px 0 !important;
 padding: 0 !important;
 
 }
@@ -232,5 +231,43 @@ margin-top: 0px !important;
     height:25px !important;
 
   }
-
+  div.region-list-block {
+    margin-left: 10px;
+  }
+ #footer div.span2 {
+  float: left;
+  max-width: 160px;
+  min-height: 100px;
+ }
+ #footer div.span2 div {
+  margin-top: -20px;
+ }
+ div.view-top div.sort-block {
+  padding: 5px 6px !important;
+  float: left !important;
+ }
+  select#sort_products {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  div.sort-block div.select label {
+    padding: 9px 5px 0 0 !important;
+  }
+  ul.item-location-block li.item-loc {
+    padding: 18px 15px 0 8px !important;
+    height: 11px;
+  }
+  ul.item-location-block li.item-type {
+  height: 20px;
+  }
+  p.item-amount-block {
+    float: right;
+    padding: 15px 0 10px 35px !important;
+  }
+  div.add-pic-block {
+    margin: 15px 5px 0 5px;
+  }
+  .js-tabs.view-top-list-block {
+    padding-top: 11px;
+  }
 }
