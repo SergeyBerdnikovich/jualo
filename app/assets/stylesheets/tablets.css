@@ -1,6 +1,86 @@
 /*@media (min-width:400px) and (max-width:767px) { /* For small resulution, like for tablets, when input fields not fit into one line*/
   @media (max-width:767px) {
 
+    .sort-block{
+      padding: 10px 5px 0 0 !important;
+      margin: 0 0 0 0 !important;
+    }
+
+    .item-location-block li a{
+  margin: 0 !important;
+  padding: 10px 5px 0 5px !important;  
+  }
+
+.links , .links a{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.item-loc{
+  padding: 10px 10px 0 10px !important;
+}
+
+.mobile_date{
+  margin: 7px 0 0 5px
+}
+.item-loc span{
+  margin: 0 5px 0 5px !important;
+}
+
+.item-amount-block{
+  margin: 0 0 0 0 !important;
+  padding: 15px 0 5px 30px !important;
+  background: url("/assets/medium-price-icon.png") no-repeat scroll 0 10px transparent !important;
+}
+
+.item-type{ 
+  margin: 0 5px 0 0 !important;
+  padding: 10px 5px 0 10px !important;
+}
+.product-description-right-block{
+  width: 65% !important;
+    margin: 0 !important;
+  padding: 0 !important;
+}
+
+.product-description-left-block
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.display-block
+{
+  margin: 10px !important;
+  padding: 0 !important;
+}
+
+.page-counter{
+ margin: 0 0 5px !important;
+ padding: 0 !important; 
+}
+
+.list-inner{
+ margin: 0 !important;
+  padding: 0 !important; 
+}
+
+.paging_counter-block
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.display-list
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.view-top{
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .about li{
 display: inline-block;
 margin-top: 0px !important;

@@ -11,6 +11,31 @@
 *= require_self
 *= require_tree .
 */
+li {
+    line-height: 0 !important;
+}
+
+div.product-info-block ol.grid-list{margin:0 0 0 -10px;}
+ol.grid-list{
+    vertical-align: right;
+}
+ol.grid-list > li{-webkit-border-radius:10px 10px 10px 10px;-moz-border-radius:10px;-o-border-radius:10px 10px 10px 10px;border-radius:10px 10px 10px 10px;background:none repeat scroll 0 0 transparent;border:1px solid #DDD;position:relative;width:229px;margin:10px 0 0 10px; display: table-cell; width: 229px !important; float:left; padding:0 ;}
+ol.grid-list li .time_left_block{float:none;background:url(/assets/timer-icon.png) no-repeat scroll 50% 3px;width:95px;margin:0 auto;padding:30px 5px 5px;}
+ol.grid-list li div.product-description-left-block{float:none;margin:0;}
+ol.grid-list li div.product-description-right-block{width:150px;float:none;}
+ol.grid-list li div.product-img{margin:0 auto;}
+ol.grid-list li div.list-inner{-webkit-border-radius:10px 10px 10px 10px;-webkit-box-shadow:0 0 4px #ccc inset;-moz-border-radius:10px;-moz-box-shadow:0 0 4px #ccc inset;-o-border-radius:10px 10px 10px 10px;-o-box-shadow:0 0 4px #ccc inset;border-radius:10px 10px 10px 10px;box-shadow:0 0 4px #ccc inset;border:1px solid #fff;padding:10px 20px;}
+ol.grid-list li div.list-inner h3{height:45px;padding:10px 0;}
+ol.grid-list li div.list-inner h3 a{display:block;text-align:center;}
+ol.grid-list li div.item-sold-block{left:-7px;position:absolute;top:-7px;}
+ol.grid-list li div.item-other-details dl{width:190px;}
+ol.grid-list li div.item-other-details dl dd{width:105px;}
+ol.grid-list li div.list-inner p.item-amount-block{background:url(/assets/medium-price-icon.png) no-repeat 0 12px;padding:16px 10px 5px 35px;}
+ol.grid-list > li:hover div.list-inner{background:none;-webkit-box-shadow:0 0 4px #ff7c07 inset;-moz-box-shadow:0 0 4px #ff7c07 inset;-o-box-shadow:0 0 4px #ff7c07 inset;}
+ol.grid-list > li:hover{border:1px solid #ffad64;background:#fff5ec;}
+ol.grid-list li div.list-inner div.product-description-right-block div.other-items-outer{max-height:30px !important;}
+
+
 .fb_home{width:300px;position:absolute;top:288px; height: 40px; z-index: 99999; margin-left: -5px;}
 
 .cuma_img{
@@ -288,6 +313,15 @@ input{
 
 
 @media (min-width:1200px) { /* For larges displays */
+    ol.grid-list{
+   margin: 0 0 0 25px !important;
+}
+    .links{
+        float: left !important;
+        margin: 0 0 0 0px !important;
+        padding: 0 !important;
+        display: inline-block !important; 
+    }
     .oranges_boxes{
         margin-right: 45px;
     }
@@ -318,6 +352,15 @@ input{
 }
 
 @media (min-width:980px) and (max-width:1200px) { /* For regular displays */
+ol.grid-list{
+    margin: 0 0 0 100px !important;
+}
+    .product-description-right-block{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 450px !important;
+    }
+
     .home-category-list{
         margin-left: 30px !important;
     }
@@ -417,13 +460,15 @@ list-style: none outside none;
 }
 
 ul.about li {
-padding: 4px 0 0 4px;
+padding: 4px 0 7px 4px;
+margin: 7px !important;
 }
 
 ul.about li a {
 background: url("/assets/footer-nav-bullet.png") no-repeat scroll 0 4px transparent;
 color: #797878;
-padding: 0 0 0 12px;
+padding: 0 0 7px 12px;
+margin: 7px !important;
 }
 
 ul.twitter li {
@@ -444,14 +489,16 @@ background: url("/assets/footer-share-img.png") no-repeat scroll left -126px tra
 }
 
 ul.about li {
-padding: 0 0 0 4px;
+padding: 0 0 7px 4px;
+margin: 7px !important;
 line-height: 12px;
 }
 
 ul.about li a {
 background: url("/assets/footer-nav-bullet.png") no-repeat scroll 0 4px transparent;
 color: #797878;
-padding: 0 0 0 12px;
+margin: 7px !important;
+padding: 0 0 7px 12px;
 }
 ul.contact-links {
 /*padding: 10px 0 0 22px;*/
@@ -1112,7 +1159,7 @@ background: none repeat scroll 0 0 transparent;
 border: medium none;
 color: #838385;
 float: left;
-padding: 10px 6px 10px 12px;
+padding: 20px 6px 20px 12px;
 }
 
 ul.item-location-block li {
@@ -1342,7 +1389,7 @@ background: url("/assets/link-bullet.png") no-repeat scroll left 5px transparent
 }
 ol.list li {
 border-top: 1px solid gray;
-display: block;
+display: inline-block;
 }
 ol.list li:hover {
 background-color: #FFF5EC;

@@ -37,7 +37,7 @@
     <div class="display-block">
       <h5>Display</h5>
       <ul class="display-list" style='margin: 5px 0 1px 25px;'>
-        <li class = '<% if @view == "table" %> active <% end %>'><a href="<%= current_url(:ad_type => "table") %>" title="View products in list view" id="view_in_list">list view</a></li>
+        <li class = '<% if @view == "table" %> active <% end %>'><a href="<%= current_url(:view => "table") %>" title="View products in list view" id="view_in_list">list view</a></li>
         <li class="grid-view <% if @view == "grid" %> ' active<% end %>"><a href="<%= current_url(:view => "grid") %>" title="View products in grid view" id="view_in_grid">grid view</a></li>
       </ul>
     </div>
@@ -55,13 +55,12 @@
       </p>
     </div>
   </div>
-  <ol class="list add-list clearfix">
-    <% if @view == "table" %>
+  
+  <% if @view == "table" %>
   <%= render '/categories/table_view', :ads => @ads %>
   <% else %>
   <%= render '/categories/grid_view', :ads => @ads %>
-  <% end %>
-      </ol>
+  <% end %> 
   <div class="js-pagination"><div class="paging">
 <span class="prev">&laquo; Sebelumnya</span>
 <span class="current">1</span>
