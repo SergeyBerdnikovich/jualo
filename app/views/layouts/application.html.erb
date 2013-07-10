@@ -89,14 +89,40 @@
       </div> -->
 
 
-        <div class="row">
+        
+<% if @category.options %>
+<div class="row-fluid">
+          <div class="span12">
+          <div id="load_sub_categories" class="option_select_block clearfix">
+            <% @category.options.each do |option|%>
+            <div class="option_select">
+            <select id="ProductCategorySearchOptionId14" onchange="javascript: submitform()" name="data[Product][category_search_option_id][14]">
+              <option value=""><%= option.name %></option>
+                          <% option.variants.each do |variant|%>
+              <option value='<%= variant.id %>'><%= variant.value %></option>
+                          <% end %>
+               </select>
+             </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    
+<% end %>
+
+ <% unless bootstrap_flash.blank? %>
+  <div class="row-fluid">
           <div class="span12">
             <%= bootstrap_flash %>
           </div>
       </div>
+      <% end %>
     </div>
 
+
     <%= yield %>
+
+
 
 
       <div id="footer">

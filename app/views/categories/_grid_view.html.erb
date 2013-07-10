@@ -4,27 +4,26 @@
 <% ads.each do |ad| %>
     <li>
       <div class="list-inner clearfix ">
-        <div class="time_left_block hidden-phone"><%=time_ago_in_words(ad.created_at) %></div>
+        <div class="time_left_block"><%=time_ago_in_words(ad.created_at) %></div>
         <div class="product-description-left-block">
           <div class="product-img">
             <div class='sqr_image_block nohover'>
+              <% if ad.image %>
             <%= link_to image_tag(ad.image.image(:thumb), :class => 'sqr_image ', :size => "90x90", :alt=> "[Image: Villa Samudra Raya]", :title => "Villa Samudra Raya"), ad_path(ad.state, ad.city, ad.category, ad) %>
+            <% end %>
             </div>
           </div>
         </div>
         <div class="product-description-right-block grid_5 omega alpha">
-          <h3><%= link_to "<span class='c'>#{ad.name}</span>".html_safe, ad_path(ad.state, ad.city, ad.category, ad) %></h3>
+          <h3><%= link_to "<span class='c'>#{truncate(ad.name,:length => 35)}</span>".html_safe, ad_path(ad.state, ad.city, ad.category, ad) %></h3>
           <div class="clearfix other-items-outer">
             <ul class="item-location-block clearfix">
-              <li class="item-loc"><span class="c"><%= ad.city.name %>, <%= ad.state.name %> </span></li>
+              <li class="item-loc"><span class="c"><%= truncate( "#{ad.city.name} , #{ad.state.name}",:length => 17) %> </span></li>
               <li class="item-type"><%= ad.ad_type.name %></li>
             </ul>
           </div>
-        <div class="visible-phone clearfix mobile_date">
-          <%=time_ago_in_words(ad.created_at) %> ago
         </div>
-        </div>
-        <p class="item-amount-block"><span class="c cr" title="zero dollars">Rp<%= ad.price %></span></p>
+        <p class="item-amount-block"><span class="c cr" title="zero dollars">Rp<%= ad.price.to_i %></span></p>
         <div class="item-sold-block clearfix"></div>
       </div>
     </li>

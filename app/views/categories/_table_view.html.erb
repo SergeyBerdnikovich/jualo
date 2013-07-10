@@ -7,7 +7,9 @@
         <div class="product-description-left-block">
           <div class="product-img">
           	<div class='sqr_image_block nohover'>
+              <% if ad.image %>
           	<%= link_to image_tag(ad.image.image(:thumb), :class => 'sqr_image ', :size => "90x90", :alt=> "[Image: Villa Samudra Raya]", :title => "Villa Samudra Raya"), ad_path(ad.state, ad.city, ad.category, ad) %>
+            <% end %>
             </div>
           </div>
         </div>
@@ -23,7 +25,7 @@
           <%=time_ago_in_words(ad.created_at) %> ago
         </div>
         </div>
-        <p class="item-amount-block"><span class="c cr" title="zero dollars">Rp<%= ad.price %></span></p>
+        <p class="item-amount-block"><span class="c cr" title="zero dollars">Rp<%= ad.price.to_i %></span></p>
         <div class="item-sold-block clearfix"></div>
       </div>
     </li>

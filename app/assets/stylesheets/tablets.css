@@ -1,6 +1,31 @@
 /*@media (min-width:400px) and (max-width:767px) { /* For small resulution, like for tablets, when input fields not fit into one line*/
   @media (max-width:767px) {
 
+    .option_select_block{
+      height: auto  !important;
+    }
+    .option_select_block select{
+      display: block;
+      height: auto  !important;
+    }
+
+.grid-list{
+  margin-top: 2px !important;
+}
+  .grid-list li div div div.other-items-outer{
+margin: 0 0 0 -10px !important;
+}
+
+.ad_types_block li{
+  padding: 2px 2px 8px 2px !important;
+  margin: 0 0 15px !important;
+
+}
+.ad_types_block li a {
+  padding: 4px 4px 3px 4px !important;
+  margin: 0 0 0 !important;
+
+}
     .sort-block{
       padding: 10px 5px 0 0 !important;
       margin: 0 0 0 0 !important;
@@ -270,4 +295,23 @@ margin-top: 0px !important;
   .js-tabs.view-top-list-block {
     padding-top: 11px;
   }
+  ol.grid-list{
+    vertical-align: right !important;
+}
+ol.grid-list > li{-webkit-border-radius:10px 10px 10px 10px !important;-moz-border-radius:10px !important;-o-border-radius:10px 10px 10px 10px !important;border-radius:10px 10px 10px 10px !important;background:none repeat scroll 0 0 transparent !important;border:1px solid #DDD !important;position:relative !important;width:229px !important;margin:10px 0 0 10px !important; display: table-cell !important; width: 229px !important; float:left !important; padding:0  !important;}
+ol.grid-list li .time_left_block{float:none !important;background:url(/assets/timer-icon.png) no-repeat scroll 50% 3px !important;width:95px !important;margin:0 auto !important;padding:30px 5px 5px !important;}
+ol.grid-list li div.product-description-left-block{float:none !important;margin:0 !important;}
+ol.grid-list li div.product-description-right-block{width:150px !important;float:none !important;}
+ol.grid-list li div.product-img{margin:0 auto !important;}
+ol.grid-list li div.list-inner{-webkit-border-radius:10px 10px 10px 10px !important;-webkit-box-shadow:0 0 4px #ccc inset !important;-moz-border-radius:10px !important;-moz-box-shadow:0 0 4px #ccc inset !important;-o-border-radius:10px 10px 10px 10px !important;-o-box-shadow:0 0 4px #ccc inset !important;border-radius:10px 10px 10px 10px !important;box-shadow:0 0 4px #ccc inset !important;border:1px solid #fff !important;padding:10px 20px !important;}
+ol.grid-list li div.list-inner h3{height:45px !important;padding:10px 0 !important;}
+ol.grid-list li div.list-inner h3 a{display:block !important;text-align:center !important;}
+ol.grid-list li div.item-sold-block{left:-7px !important;position:absolute !important;top:-7px !important;}
+ol.grid-list li div.item-other-details dl{width:190px !important;}
+ol.grid-list li div.item-other-details dl dd{width:105px !important;}
+ol.grid-list li div.list-inner p.item-amount-block{background:url(/assets/medium-price-icon.png) no-repeat 0 12px !important;padding:16px 10px 5px 35px !important;}
+ol.grid-list > li:hover div.list-inner{background:none !important;-webkit-box-shadow:0 0 4px #ff7c07 inset !important;-moz-box-shadow:0 0 4px #ff7c07 inset !important;-o-box-shadow:0 0 4px #ff7c07 inset !important;}
+ol.grid-list > li:hover{border:1px solid #ffad64 !important;background:#fff5ec !important;}
+ol.grid-list li div.list-inner div.product-description-right-block div.other-items-outer{max-height:30px !important;}
+
 }
