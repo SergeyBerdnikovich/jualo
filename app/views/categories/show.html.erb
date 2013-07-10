@@ -4,11 +4,11 @@
   <div class="view-top clearfix" style='height:45px;'>
     <div class="list clearfix" style='margin-bottom:-0.5px;'>
       <div class="js-tabs view-top-list-block">
-        <ul class="item-location-block clearfix">
-          <li <% if @ad_type == nil %> class='selected' <% end %> ><a  id="count_all" href="<%= current_url(:ad_type => "all") %>" rel="">All listed <span>19660</span></a></li>
-          <li <% if @ad_type == 1 %> class='selected' <% end %>><a  id="count_new" href="<%= current_url(:ad_type => "new") %>" rel="1">New <span>3998</span></a></li>
-          <li <% if @ad_type == 2 %> class='selected' <% end %>><a  id="count_second" href="<%= current_url(:ad_type => "second") %>" rel="2">Second <span>15584</span></a></li>
-          <li <% if @ad_type == 3 %> class='selected' <% end %>><a  id="count_searched" href="<%= current_url(:ad_type => "searched") %>" rel="3">Searched <span>78</span></a></li>
+        <ul class="ad_types_block clearfix">
+          <li <% if @ad_type == nil %> class='selected' <% else %>  class='not_selected'  <% end %> ><a  id="count_all" href="<%= current_url(:ad_type => "all") %>" rel="">All listed <span>19660</span></a></li>
+          <li <% if @ad_type == 1 %> class='selected' <% else %>  class='not_selected' <% end %>><a  id="count_new" href="<%= current_url(:ad_type => "new") %>" rel="1">New <span>3998</span></a></li>
+          <li <% if @ad_type == 2 %> class='selected' <% else %>  class='not_selected' <% end %>><a  id="count_second" href="<%= current_url(:ad_type => "second") %>" rel="2">Second <span>15584</span></a></li>
+          <li <% if @ad_type == 3 %> class='selected' <% else %>  class='not_selected' <% end %>><a  id="count_searched" href="<%= current_url(:ad_type => "searched") %>" rel="3">Searched <span>78</span></a></li>
         </ul>
       </div>
 
@@ -38,7 +38,7 @@
       <h5>Display</h5>
       <ul class="display-list" style='margin: 5px 0 1px 25px;'>
         <li class = '<% if @view == "table" %> active <% end %>'><a href="<%= current_url(:view => "table") %>" title="View products in list view" id="view_in_list">list view</a></li>
-        <li class="grid-view <% if @view == "grid" %> ' active<% end %>"><a href="<%= current_url(:view => "grid") %>" title="View products in grid view" id="view_in_grid">grid view</a></li>
+        <li class="grid-view <% if @view == "grid" %>active<% end %>"><a href="<%= current_url(:view => "grid") %>" title="View products in grid view" id="view_in_grid">grid view</a></li>
       </ul>
     </div>
   </div>
