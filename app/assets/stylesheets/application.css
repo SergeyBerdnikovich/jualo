@@ -544,14 +544,14 @@ margin-left: 30px;
 }
 
 .map-side-img {
-background: url("/assets/banner-side-img.png") no-repeat scroll 0 0 transparent;
-bottom: 10px;
+background: url("/assets/indonesian-woman-shopping.png") no-repeat scroll 0 0 transparent;
+bottom: -21px;
 height: 360px;
 position: absolute;
-right: 25px;
+right: -25px;
 text-indent: -9999em;
-width: 191px;
-z-index: 101;
+width: 291px;
+z-index: 104;
 }
 
 }
@@ -584,18 +584,16 @@ margin-left: 0px;
 
 .map-side-img{
 position:absolute;
-background:url('/assets/banner-side-img.png') no-repeat 0 0;
-width:157px;
+background:url('/assets/indonesian-woman-shopping.png') no-repeat 0 0;
+width:291px;
 height:340px;
-z-index:101;
-right:0px;
-bottom:27px;
+z-index:104;
+right:-25px;
+bottom:-1px;
 text-indent:-9999em;
 }
-
+.fb_home{margin-left: 15px;}
 }
-
-
 
 .for_mobiles{
 display: none;
@@ -2235,4 +2233,8 @@ div.dollar h2.links a, div.dollar h2.links span {
     border: 1px solid #DFDFDF;
     display: block;
     padding: 1em 1.4em;
+}
+
+.bodycontent_head_inner input {
+    border-color: rgb(190, 190, 190) !important;
 }

@@ -10,7 +10,7 @@
 
 
 <script type="text/javascript">
-    
+
   //<![CDATA[
   $(window).load(function(){
       var galleries = $('.ad-gallery').adGallery({
@@ -46,7 +46,7 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-  
+
    <script>
 var geocoder;
 var map;
@@ -108,7 +108,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <li>Number Advertisement: 00603921</li>
       <!-- <li class="top_otherdetails">1 jam lalu</li> -->
     </ul>
-    <div class="code-block">      
+    <div class="code-block">
         <span class="count1 tool-tip" title ="Halaman ditampilkan: 137">137</span>
       </p>
     </div>
@@ -205,12 +205,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
           </div>
           <div class="seller-right">
  <p class="clearfix">
-   <span class="user"><%= @ad.user.name %></span>
+   <span class="user"><%= @ad.user.try(:name) %></span>
    <a class="rss" target="_blank" href="/products/user/200514.rss">RSS</a>
  </p>
  <p class="spain">
    Member Since:
-   <span class="c" title="<%= @ad.user.created_at %>"><%= @ad.user.created_at.strftime("%d-%m-%Y") %></span>
+   <span class="c" title="<%= @ad.user.try(:created_at) %>"><%= @ad.user.created_at.strftime("%d-%m-%Y") if @ad.user %></span>
  </p>
  <p>
    <img alt="verified" src="/assets/verified-img.png">

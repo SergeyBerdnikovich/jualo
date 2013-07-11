@@ -48,10 +48,12 @@
 
                 <div class='upper_buttons_layout_div' style='z-index:1'>
                 <span class='custom_top_button'>
-                 <% if current_user == nil %>
-               <%= link_to 'Login', user_omniauth_authorize_path(:facebook), :class => "button_small new_button_bg" %>
+                  <% if current_user == nil %>
+                    <%#= link_to 'Login', user_omniauth_authorize_path(:facebook), :class => "button_small new_button_bg" %>
+                    <%= link_to 'Login', new_user_session_path, :class => "button_small new_button_bg" %>
                   <% else %>
-                  Welcome <%= current_user.name %>! <%= link_to "My account", user_path(current_user) %> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    <!-- Welcome <%#= current_user.name %>! <%#= link_to "My account", user_path(current_user) %>--> <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    <%= link_to "My account", user_path(current_user), :class => "button_small new_button_bg" %>
                   <% end %>
                 </span>
 
@@ -60,7 +62,7 @@
                       <span>
                         Pasang iklan Gratis
                         <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0;' %>
-                        <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
+                        <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
                       </span>
                     </a>
                   </span>
