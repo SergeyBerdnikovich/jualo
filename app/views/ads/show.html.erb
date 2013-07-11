@@ -1,16 +1,30 @@
 <div class="main-inner container_12">
-                                                                                    <script type="text/javascript" src="/js/jquery.ad-gallery.js"></script><script type="text/javascript">
-  $(function() {
-    var galleries = $('.ad-gallery').adGallery();
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=534939866541136";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/javascript">
+    
+  //<![CDATA[
+  $(window).load(function(){
+      var galleries = $('.ad-gallery').adGallery({
+         display_next_and_prev: false,
+         loader_image: 'assets/loader.gif',
+           display_back_and_forward: false
+      });
     $('#toggle-slideshow').click(
       function() {
         galleries[0].slideshow.toggle();
         return false;
       }
     );
-  });
-  //<![CDATA[
-  $(window).load(function(){
+
   function fixDiv() {
     var $cache = $('#getfixed');
     if ($(window).scrollTop() > 250 && $(window).scrollTop() < 850)
@@ -24,6 +38,51 @@
   fixDiv();
   });//]]>
 </script>
+ <style>
+      #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  
+   <script>
+var geocoder;
+var map;
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+     disableDefaultUI: true
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+  codeAddress()
+}
+
+ function codeAddress() {
+    var address = "<%= @ad.city.name %>, <%= @ad.state.name %>, Indonesia";
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
 
 <div class="dollar clearfix">
       <!-- Bread Crumb Starts-->
@@ -35,22 +94,21 @@
     <a href='javascript:;' onclick='breadcrumb_filter(79,3287)'>
       <span class="c">Komik</span>
     </a>
-    <span class="c">Paket pernikahan murah sudah dengan catering,tata rias,dekorasi,pelaminan,foto DLL harga mulai 20 juta</span>
+    <span class="c"><%= @ad.name %></span>
   </h2>
       <!-- Bread Crumb ends-->
 </div>
 <div class="stock-block clearfix">
-  <h2><span class="c">Paket pernikahan murah sudah dengan catering,tata rias,dekorasi,pelaminan,foto DLL harga mulai 20 juta</span></h2>
+  <h2><span class="c"><%= @ad.name %></span></h2>
   <div class="top_view_details clearfix">
     <ul>
-      <li class="top_location">Jakarta, Jakarta, Indonesia</li>
-      <li class="top_timer">3 weeks ago</li>
-      <li class="second-hand">Second Hand</li>
+      <li class="top_location"><%= @ad.city.name %>, <%= @ad.state.name %></li>
+      <li class="top_timer"><%= time_ago_in_words(@ad.created_at) %></li>
+      <li class="second-hand"><%= @ad.ad_type.name %></li>
       <li>Number Advertisement: 00603921</li>
       <!-- <li class="top_otherdetails">1 jam lalu</li> -->
     </ul>
-    <div class="code-block">
-      <p>Stok<span class="tool-tip" title ="Sisa jumlah: tak terbatas">tak terbatas</span>
+    <div class="code-block">      
         <span class="count1 tool-tip" title ="Halaman ditampilkan: 137">137</span>
       </p>
     </div>
@@ -61,116 +119,46 @@
     <div class="product-view-block clearfix">
      <div class="clearfix">
        <form class="normal" id="ProductAddForm" method="post" action="/products/add">
-         <fieldset style="display:none;">
-           <input type="hidden" name="_method" value="POST" />
-           <input type="hidden" name="data[_Token][key]" value="e62020008e1fbb190ace9fbcae448bbea9498bf2" id="Token1721296834" />
-         </fieldset>
          <div class="club">
-           <div class=" clearfix">
-             <div id="container">
-               <div id="gallery" class="ad-gallery">
-                 <div class="ad-image-wrapper"> </div>
-                 <div class="ad-nav">
-                   <div class="ad-thumbs">
-                     <ul class="ad-thumb-list">
-                       <li>
-                         <a href="#">
-                             <img src="/assets/458600.b5867440c5f40693b7cb44c186f9fb44.jpg">
-                         </a>
-                       </li>
-                       <li>
-                         <a href="#">
-                           <img src="/assets/458603.7e2adf71e4ec28daec1b1efcebff7409.jpg">
-                         </a>
-                       </li>
-                       <li>
-                         <a href="#">
-                           <img src="/assets/458607.e550482c114ea82ffc576b33ec315769.jpg">
-                         </a>
-                       </li>
-                       <li>
-                         <a href="#">
-                           <img src="/assets/458609.e614424c685ccd26b3a06894e7e885b2.jpg">
-                         </a>
-                       </li>
-                       <li>
-                         <a href="#">
-                           <img src="/assets/458611.ce3840a24ce5c977ba024e6c3ceae36a.jpg">
-                         </a>
-                       </li>
-                     </ul>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+<div class=" clearfix">
+  <div id="container">
+    <div id="gallery" class="ad-gallery">
+      <div class="ad-image-wrapper"> </div>
+      <div class="ad-nav">
+        <div class="ad-thumbs">
+          <ul class="ad-thumb-list nohover">
+<% @ad.images.each do |image| %>
+ <li>
+   <a href="<%= image.image.url() %>">
+       <img src="<%= image.image.url(:thumb) %>">
+   </a>
+ </li>
+ <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
          </div>
     <!-- Display subcategories values starts-->
         <!-- Display sub category values ends -->
         <div class="product-desc-block">
-          <p>
-            <p align="center">
-              <strong>Paket Wedding Rumah Rp. 20 juta</strong>
-            </p><br />
-            <p><strong>Paket Rumah Rp. 20.000.000</strong></p><br />
-            <p>v <strong>Buffet Utama Type A : 500 porsi</strong></p><br />
-            <p><strong>-Nasi Putih</strong></p><br />
-            <p><strong>-Soup Kimlo</strong></p><br />
-            <p><strong>-Daging Sukiyaki Masak Paprika</strong></p><br />
-            <p><strong>-Kakap Asam Manis</strong></p><br />
-            <p><strong>-Capcay / Salad</strong></p><br />
-            <p><strong>-Kerupuk</strong></p><br />
-            <p><strong>-Sambal</strong></p><br />
-            <p><strong>-Buah Segar Iris</strong></p><br />
-            <p><strong>-Aneka Snack</strong></p><br />
-            <p><strong>-Aneka Puding</strong></p><br />
-            <p><strong>-Soft Drink</strong></p><br />
-            <p><strong>-Air Mineral<br /></strong></p><br />
-            <p>v <strong>Tata Rias dan Busana</strong></p><br />
-            <ul>
-              <li><strong>Pengantin Akad Nikah dan Resepsi<br /></strong></li><br />
-              <li><strong>Tata Rias kedua orang tua</strong></li><br />
-              <li><strong>4 orang penerima tamu</strong></li><br />
-            </ul><p>v <strong>Dekorasi</strong></p><br />
-            <ul><li><strong>Tenda plafon 50 meter</strong></li><br />
-              <li><strong>100 buah kursi standard</strong></li><br />
-              <li><strong>3 buah meja prasmanan</strong></li><br />
-              <li><strong>2 meja penerima tamu</strong></li><br />
-            </ul><p>v <strong>Pelaminan Gebyok Standart 6M Bunga Segar<br /></strong></p><br />
-            <p>v <strong>Foto Digital &amp; Video Shoting ( VCD 1 Album Exclusive )</strong></p><br />
-            <p>v <strong>Lain – lain</strong></p><br />
-            <ul>
-              <li><strong>2 buah tempat angpao</strong></li><br />
-              <li><strong>2 buah tempat souvenir</strong></li><br />
-              <li><strong>2 buah buku tamu</strong></li><br />
-            </ul><p><strong>Kami Selalu memberikan kemudahan bagi anda yang ingin melangsungkan resepsi pernikahan.</strong></p><br />
-            <p><strong>Contact : Budi ( 021 ) 91702117 / 085717772167</strong></p><br />
-            <p><strong>Website :</strong><br />
-            <a href="http://www.dinicatering.com/"><strong>www.dinicatering.com</strong></a></p><br />
-            <p><strong>Email : dinicatering@yahoo.co.id</strong></p><br />
-            <p><strong>Kami selalu berkenan untuk berkomunikasi dengan anda.</strong></p><br />
-            <p><strong>Kami juga menyediakan paket untuk resepsi di gedung.<br /></strong></p><br />
+          <%== stripe_unallowed_tags(@ad.detail.description) %>
+          </p><br />
           </p>
           <div class="product-detail clearfix">
-            <p class="last-update"> update terakhir: 3 weeks, 2 days ago</p>
-            <div class="clearfix clubwear-block">
-              <ul class="clubwear clearfix">
-                <li class="notice">Tidak ada label</li>
-              </ul>
-            </div>
-          </div>
+ <p class="last-update"> update terakhir: 3 weeks, 2 days ago</p>
+         </div>
           <div class="comments" style="overflow:hidden;">
-            <div class="head1 ">
-              <h3>Komentar</h3>
-            </div>
-            <div id="disqus_thread">
-              <ul class="clubwear clearfix">
-                <li class="notice">Komentar tidak tersedia</li>
-              </ul>
-            </div>
-            <div id="fb-root"></div>
-            <script src="http://connect.facebook.net/en_US/all.js#appId=195680380455047&amp;xfbml=1"></script>
-            <fb:comments href="http://jualo.com/product/Paket-pernikahan-murah-sudah-dengan-catering-tata-rias-dekorasi-pelaminan-foto-DLL-harga-mulai-20-juta" num_posts="2" width="500"></fb:comments>
+ <div class="head1 ">
+   <h3>Komentar</h3>
+ </div>
+ <div id="disqus_thread">
+   <ul class="clubwear clearfix">
+   </ul>
+ </div>
+<div class="fb-comments" data-href="<%= request.fullpath %>" data-width="470" data-num-posts="10"></div>
           </div>
         </div>
         <fieldset style="display:none;">
@@ -187,7 +175,7 @@
       <div class='js_tabs_content'>
         <div class="clearfix">
           <div class="print-but">
-            <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
+ <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
           </div>
         </div>
       </div>
@@ -200,10 +188,12 @@
         <div class="item-sold-block view-sold-block clearfix"> </div>
         <div class="dollar clearfix">
           <p class="buy-amount-info">
-            <span class="c cr" title="zero dollars">Rp0</span>
+ <span class="c cr" title="zero dollars">Rp<%= @ad.price.to_i %></span>
           </p>
-          <div class="contact-seller-but">
-            <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921">Hubungi Penjual</a>
+          <div>
+ <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921"></a>
+ <a href="#" id="send_mail" class='new_button_bg button_sell'><span>Hubungi Penjual</span>
+</a>
           </div>
         </div>
       </div>
@@ -211,73 +201,57 @@
         <div class="seller">
           <div class="seller-center clearfix">
           <div class="seller-left">
-            <img alt="" title="Anonim" src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?default=identicon&size=55">
+ <img alt="" title="Anonim" src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?default=identicon&size=55">
           </div>
           <div class="seller-right">
-            <p class="clearfix">
-              <span class="user">Anonim</span>
-              <a class="rss" target="_blank" href="/products/user/200514.rss">RSS</a>
-            </p>
-            <p class="spain">
-              Member Since:
-              <span class="c" title="June 17, 2013 (Monday) SGT (GMT+08:00)">17-06-2013</span>
-            </p>
-            <p>
-              <img alt="verified" src="/assets/verified-img.png">
-            </p>
+ <p class="clearfix">
+   <span class="user"><%= @ad.user.name %></span>
+   <a class="rss" target="_blank" href="/products/user/200514.rss">RSS</a>
+ </p>
+ <p class="spain">
+   Member Since:
+   <span class="c" title="<%= @ad.user.created_at %>"><%= @ad.user.created_at.strftime("%d-%m-%Y") %></span>
+ </p>
+ <p>
+   <img alt="verified" src="/assets/verified-img.png">
+ </p>
           </div>
           </div>
         </div>
         <div class="seller-details-right1 clearfix">
           <div class="code-block1 clearfix">
-            <p class="phone-no clearfix">
-              <span id="phone_no" class="user">021-917xxxxx</span>
-              <span id="phone_full_no" class="user" style="display:none">021-91702117</span>
-              <span id="see_complete_no" class="text">See complete phone number</span>
-            </p>
-            <p class="send-mail clearfix">
-              <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921">Send Email</a>
-            </p>
-            <p class="see-more clearfix">
-              <a class="" href="/products/op:200514">See other advertisements</a><br />
-            </p>
-            <div class="view-map-block">
-              <input type="hidden" name="data[latitude]" id="product_latitude" value="" />
-              <input type="hidden" name="data[longitude]" id="product_longitude" value="" />
-              <input type="hidden" name="data[zoom_level]" id="product_zoom_level" value="0" />
-              <input type="hidden" name="data[latitude]" id="latitude" value="" />
-              <input type="hidden" name="data[longitude]" id="longitude" value="" />
-              <input type="hidden" name="data[city]" id="city" value="" />
-              <input type="hidden" name="data[state]" id="state" value="" />
-              <input type="hidden" name="data[country_name]" id="country_name" value="" />
-              <input type="hidden" name="data[country_code]" id="country_code" value="" />
-              <input type="hidden" name="data[dstOffset]" id="dstOffset" value="" />
-              <input type="hidden" name="data[rawOffset]" id="rawOffset" value="" />
-              <input type="hidden" name="data[timeZoneId]" id="timeZoneId" value="" />
-              <input type="hidden" name="data[timeZoneName]" id="timeZoneName" value="" />
-              <input type="hidden" name="data[product_address]" id="product_address" value="Jakarta, Jakarta, Indonesia" />
-              <div class="map-block" id="map_canvas">
+ <p class="phone-no clearfix">
+   <span id="phone_no" class="user">021-917xxxxx</span>
+   <span id="phone_full_no" class="user" style="display:none">021-91702117</span>
+   <span id="see_complete_no" class="text">See complete phone number</span>
+ </p>
+ <p class="send-mail clearfix">
+   <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921">Send Email</a>
+ </p>
+ <p class="see-more clearfix">
+   <a class="" href="/products/op:200514">See other advertisements</a><br />
+ </p>
 
-              </div>
-            </div>
+<div id="map-canvas" style="width:250px;height:250px;"></div>
+ </div>
           </div>
           <p class="clearfix map-link">
-            <a href="https://maps.google.com/maps?q=Jakarta, Jakarta, Indonesia&hl=en&sll=,&hnear=Jakarta, Jakarta, Indonesia&z=14" class="" target="_blank">View big map</a>
+ <a href="https://maps.google.com/maps?q=Jakarta, Jakarta, Indonesia&hl=en&sll=,&hnear=Jakarta, Jakarta, Indonesia&z=14" class="" target="_blank">View big map</a>
           </p>
           <br>
         </div>
         <div class="share-btn clearfix">
           <div class=" clearfix">
-            <div class="addthis_toolbox addthis_default_style addthis_pill_combo abs abs-tl lh-24 o-visible">
-                <!-- AddThis Button BEGIN -->
-              <div class="addthis_toolbox addthis_default_style ">
-                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                <a class="addthis_button_tweet" tw:via="productmicropay" tw:text="Paket pernikahan murah sudah dengan catering,tata rias,dekorasi,pelaminan,foto DLL harga mulai 20 juta"></a>
-                <a class="addthis_counter addthis_pill_style"></a>
-              </div>
-              <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4d7f4a9c2ded1580"></script>
-                      <!-- AddThis Button END -->
-            </div>
+ <div class="addthis_toolbox addthis_default_style addthis_pill_combo abs abs-tl lh-24 o-visible">
+     <!-- AddThis Button BEGIN -->
+   <div class="addthis_toolbox addthis_default_style ">
+     <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+     <a class="addthis_button_tweet" tw:via="productmicropay" tw:text="<%= @ad.name %>"></a>
+     <a class="addthis_counter addthis_pill_style"></a>
+   </div>
+   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4d7f4a9c2ded1580"></script>
+<!-- AddThis Button END -->
+ </div>
           </div>
         </div>
         <div class="share-btn clearfix">
@@ -295,5 +269,5 @@
     </div>
   </div>
 </div>
-                                  <!--   -->
-              </div>
+ <!--   -->
+   </div>

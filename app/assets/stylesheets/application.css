@@ -327,6 +327,16 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
 }
 
+.button_sell{
+padding: 8px 50px 8px 50px !important;
+margin: 5px 10px 0 10px !important;
+width: 150px  !important;
+box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.button_sell span{
+    width: 150px  !important;
+}
+
 .top-buffer { margin-top:30px; }
 .top-margin { margin-top:5px; }
 
@@ -2001,7 +2011,7 @@ div.print-but input, div.print-but a {
 div.view-right-block {
     background: url("/assets/price-block-sep.png") repeat-x scroll left bottom transparent;
     float: left;
-    margin: 25px 0 0 711px;
+    margin: 25px 0 0 725px;
     padding: 0 15px 15px 0;
     position: absolute;
     width: 276px;
