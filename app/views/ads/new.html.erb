@@ -1,5 +1,128 @@
 <%- model_class = Ad -%>
-<div class="page-header">
-  <h2>Start selling where it matters</h2>
+<style type="text/css">
+  div.container {
+    background: white;
+  }
+</style>
+<div class="main-top clearfix">
+  <h2>Menjual tepat sasaran</h2>
+  <div class="buy-block">
+    <a class="price_btn button_small new_button_bg" title="Cara kerja" href="/page/how_it_works">Cara kerja?</a>
+  </div>
 </div>
-<%= render :partial => 'form' %>
+<div class='ad_new'>
+  <%= form_tag() do %>
+    <div class='label'>
+      <%= label_tag :product_title, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div>
+      <%= text_field_tag :product_title, nil, :placeholder => 'Massukan judal product anda*' %>
+    </div>
+    <div>
+      <%= label_tag :product_type, nil, :class => 'title' %><br />
+    </div>
+    <div>
+      <%= select_tag :product_type %>
+    </div>
+    <div>
+      <%= label_tag :kategori, nil, :class => 'title' %><br />
+    </div>
+    <div>
+      <%= select_tag :kategori %>
+    </div>
+    <div class='label'>
+      <%= label_tag :descripsi, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div>
+      <%= text_area_tag :descripsi, '', :placeholder => 'Massukan descripsi product anda*' %>
+    </div>
+    <div class='label'>
+      <%= label_tag :label, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div>
+      <%= text_field_tag :label %>
+    </div>
+    <div class='label'>
+      <%= label_tag :harga, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div class='harga'>
+      <%= select_tag :harga_currency %>
+      <%= text_field_tag :harga_price, '', :placeholder => 'Enter your price' %>
+    </div>
+    <div class='label'>
+      <%= label_tag :pembayaran, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div class='pembayaran'>
+      <span id='title'>Pay me by</span>
+      <%= radio_button_tag 'pembayaran[]', 1 %><span>Cash</span>
+      <%= radio_button_tag 'pembayaran[]', 2 %><span>Paypal</span>
+      <%= text_field_tag :paypal_address, '', :placeholder => 'Enter your PayPal address' %>
+    </div>
+    <div class='label'>
+      <%= label_tag :data_pribadi, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div style='margin-top:20px;'></div>
+    <div class='photo'>
+      <img alt="" title="Gambar Penjual" src="/assets/personal-background-image.png">
+    </div>
+    <div class='inputs'>
+      <%= text_field_tag :name, '', :placeholder => 'Massukan nama anda *' %><br />
+      <%= text_field_tag :email, '', :placeholder => 'Enter your personal e-mail address *' %><br />
+      <%= text_field_tag :phone, '', :placeholder => 'Enter your phone number *' %><br />
+      <%= text_field_tag :pin, '', :placeholder => 'Blackberry Pin' %>
+    </div>
+    <div class='clear'></div>
+    <div class='label'>
+      <%= label_tag :gambar, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+    <div>
+      <div class="picture">
+        <ol class=" upload-list clearfix">
+          <li id="list_uploader0">
+            <div class="product-img">
+
+            </div>
+            <div class="js-overlabel">
+              <div class="input text overlabel-wrapper">
+                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
+              </div>
+            </div>
+          </li>
+          <li id="list_uploader1">
+            <div class="product-img">
+
+            </div>
+            <div class="js-overlabel">
+              <div class="input text overlabel-wrapper">
+                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
+              </div>
+            </div>
+          </li>
+          <li id="list_uploader2">
+            <div class="product-img">
+
+            </div>
+            <div class="js-overlabel">
+              <div class="input text overlabel-wrapper">
+                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
+              </div>
+            </div>
+          </li>
+        </ol>
+        <a id="upload_more" onclick="diplay_more_uploder(6);" href="javascript:;">Add More</a>
+      </div>
+    </div>
+    <div class='label'>
+      <%= label_tag :captcha, nil, :class => 'title' %>
+      <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
+    </div>
+  <% end %>
+</div>
+</div>
