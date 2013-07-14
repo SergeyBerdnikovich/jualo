@@ -19,11 +19,11 @@
 
 
 //for each element that is classed as 'pull-down', set its margin-top to the difference between its own height and the height of its parent
-var map_image_id = 0;
+	var map_image_id = 0;
 
-function override_hide_image(id,not_necessary){
-	map_image_id = id;
-}
+	function override_hide_image(id,not_necessary){
+		map_image_id = id;
+	}
 
 	$(window).resize(function(){
 
@@ -32,7 +32,19 @@ function override_hide_image(id,not_necessary){
 		});
 
 
-	})
+		$('.ad-thumb-list li a img').each(function(){
+		$(this).css("position",'relative')
+        $(this).css("margin-left",(90 - $(this).width())/2)
+        $(this).css("margin-top",(90 - $(this).height())/2)
+    })
+
+
+    });
+
+
+
+	// To initially run the function:
+
 
 
 	$(window).resize();
@@ -67,155 +79,155 @@ function override_hide_image(id,not_necessary){
 				x += parseInt(value)
 			}
 		});
-		//it's not working well always and unable to decide when switch arrows
+	//it's not working well always and unable to decide when switch arrows
 		// thus making knowing exceptions
 		switch(state)
-			{
+		{
 			case "SUMBAR":
-			popup_arrow_up = true
-			fix_x = -68
-			fix_y = 60
-    		break;
+				popup_arrow_up = true
+				fix_x = -68
+				fix_y = 60
+				break;
 
-			case "RIAU":
-			popup_arrow_up = false
-			fix_x = -35
-			fix_y = 10
-    		break;
-
-
-			case "DKI: Jakarta":
-			popup_arrow_up = false
-			fix_x = -2
-			fix_y = 0
-    		break;
-
-    		case "BENGKULU":
-			popup_arrow_up = true
-			fix_x = -74
-			fix_y = 58
-    		break;
-
-    		case "SULBAR":
-			popup_arrow_up = true
-			fix_x = -74
-			fix_y = 58
-    		break;
+				case "RIAU":
+					popup_arrow_up = false
+					fix_x = -35
+					fix_y = 10
+					break;
 
 
-			case "DIY: Yogyakarta":
-			popup_arrow_up = true
-			fix_x = -72
-			fix_y = 70
-    		break;
+					case "DKI: Jakarta":
+						popup_arrow_up = false
+						fix_x = -2
+						fix_y = 0
+						break;
 
-			case "SUMSEL":
-			popup_arrow_up = false
-			fix_x = 0
-			fix_y = -10
-    		break;
+						case "BENGKULU":
+							popup_arrow_up = true
+							fix_x = -74
+							fix_y = 58
+							break;
 
-    		case "NAD":
-			popup_arrow_up = false
-			fix_x = 0
-			fix_y = -20
-    		break;
-
-    		case "SUMUT":
-			popup_arrow_up = false
-			fix_x = 0
-			fix_y = -25
-    		break;
-
-    		case "SULUT":
-			popup_arrow_up = false
-			fix_x = -7
-			fix_y = 0
-    		break;
+							case "SULBAR":
+								popup_arrow_up = true
+								fix_x = -74
+								fix_y = 58
+								break;
 
 
-			case "KALBAR":
-			popup_arrow_up = false
-			fix_x = -15
-			fix_y = -20
-    		break;
+								case "DIY: Yogyakarta":
+									popup_arrow_up = true
+									fix_x = -72
+									fix_y = 70
+									break;
 
-			case "MALUT":
-			popup_arrow_up = true
-			fix_x = -60
-			fix_y = 60
-    		break;
+									case "SUMSEL":
+										popup_arrow_up = false
+										fix_x = 0
+										fix_y = -10
+										break;
+
+										case "NAD":
+											popup_arrow_up = false
+											fix_x = 0
+											fix_y = -20
+											break;
+
+											case "SUMUT":
+												popup_arrow_up = false
+												fix_x = 0
+												fix_y = -25
+												break;
+
+												case "SULUT":
+													popup_arrow_up = false
+													fix_x = -7
+													fix_y = 0
+													break;
 
 
-			default:
-			  fix_x = 0
-			  popup_arrow_up = false
-			  fix_y =  0
-			}
+													case "KALBAR":
+														popup_arrow_up = false
+														fix_x = -15
+														fix_y = -20
+														break;
+
+														case "MALUT":
+															popup_arrow_up = true
+															fix_x = -60
+															fix_y = 60
+															break;
 
 
-		var map_position = $('#area_image').offset()
+															default:
+															fix_x = 0
+															popup_arrow_up = false
+															fix_y =  0
+														}
 
-		x = ((x / position.length) * 2) + map_position.left - 8 + fix_x
-		y = ((y / position.length) * 1.9) + map_position.top - 43 + fix_y
 
+														var map_position = $('#area_image').offset()
 
-
-		$('.popup').show()
-		if (popup_arrow_up){
-			$('.popup').attr("class",'popup popup_arrow_up')
-
-		} else{
-			$('.popup').attr("class",'popup popup_arrow_down')
-		}
-
-		$('.popup').css("left", x)
-		$('.popup').css("top", y)
-		var position = $('.popup').offset()
-
-		$('#popup_text_val').html(state)
-		$('.popup_text').css(position)
-		$('.popup_text').show()
+														x = ((x / position.length) * 2) + map_position.left - 8 + fix_x
+														y = ((y / position.length) * 1.9) + map_position.top - 43 + fix_y
 
 
 
-	})
+														$('.popup').show()
+														if (popup_arrow_up){
+															$('.popup').attr("class",'popup popup_arrow_up')
 
-	$('area').mouseleave(function(){
-		cursor_on_area = false
-		setTimeout(function(){
-			if (cursor_on_area == false){
-				if (cursor_on_balloon == false){
-					$('.popup').hide()
-					$('.popup_text').hide()
-					hide_image(map_image_id,1)
-				}
-			}
-		},100)
-	})
+														} else{
+															$('.popup').attr("class",'popup popup_arrow_down')
+														}
 
-	$('.popup, .popup_text *').mouseover(function(){
-		cursor_on_balloon = true;
-	})
-	$('.popup, .popup_text *').mouseleave(function(){
-		cursor_on_balloon = false;
-		setTimeout(function(){
-			if (cursor_on_area == false){
-				if (cursor_on_balloon == false){
-					$('.popup').hide()
-					$('.popup_text').hide()
-					hide_image(map_image_id,1)
-				}
-			}
-		},100)
+														$('.popup').css("left", x)
+														$('.popup').css("top", y)
+														var position = $('.popup').offset()
 
-	})
+														$('#popup_text_val').html(state)
+														$('.popup_text').css(position)
+														$('.popup_text').show()
 
-	function isOdd(n)
-	{
-		return isNumber(n) && (n % 2 == 1);
-	}
-	function isNumber(n)
-	{
-		return n == parseFloat(n);
-	}
+
+
+													})
+
+													$('area').mouseleave(function(){
+														cursor_on_area = false
+														setTimeout(function(){
+															if (cursor_on_area == false){
+																if (cursor_on_balloon == false){
+																	$('.popup').hide()
+																	$('.popup_text').hide()
+																	hide_image(map_image_id,1)
+																}
+															}
+														},100)
+													})
+
+													$('.popup, .popup_text *').mouseover(function(){
+														cursor_on_balloon = true;
+													})
+													$('.popup, .popup_text *').mouseleave(function(){
+														cursor_on_balloon = false;
+														setTimeout(function(){
+															if (cursor_on_area == false){
+																if (cursor_on_balloon == false){
+																	$('.popup').hide()
+																	$('.popup_text').hide()
+																	hide_image(map_image_id,1)
+																}
+															}
+														},100)
+
+													})
+
+													function isOdd(n)
+													{
+														return isNumber(n) && (n % 2 == 1);
+													}
+													function isNumber(n)
+													{
+														return n == parseFloat(n);
+													}

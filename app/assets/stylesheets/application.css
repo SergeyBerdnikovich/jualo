@@ -11,6 +11,253 @@
 *= require_self
 *= require_tree .
 */
+
+
+.ad-thumb-list li a {
+display: block !important;
+text-align:center !important;
+padding: 8px !important;
+width: 90px;
+height: 90px;
+overflow: hidden;
+border: 3px solid #CCC;
+}
+
+.ad-thumb-list li a img {
+    display: block !important;
+    vertical-align:middle !important;
+    border: none !important;
+
+}
+
+.ad-active{
+    width: 90px;
+    height: 90px;
+    border: 3px solid #FF7800 !important;
+    padding: 8px !important;
+}
+
+
+.ad-active img{
+    border: none !important;
+}
+
+.club{
+    padding-bottom: 120px !important;
+    background: url("/assets/title-bg.png") repeat-x scroll left bottom #FFFEFF;
+}
+
+
+.price_flat_span{
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background: #ffffff url('http://jualo.com:3000/assets/price-icon.png')  no-repeat left top !important;
+background-origin: padding-box;
+background-size: auto;
+color: rgb(255, 120, 0);
+display: block;
+font-family: arial, helvetica, sans-serif;
+font-size: 26px;
+font-weight: bold;
+height: 18px;
+line-height: 18px;
+padding-bottom: 26px;
+padding-left: 50px;
+padding-right: 0px;
+padding-top: 0px;
+width: 100% !important;
+margin: 0 0 20px;
+}
+
+
+.buy-amount-info-flat{
+    width: 100% !important;
+    display: block !important;
+}
+.view-flat-block{
+  width: 100% !important;
+  margin: 0 !important;
+  display: inline-block !important;
+}
+.seller_flat{
+    float: left !important;
+display: inline-block !important;
+width: 220px !important;
+margin-left: 0px !important;
+}
+
+.sell_button_block_flat{
+    float: left !important;
+margin-top: 0px !important;
+margin-left: 00px !important;
+margin-bottom: 10px !important;
+width: 200px !important;
+display: inline-block !important;
+} 
+ 
+.view-flat-block{
+    width:100% ;
+}
+
+a.addthis_button_tweet iframe.twitter-share-button{width:80px!important;}
+
+.share-btn {
+    padding: 0 15px;
+}
+
+.facebook-share{
+    -webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: url(http://jualo.com:3000/assets/Share_button.png);
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(79, 78, 78);
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(79, 78, 78);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(79, 78, 78);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(79, 78, 78);
+border-top-style: none;
+border-top-width: 0px;
+color: rgb(79, 78, 78);
+cursor: pointer;
+display: block;
+font-family: arial, sans-serif;
+font-size: 12px;
+height: 18px;
+line-height: 12px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 5px;
+outline-color: rgb(79, 78, 78);
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+text-decoration: none;
+text-indent: -119988px;
+vertical-align: baseline;
+width: 57px;
+}
+
+.map-link{
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(76, 76, 76);
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(76, 76, 76);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(76, 76, 76);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(76, 76, 76);
+border-top-style: none;
+border-top-width: 0px;
+color: rgb(76, 76, 76);
+display: block;
+font-family: arial, sans-serif;
+font-size: 12px;
+height: 16px;
+line-height: 12px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: rgb(76, 76, 76);
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+vertical-align: baseline;
+width: 276px;
+}
+.map-link a{
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(66, 172, 233);
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(66, 172, 233);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(66, 172, 233);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(66, 172, 233);
+border-top-style: none;
+border-top-width: 0px;
+color: rgb(66, 172, 233);
+cursor: auto;
+display: inline;
+font-family: arial, sans-serif;
+font-size: 12px;
+height: auto;
+line-height: 12px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: rgb(66, 172, 233);
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 28px;
+padding-right: 0px;
+padding-top: 5px;
+text-decoration: none;
+vertical-align: baseline;
+width: auto;
+}
+
+
 .option_select{
     background: url(/assets/arrow.png) no-repeat scroll 122px 16px #FFF;
     border: 1px solid #BBB;
@@ -325,18 +572,34 @@ padding: 8px 10px 8px 10px !important;
 margin: 5px 0 !important;
 box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
+} 
+.sell_button_block{
+margin-top: -15px !important;
+margin-left: -12px !important;
+margin-bottom: 10px !important;
 }
-
+ 
 .button_sell{
-padding: 8px 50px 8px 50px !important;
-margin: 5px 10px 0 10px !important;
-width: 150px  !important;
+padding: 8px 0px 8px 00px !important;
+margin: 10px 10px 0 0px !important;
+width: 250px  !important;
+display: inline-block !important;
 box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+height: 17px !important;
 }
 .button_sell span{
-    width: 150px  !important;
+    width: 100% !important;
+    display: inline-block !important;
+    text-align: center !important;
+} 
+  
+.button_sell span span{
+  float: right ;
+  width: 50px !important;
+  margin-top: -9px !important;
 }
 
+ 
 .top-buffer { margin-top:30px; }
 .top-margin { margin-top:5px; }
 
@@ -557,6 +820,16 @@ z-index: 104;
 }
 
 @media (min-width:980px) and (max-width:1200px) { /* For regular displays */
+div.product-view-block{
+margin: 15px 0 !important;
+padding: 0 0px 10px !important;
+width: 615px !important;
+}
+div.view-right-block {
+    margin: -60px 0 0 635px !important;    
+}
+
+ 
 ol.grid-list{
 margin: 0 0 0 100px !important;
 }
@@ -1345,7 +1618,7 @@ padding: 0 !important;
 }
 
 div.dollar h2.links a, div.dollar h2.links span {
-color: #42ACE9;
+color: #FF7800;
 font-size: 12px;
 line-height: 15px;
 padding: 0 8px 0 15px;
@@ -1461,7 +1734,7 @@ div.paging a, div.paging span.prev, div.paging span.next, div.paging span.curren
 padding: 5px 10px;
 }
 div.paging a, div.paging span {
-color: #42ACE9;
+color: #FF7800;
 display: inline-block;
 font-size: 14px;
 font-weight: 700;
@@ -1811,6 +2084,9 @@ div.top_view_details li.second-hand {
 .code-block p, .code-block a.flag, .code-block1, ul.code-list li, .code-block {
     float: left;
 }
+.code-block1{
+    padding: 0 0 0 36px;
+}
 .code-block {
     margin-top: -10px;
 }
@@ -1831,7 +2107,6 @@ span.count1 {
     margin: 0 auto;
 }
 div.product-view-block {
-    border-right: 1px solid #EAEAEA;
     display: inline;
     float: left;
     margin: 15px 0;
@@ -1842,11 +2117,13 @@ div.product-view-block {
     padding: 0 0 10px;
 }
 .ad-gallery {
-    width: 600px;
+    width: 650px;
+    height: 480px;
 }
 .ad-gallery .ad-image-wrapper {
-    height: 400px;
+    height: 400px; 
     margin-bottom: 10px;
+    padding: 30px 30px 30px 30px !important; 
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -1855,6 +2132,9 @@ div.product-view-block {
     border: 1px solid #FFFFFF;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 0 4px #CCCCCC inset;
+}
+.ad-image-wrapper div img{
+    padding: 10px 0px 10px 30px; 
 }
 .ad-gallery .ad-image-wrapper .ad-image {
     left: 0;
@@ -1968,7 +2248,7 @@ div.product-view-block {
     cursor: pointer;
 }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-    color: #42ACE9;
+    color: #FF7800;
     outline: medium none;
     text-decoration: none;
 }
@@ -2001,19 +2281,19 @@ div.print-but input, div.print-but a {
     margin: 0;
     padding: 0 5px 8px 0;
     text-align: center;
-    width: 130px;
-}
+    width: 130px; 
+} 
 .ui-tabs .ui-tabs-hide {
-    display: none !important;
+    display: none !important; 
 }
 div.view-right-block {
     background: url("/assets/price-block-sep.png") repeat-x scroll left bottom transparent;
     float: left;
-    margin: 25px 0 0 725px;
+    margin: 0px 0 0 680px; 
     padding: 0 15px 15px 0;
     position: absolute;
-    width: 276px;
-}
+    width: 286px;
+} 
 .view-right-block div.buy-block {
     background: url("/assets/price-block-sep.png") repeat-x scroll left bottom transparent;
     float: none;
@@ -2025,7 +2305,7 @@ div.view-right-block {
 }
 .view-right-block div.dollar {
     background: none repeat scroll 0 0 transparent;
-    padding: 0 0 0 25px;
+    padding: 0 0 0 36px;
 }
 .view-right-block p.buy-amount-info {
     color: #FF7800;
@@ -2033,12 +2313,13 @@ div.view-right-block {
     font-size: 26px;
     font-weight: 700;
     padding: 12px 6px;
+    height: 38px;
     margin: 0 !important;
 }
 .view-right-block p.buy-amount-info span {
     background: url("/assets/price-icon.png") no-repeat scroll left top transparent;
     display: block;
-    padding: 0 0 26px 50px;
+    padding: 11px 0 26px 50px;
 }
 
 div.contact-seller-but {
@@ -2076,7 +2357,7 @@ div.seller-left {
     text-align: left;
 }
 .view-right-block div.seller-left {
-    margin: 15px 0 15px 25px;
+    margin: 12px 0 12px 36px;
 }
 div.seller-right {
     float: left;
@@ -2087,11 +2368,11 @@ div.seller-right {
     margin: 0 !important;
 }
 .view-right-block div.seller-right {
-    margin: 15px 0 0 10px;
+    margin: 12px 0 0 12px;
     width: 150px;
 }
 .view-right-block span.user {
-    color: #42ACE9;
+    color: #FF7800;
     font-size: 16px;
 }
 div.seller-right span.user {
@@ -2109,11 +2390,12 @@ a.rss {
     width: 13px;
 }
 p.spain {
-    padding: 5px 0;
+    padding: 0 0 0 0;
 }
 .product-desc-block ul {
     margin: 0 !important;
 }
+
 
 ul.clubwear li.notice {
     float: none;
@@ -2137,7 +2419,7 @@ ul.clubwear li {
     line-height: 15px;
 }
 .view-right-block p.phone-no span.user {
-    color: #42ACE9;
+    color: #FF7800;
     cursor: pointer;
     float: none;
     font-size: 22px;
@@ -2147,30 +2429,33 @@ ul.clubwear li {
 p.see-more, p.send-mail {
     padding: 10px 0 0;
 }
+
+.see-more{
+    height: 20px !important;
+}
 p.see-more a, p.send-mail a, p.blackberry_pin a {
-    background: url("/assets/see-more-img.png") no-repeat scroll 0 0 transparent;
-    color: #42ACE9;
+    background: url("/assets/plus-icon.png") no-repeat scroll 0 0 transparent;
+    color: #FF7800;
     display: block;
     font-size: 14px;
     font-weight: 700;
+    margin: 0 0 0 0 !important;
     padding: 2px 0 4px 40px;
     text-decoration: underline;
 }
 p.send-mail a {
-    background: url("/assets/mail-icon2.png") no-repeat scroll 0 0 transparent;
+    background: url("/assets/email-icon.png") no-repeat scroll 0 0 transparent;
 }
 div.view-map-block {
     height: auto;
 }
 .seller-details-right1.clearfix {
-    padding: 15px;
+    padding: 15px 15px 5px 15px;
 }
 .seller-details-right1.clearfix p {
     margin: 0 !important;
 }
-.share-btn {
-    padding: 0 15px;
-}
+
 .main-inner.container_12 {
     background: white;
     font-family: arial, sans-serif !important;
@@ -2193,7 +2478,7 @@ div.view-map-block {
 }
 div.dollar h2.links a, div.dollar h2.links span {
     background: url("/assets/link-bullet.png") no-repeat scroll left 5px transparent;
-    color: #42ACE9;
+    color: #FF7800;
     font-size: 12px;
     line-height: 15px;
     padding: 0 8px 0 15px;
@@ -2224,7 +2509,7 @@ div.dollar h2.links a, div.dollar h2.links span {
     padding: 6px 12px;
 }
 .js_tabs_block li.select a {
-    color: #42ACE9;
+    color: #FF7800;
     cursor: text;
     text-decoration: none;
 }

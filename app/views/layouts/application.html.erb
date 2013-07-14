@@ -56,13 +56,13 @@
                     <%= link_to "My account", user_path(current_user), :class => "button_small new_button_bg" %>
                   <% end %>
                 </span>
-
+  
                   <span class='custom_top_button'>
-                    <a href="#" class='new_button_bg button_small' >
+                    <a href="<%= new_ad_path %>" class='new_button_bg button_small' >
                       <span>
                         Pasang iklan Gratis
                         <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0;' %>
-                        <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
+                        <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;' %>
                       </span>
                     </a>
                   </span>
