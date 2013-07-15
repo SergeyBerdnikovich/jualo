@@ -105,7 +105,10 @@ div.inputs input{
   margin-right: -5px;
   margin-top: 10px;
 }
-
+.links span.c.last {
+  color: black !important;
+  font-weight: bold !important;
+}
 ol.upload-list li {
     display: inline-block;
     float: left;
