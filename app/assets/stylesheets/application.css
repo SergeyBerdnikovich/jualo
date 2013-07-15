@@ -14,13 +14,14 @@
 
 
 .ad-thumb-list li a {
-display: block !important;
-text-align:center !important;
-padding: 8px !important;
-width: 90px;
-height: 90px;
-overflow: hidden;
-border: 3px solid #CCC;
+    display: block !important;
+    text-align:center !important;
+    padding: 8px !important;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 3px 0 #CCCCCC;
 }
 
 .ad-thumb-list li a img {
@@ -43,7 +44,7 @@ border: 3px solid #CCC;
 }
 
 .club{
-    padding-bottom: 120px !important;
+    /*padding-bottom: 120px !important;*/
     background: url("/assets/title-bg.png") repeat-x scroll left bottom #FFFEFF;
 }
 
@@ -97,8 +98,8 @@ margin-left: 00px !important;
 margin-bottom: 10px !important;
 width: 200px !important;
 display: inline-block !important;
-} 
- 
+}
+
 .view-flat-block{
     width:100% ;
 }
@@ -572,17 +573,17 @@ padding: 8px 10px 8px 10px !important;
 margin: 5px 0 !important;
 box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 
-} 
+}
 .sell_button_block{
 margin-top: -15px !important;
 margin-left: -12px !important;
 margin-bottom: 10px !important;
 }
- 
+
 .button_sell{
 padding: 8px 0px 8px 00px !important;
 margin: 10px 10px 0 0px !important;
-width: 250px  !important;
+width: 100% !important;
 display: inline-block !important;
 box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 height: 17px !important;
@@ -591,15 +592,15 @@ height: 17px !important;
     width: 100% !important;
     display: inline-block !important;
     text-align: center !important;
-} 
-  
+}
+
 .button_sell span span{
   float: right ;
   width: 50px !important;
   margin-top: -9px !important;
 }
 
- 
+
 .top-buffer { margin-top:30px; }
 .top-margin { margin-top:5px; }
 
@@ -823,13 +824,13 @@ z-index: 104;
 div.product-view-block{
 margin: 15px 0 !important;
 padding: 0 0px 10px !important;
-width: 615px !important;
+/*width: 615px !important;*/
 }
-div.view-right-block {
-    margin: -60px 0 0 635px !important;    
-}
+/*div.view-right-block {
+    margin: -60px 0 0 635px !important;
+}*/
 
- 
+
 ol.grid-list{
 margin: 0 0 0 100px !important;
 }
@@ -2047,6 +2048,13 @@ color: black;
 
 
 /*ad show*/
+.club {
+    float: left;
+    width: 70%;
+}
+.ad-gallery .ad-image-wrapper {
+    width: 90% !important;
+}
 .product-view-block.clearfix {
     float: left !important;
 }
@@ -2056,6 +2064,7 @@ color: black;
 }
 .stock-block.clearfix h2 span{
     font-size: 15px !important;
+    margin:  0 22px;
 }
 .top_view_details.clearfix {
     margin: 0 !important;
@@ -2079,7 +2088,7 @@ div.top_view_details li.top_timer {
 }
 div.top_view_details li.second-hand {
     background: url("/assets/second-icon.png") no-repeat scroll left top transparent;
-    padding: 2px 10px 4px 11px;
+    padding: 22px 10px 4px 11px;
 }
 .code-block p, .code-block a.flag, .code-block1, ul.code-list li, .code-block {
     float: left;
@@ -2110,31 +2119,32 @@ div.product-view-block {
     display: inline;
     float: left;
     margin: 15px 0;
-    padding: 0 20px 10px;
-    width: 670px;
+    /*padding: 0 20px 10px;*/
+    width: 100%;
 }
 #gallery {
     padding: 0 0 10px;
 }
 .ad-gallery {
-    width: 650px;
-    height: 480px;
+    width: 100% !important;
+    /*height: 480px;*/
 }
 .ad-gallery .ad-image-wrapper {
-    height: 400px; 
+    height: 400px;
     margin-bottom: 10px;
-    padding: 30px 30px 30px 30px !important; 
+    padding: 32px !important;
     overflow: hidden;
     position: relative;
     width: 100%;
 }
 .ad-image-wrapper {
-    border: 1px solid #FFFFFF;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0 0 4px #CCCCCC inset;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 3px 0 #CCCCCC;
+   /* border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 4px #CCCCCC inset;*/
 }
 .ad-image-wrapper div img{
-    padding: 10px 0px 10px 30px; 
+    padding: 10px 0px 10px 30px;
 }
 .ad-gallery .ad-image-wrapper .ad-image {
     left: 0;
@@ -2192,6 +2202,7 @@ div.product-view-block {
 .ad-gallery .ad-thumbs li {
     float: left;
     padding-right: 5px;
+    padding-bottom: 5px;
 }
 .ad-gallery .ad-thumbs li a {
     display: block;
@@ -2281,19 +2292,19 @@ div.print-but input, div.print-but a {
     margin: 0;
     padding: 0 5px 8px 0;
     text-align: center;
-    width: 130px; 
-} 
+    width: 130px;
+}
 .ui-tabs .ui-tabs-hide {
-    display: none !important; 
+    display: none !important;
 }
 div.view-right-block {
     background: url("/assets/price-block-sep.png") repeat-x scroll left bottom transparent;
     float: left;
-    margin: 0px 0 0 680px; 
-    padding: 0 15px 15px 0;
-    position: absolute;
-    width: 286px;
-} 
+    /*margin: 0px 0 0 680px;*/
+    padding: 0 0px 25px 0;
+    /*position: absolute;*/
+    width: 30%;
+}
 .view-right-block div.buy-block {
     background: url("/assets/price-block-sep.png") repeat-x scroll left bottom transparent;
     float: none;

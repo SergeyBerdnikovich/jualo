@@ -12,16 +12,46 @@
 }
 @media (min-width:767px) and (max-width:980px) { /*For highier resolution like all PC, everything smaller like for tablets and phones*/
 
+  .ad-gallery .ad-image-wrapper {
+    max-height: 400px !important;
+    min-height: 200px !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .ad-gallery .ad-nav {
+    width: 90% !important;
+  }
+  .club {
+    width: 65% !important;
+  }
+  div.view-right-block {
+    width: 35% !important;
+  }
+  .view-right-block div.dollar {
+    padding-left: 10px !important;
+  }
+  .view-right-block div.seller-left {
+    margin: 12px 10px;
+  }
+  .view-right-block div.seller-right {
+    margin: 12px 0;
+  }
+  .code-block1 {
+    padding: 0 !important;
+  }
+
   .button_sell{
 padding: 8px 5px 8px 5px !important;
-margin: 0px 10px 0 0px !important;
-width: 110px  !important;
+margin: 10px !important;
+width: 90%  !important;
 display: inline-block !important;
 box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
-.button_sell span{
-    width:  80px  !important;
-}
+/*.button_sell span{
+    width:  100px  !important;
+}*/
 
 
   .grid-list li div div div.other-items-outer{
@@ -37,7 +67,7 @@ margin: 0 0 0 -7px !important;
   .item-amount-block{
     float:right !important;
     margin-top: -70px !important;
-    
+
   }
 
 	.home-category-list{
