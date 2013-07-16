@@ -778,8 +778,8 @@ padding-top: 10px;
 
 .dollar h2{
 /*margin-left: -640px !important;*/
-margin-top: 7px !important;
-
+    margin-top: 7px !important;
+    margin-bottom: 5px !important;
 }
 
 ol.grid-list{
@@ -1413,10 +1413,6 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 /*All css*/
 
-.product-info-block {
-background: none repeat scroll 0 0 #FFFFFF;
-padding: 20px 0 0;
-}
 div.view-top {
 background: url("/assets/view-top-bg.png") repeat-x scroll left bottom #F4F4F4;
 border-bottom: 1px solid #DBDFE7;
@@ -2063,8 +2059,8 @@ color: black;
     margin: 0 auto;
 }
 .stock-block.clearfix h2 span{
-    font-size: 15px !important;
-    margin:  0 22px;
+    font-size: 18px !important;
+    text-transform: uppercase;
 }
 .top_view_details.clearfix {
     margin: 0 !important;
@@ -2081,14 +2077,16 @@ div.top_view_details li {
     font-size: 13px;
     padding: 2px 10px 4px 20px;
 }
-
+.top_view_details.clearfix ul{
+    margin: 0 !important;
+}
 div.top_view_details li.top_timer {
     background: url("/assets/timer1-icon.png") no-repeat scroll left top transparent;
     padding: 2px 10px 4px 25px;
 }
 div.top_view_details li.second-hand {
     background: url("/assets/second-icon.png") no-repeat scroll left top transparent;
-    padding: 3px 0px 4px 15px;
+    padding: 13px 0px 4px 15px;
 }
 .code-block p, .code-block a.flag, .code-block1, ul.code-list li, .code-block {
     float: left;
@@ -2097,7 +2095,7 @@ div.top_view_details li.second-hand {
     padding: 0 0 0 36px;
 }
 .code-block {
-    margin-top: -10px;
+    margin-top: 2px;
 }
 .code-block p {
     background: url("/assets/stock-icon.png") no-repeat scroll left top transparent;
@@ -2105,13 +2103,14 @@ div.top_view_details li.second-hand {
     padding: 0 0 0 20px;
 }
 span.count1 {
-    background: url("/assets/eye-button.png") no-repeat scroll left 4px transparent;
-    margin: 0 0 0 3px;
+/*    background: url("/assets/eye-button.png") no-repeat scroll left 4px transparent;*/
     padding: 4px 0 0 22px;
+    color: #838385;
 }
+
 .product-info-block {
     background: none repeat scroll 0 0 #FFFFFF;
-    padding: 20px 0 0;
+    padding: 0px 0 0;
     width: 95%;
     margin: 0 auto;
 }
@@ -2496,13 +2495,24 @@ div.dollar h2.links a, div.dollar h2.links span {
 }
 .js_tabs_block li {
     line-height: 20px !important;
-    background: none repeat scroll 0 0 #EEEEEE;
-    border-color: #DFDFDF;
+    background: none repeat scroll 0 0 #EEEEEE !important;
+    border-color: #DFDFDF !important;
     float: left;
-    margin: 0 0.2em -1px 0;
-    padding: 0;
+    margin: 0 0.2em -1px 0 !important;
+    padding: 0 !important;
     position: relative;
-    border: 1px solid #DFDFDF;
+    border: 1px solid #DFDFDF !important;
+}
+.js_tabs_block li a:focus {
+    outline: none;
+}
+.nav-tabs > li > a, .nav-pills > li > a {
+    margin-right: 0 !important;
+    border:none !important;
+    border-radius: 0 !important;
+}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    border-color: white !important;
 }
 .js_tabs_block li a:hover {
     background: none;
@@ -2512,15 +2522,15 @@ div.dollar h2.links a, div.dollar h2.links span {
 .js_tabs_block ul {
     margin: 0 !important;
 }
-.js_tabs_block li.select {
+.js_tabs_block li.active {
     background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid white !important;
 }
 .js_tabs_block li a {
-    padding: 6px 12px;
+    padding: 6px 12px !important;
 }
-.js_tabs_block li.select a {
-    color: #FF7800;
+.js_tabs_block li.active a {
+    color: #FF7800 !important;
     cursor: text;
     text-decoration: none;
 }

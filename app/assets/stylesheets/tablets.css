@@ -1,7 +1,7 @@
 /*@media (min-width:400px) and (max-width:767px) { /* For small resulution, like for tablets, when input fields not fit into one line*/
   @media (max-width:767px) {
 
-   
+
 
     .club {
       width: 100% !important;
@@ -116,6 +116,9 @@ margin: 0 0 0 -10px !important;
   padding: 4px 4px 3px 4px !important;
   margin: 0 0 0 !important;
 
+}
+.ad-gallery .ad-nav .ad-thumbs {
+  width: 103%;
 }
     .sort-block{
       padding: 10px 5px 0 0 !important;

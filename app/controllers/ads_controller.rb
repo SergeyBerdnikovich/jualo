@@ -28,6 +28,19 @@ class AdsController < ApplicationController
      end
   end
 
+  def send_email
+    if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present?
+      Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
+      flash[:notice] = 'Email has been sended'
+    elsif params[:nama].present? && params[:email_a_friend].present? && params[:your_email].present? && params[:pesan].present?
+      Mailer.send_message_to_friend(params).deliver
+      flash[:notice] = 'Email has been sended to your friend'
+    else
+      flash[:error] = 'Please fill out the fields correctly'
+    end
+    redirect_to ad_path(:state => params[:state], :city => params[:city], :category => params[:category], :id => params[:ad_id])
+  end
+
   # GET /ads/new
   # GET /ads/new.json
   def new

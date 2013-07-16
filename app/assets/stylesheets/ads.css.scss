@@ -83,9 +83,12 @@ div.inputs input{
 .links a.back_btn {
   border: 1px solid #c2c2c2;
   border-left-color: #999999;
+  border-top-color: white;
   border-radius: 3px;
   padding: 5px 10px !important;
   background: none !important;
+  color: white !important;
+  padding-left: 17px !important;
 
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 1%, rgba(0,0,0,0.21) 18%, rgba(0,0,0,0.34) 40%, rgba(0,0,0,0.4) 49%, rgba(0,0,0,0.4) 69%) !important; /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(0,0,0,0)), color-stop(18%,rgba(0,0,0,0.21)), color-stop(40%,rgba(0,0,0,0.34)), color-stop(49%,rgba(0,0,0,0.4)), color-stop(69%,rgba(0,0,0,0.4))) !important; /* Chrome,Safari4+ */
@@ -105,9 +108,33 @@ div.inputs input{
   margin-right: -5px;
   margin-top: 10px;
 }
+.triangle {
+  float: left;
+  margin-left: 4px;
+  margin-top: 10px;
+  position: absolute;
+}
+#top_triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 14px 13px 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+#bottom_triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 13px 0 0 13px;
+  border-color: transparent transparent transparent #ffffff;
+}
+.nav-tabs {
+  border-bottom: none !important;
+}
 .links span.c.last {
   color: black !important;
-  font-weight: bold !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
 }
 ol.upload-list li {
     display: inline-block;
@@ -172,6 +199,21 @@ form.normal div.picture div.input input {
     padding: 0;
     width: 120px !important;
 }
+#send_to_friend h2 {
+    background: url("/assets/title-bullet.png") no-repeat scroll 0 3px #FFFFFF;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 0 10px 20px;
+    line-height: 20px !important;
+}
+#send_to_friend input {
+  border-color: #cccccc !important;
+  margin-left: 5px !important;
+}
+#send_to_friend textarea {
+  margin-left: 5px !important;
+}
 .js-overlabel input {
   width: 130px !important;
   margin-left: 25px !important;
@@ -230,4 +272,39 @@ input[type="radio"] {
 input#paypal_address {
   margin-left: 3px;
   width: 231px !important;
+}
+
+
+/*modal*/
+#send_email_modal {
+  max-width: 400px;
+}
+#modal_block {
+  padding: 10px 15px;
+}
+#modal_block h2 {
+    background: url("/assets/title-bullet.png") no-repeat scroll 0 3px #FFFFFF;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 0 10px 20px;
+    line-height: 20px !important;
+}
+.report-content {
+  color: #337DAB;
+  padding: 5px 0px;
+}
+.avatar {
+    background: none repeat scroll 0 0 #FFF7EF;
+    border: 1px solid #FFC48F;
+    margin: 10px 0;
+    padding: 10px;
+    min-height: 55px;
+}
+.avatar img {
+  float: left;
+  margin-right: 5px;
+}
+#modal_block input {
+  border-color: #cccccc !important;
 }

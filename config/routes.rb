@@ -24,7 +24,7 @@ Jualo::Application.routes.draw do
 
 
   resources :ad_types
-
+  match "ads/send_email" => "ads#send_email", :as => :send_email
 
   resources :static_pages
 

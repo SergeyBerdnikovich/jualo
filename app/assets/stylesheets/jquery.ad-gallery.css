@@ -148,7 +148,8 @@
     }
     .ad-gallery .ad-nav .ad-thumbs {
       overflow: hidden;
-      width: 100%;
+      width: 99%;
+      max-height: 113px;
     }
       .ad-gallery .ad-thumbs .ad-thumb-list {
         float: left;

@@ -57,7 +57,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div class="dollar clearfix">
       <!-- Bread Crumb Starts-->
   <h2 class="links">
-    <p class='back_btn_prev'></p>
+    <!-- <p class='back_btn_prev'></p> -->
+    <div class='triangle'>
+      <div id='top_triangle'></div>
+      <div id='bottom_triangle'></div>
+    </div>
     <%= link_to 'Kembali', :back , :class => 'back_btn' %>
     <a href='http://jualo.com/'>Home</a>
     <a href='javascript:;' onclick='breadcrumb_filter(79,0)'>
@@ -81,8 +85,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <!-- <li class="top_otherdetails">1 jam lalu</li> -->
     </ul>
     <div class="code-block">
-        <span class="count1 tool-tip" title ="Halaman ditampilkan: 137">137</span>
-      </p>
+        <span class="count1 tool-tip" title ="Halaman ditampilkan: 137">Views: 137</span>
     </div>
   </div>
 </div>
@@ -149,11 +152,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <div class="code-block1 clearfix">
 <div class='sell_button_block'>
  <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921"></a>
- <a href="#" id="send_mail" class='new_button_bg button_sell'><span>Hubungi Penjual
-<span>
-    <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0; float:ri', :class => 'hidden-phone' %>
-    <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %></span>
- </span>
+ <a href="#send_email_modal" id="send_mail" class='new_button_bg button_sell' data-toggle="modal">
+   <span>
+     Hubungi Penjual
+     <span>
+       <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0; float:ri', :class => 'hidden-phone' %>
+       <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %>
+     </span>
+   </span>
  </a>
 </div>
  <p class="phone-no clearfix">
@@ -162,7 +168,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
    <span id="see_complete_no" class="text">See complete phone number</span>
  </p>
  <p class="send-mail clearfix">
-   <a id="send_mail" class="js-thickbox cboxElement" href="/contact_sellers/add/603921">Send Email</a>
+   <a id="send_mail" class="js-thickbox cboxElement" href="#send_email_modal" data-toggle="modal">Send Email</a>
  </p>
  <p class="see-more clearfix">
    <a class="" href="/products/op:200514">See other advertisements</a><br />
@@ -200,18 +206,45 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </form>
         <!-- print/refer/save-->
     <div class='js_tabs_block'>
-      <ul class='clearfix'>
-        <li class='select'><a href="#">Print</a></li>
-        <li><a href="#">Send to Friend</a></li>
-        <li><a href="#">Report</a></li>
-        <li><a href="#">Save</a></li>
+      <ul class='nav nav-tabs clearfix' id="myTab">
+        <li class="active"><a href="#print" data-toggle="tab">Print</a></li>
+        <li><a href="#send_to_friend" data-toggle="tab">Send to Friend</a></li>
+        <li><a href="#report" data-toggle="tab">Report</a></li>
+        <li><a href="#save" data-toggle="tab">Save</a></li>
       </ul>
-      <div class='js_tabs_content'>
-        <div class="clearfix">
-          <div class="print-but">
- <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
+      <div class='tab-content js_tabs_content'>
+         <div class="tab-pane active" id="print">
+           <div class="print-but">
+            <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
           </div>
+         </div>
+        <div class="tab-pane" id="send_to_friend">
+          <%= form_tag send_email_path(:ad_id => @ad.id, :state => @ad.state, :city => @ad.city, :category => @ad.category) do %>
+            <h2>Refer a Friend</h2>
+            <table>
+              <tr>
+                <td><%= label_tag :nama %></td>
+                <td><%= text_field_tag :nama %></td>
+              </tr>
+              <tr>
+                <td><%= label_tag 'Email A Friend' %></td>
+                <td><%= email_field_tag :email_a_friend %></td>
+              </tr>
+              <tr>
+                <td><%= label_tag 'Your Email' %></td>
+                <td><%= email_field_tag :your_email %></td>
+              </tr>
+              <tr>
+                <td><%= label_tag :pesan %></td>
+                <td><%= text_area_tag :pesan, '', :size => '60x6' %></td>
+              </tr>
+            </table>
+
+            <%= submit_tag 'Send now', :class => 'new_button_bg' %>
+          <% end %>
         </div>
+        <div class="tab-pane" id="report">report</div>
+        <div class="tab-pane" id="save">save</div>
       </div>
     </div>
     </div>
@@ -230,3 +263,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
  <!--   -->
    </div>
+
+<!-- Modal -->
+<div id="send_email_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id='modal_block'>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h2>Kontak Penjual</h2>
+    <span class='report-content'>Use this form to send a message to the seller.</span>
+    <div class='avatar'>
+      <img src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?default=identicon&size=55">
+      <span><%= @ad.user.try(:name) %></span>
+    </div>
+    <div class='clear'></div>
+    <%= form_tag send_email_path(:ad_id => @ad.id, :state => @ad.state, :city => @ad.city, :category => @ad.category, :modal => true, :ad_user_email => @ad.try(:user).try(:email)) do %>
+      <%= text_field_tag :nama, '', :placeholder => 'Masukkan nama anda *' %><br />
+      <%= email_field_tag :email, '', :placeholder => 'Masukkan alamat email anda *' %><br />
+      <%= text_field_tag :phone_number, '', :placeholder => 'Enter your phone number *' %><br />
+      <%= text_field_tag :subyek, '', :placeholder => 'Masukkan subyek *' %><br />
+      <%= text_area_tag :pesan, '', :placeholder => 'Masukkan pesan anda *', :size => '60x6' %><br />
+      <div class='capcha'>
+        <span>Please enter the letters displayed:</span>
+      </div>
+
+      <%= submit_tag 'Send Now', :class => 'new_button_bg' %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show');
+  })
+</script>
