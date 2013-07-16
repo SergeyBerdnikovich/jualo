@@ -308,3 +308,10 @@ input#paypal_address {
 #modal_block input {
   border-color: #cccccc !important;
 }
+#abuse_reports td, #spam_reports td {
+  vertical-align: top;
+}
+#modal_block .red {
+  color: red !important;
+  margin-right: 5px;
+}

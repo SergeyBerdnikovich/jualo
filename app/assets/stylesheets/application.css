@@ -2086,7 +2086,7 @@ div.top_view_details li.top_timer {
 }
 div.top_view_details li.second-hand {
     background: url("/assets/second-icon.png") no-repeat scroll left top transparent;
-    padding: 13px 0px 4px 15px;
+    padding: 0px 0px 4px 15px;
 }
 .code-block p, .code-block a.flag, .code-block1, ul.code-list li, .code-block {
     float: left;
@@ -2543,4 +2543,8 @@ div.dollar h2.links a, div.dollar h2.links span {
 
 .bodycontent_head_inner input {
     border-color: rgb(190, 190, 190) !important;
+}
+.button_shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 9px !important;
 }

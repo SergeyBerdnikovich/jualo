@@ -215,8 +215,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <div class='tab-content js_tabs_content'>
          <div class="tab-pane active" id="print">
            <div class="print-but">
-            <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
-          </div>
+             <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print">
+           </div>
          </div>
         <div class="tab-pane" id="send_to_friend">
           <%= form_tag send_email_path(:ad_id => @ad.id, :state => @ad.state, :city => @ad.city, :category => @ad.category) do %>
@@ -240,10 +240,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
               </tr>
             </table>
 
-            <%= submit_tag 'Send now', :class => 'new_button_bg' %>
+            <%= submit_tag 'Send now', :class => 'new_button_bg button_shadow' %>
           <% end %>
         </div>
-        <div class="tab-pane" id="report">report</div>
+        <div class="tab-pane" id="report">
+          <a href="#abuse_reports" class='new_button_bg button_shadow' data-toggle="modal">Laporan Penyalahgunaan</a>
+          <a href="#spam_reports" class='new_button_bg button_shadow' data-toggle="modal">Laporan Spam</a>
+        </div>
         <div class="tab-pane" id="save">save</div>
       </div>
     </div>
@@ -285,11 +288,66 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <span>Please enter the letters displayed:</span>
       </div>
 
-      <%= submit_tag 'Send Now', :class => 'new_button_bg' %>
+      <%= submit_tag 'Send Now', :class => 'new_button_bg button_shadow' %>
     <% end %>
   </div>
 </div>
-
+<!-- Modal -->
+<div id="abuse_reports" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id='modal_block'>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h2>Laporan Penyalahgunaan</h2>
+    <span class='report-content'>Jika menurut anda konten di halaman ini tidak layak/pantas ditampilkan, silakan sampaikan keluhan anda ke Jualo menggunakan formulir ini. </span>
+    <%= form_tag '' do %>
+      <table>
+        <tr>
+          <td>Nama <span class='red'>*</span></td>
+          <td><%= text_field_tag :nama %></td>
+        </tr>
+        <tr>
+          <td>email <span class='red'>*</span></td>
+          <td><%= email_field_tag :email %></td>
+        </tr>
+        <tr>
+          <td>Pesan <span class='red'>*</span></td>
+          <td><%= text_area_tag :pesan, '', :size => '60x6' %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= submit_tag 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>
+<!-- Modal -->
+<div id="spam_reports" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id='modal_block'>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h2>Laporan Spam</h2>
+    <span class='report-content'>Jika anda menemukan spam pada halaman produk ini, silakan lapor ke Jualo menggunakan formulir ini.</span>
+    <%= form_tag '' do %>
+      <table>
+        <tr>
+          <td>Nama <span class='red'>*</span></td>
+          <td><%= text_field_tag :nama %></td>
+        </tr>
+        <tr>
+          <td>email <span class='red'>*</span></td>
+          <td><%= email_field_tag :email %></td>
+        </tr>
+        <tr>
+          <td>Pesan <span class='red'>*</span></td>
+          <td><%= text_area_tag :pesan, '', :size => '60x6' %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= submit_tag 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>
 <script>
   $(function () {
     $('#myTab a:last').tab('show');
