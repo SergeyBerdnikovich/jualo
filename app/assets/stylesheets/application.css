@@ -2088,7 +2088,7 @@ div.top_view_details li.top_timer {
 }
 div.top_view_details li.second-hand {
     background: url("/assets/second-icon.png") no-repeat scroll left top transparent;
-    padding: 22px 10px 4px 11px;
+    padding: 3px 0px 4px 15px;
 }
 .code-block p, .code-block a.flag, .code-block1, ul.code-list li, .code-block {
     float: left;

@@ -1,6 +1,8 @@
 /*@media (min-width:400px) and (max-width:767px) { /* For small resulution, like for tablets, when input fields not fit into one line*/
   @media (max-width:767px) {
 
+   
+
     .club {
       width: 100% !important;
     }
@@ -61,6 +63,8 @@
     }
     div.view-right-block {
       width: 100% !important;
+
+
       /*background: none;*/
     }
     .code-block1 {

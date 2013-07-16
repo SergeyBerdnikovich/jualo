@@ -32,10 +32,16 @@
 		});
 
 
-		$('.ad-thumb-list li a img').each(function(){
+	
+
+	$('.center_me').each(function(){
 		$(this).css("position",'relative')
-        $(this).css("margin-left",(90 - $(this).width())/2)
-        $(this).css("margin-top",(90 - $(this).height())/2)
+		$(this).css("left", "0px")
+		$(this).css("top", "0px")
+		$(this).css("padding-left", "0px")
+		$(this).css("padding-top", "0px")
+        $(this).css("margin-left",($(this).parent().width() - $(this).width() )/2)
+        $(this).css("margin-top",($(this).parent().height() -  $(this).height() )/2)
     })
 
 
@@ -47,7 +53,7 @@
 
 
 
-	$(window).resize();
+	setTimeout(function(){$(window).resize() },300)
 
 	var cursor_on_balloon = false
 	var cursor_on_area = false
