@@ -157,7 +157,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
      Hubungi Penjual
      <span>
        <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0; float:ri', :class => 'hidden-phone' %>
-       <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %>
+       <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %>
      </span>
    </span>
  </a>
@@ -284,10 +284,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <%= text_field_tag :phone_number, '', :placeholder => 'Enter your phone number *' %><br />
       <%= text_field_tag :subyek, '', :placeholder => 'Masukkan subyek *' %><br />
       <%= text_area_tag :pesan, '', :placeholder => 'Masukkan pesan anda *', :size => '60x6' %><br />
+      <span>Please enter the letters displayed:</span>
       <div class='capcha'>
-        <span>Please enter the letters displayed:</span>
+        <%= @captcha.html_safe %>
       </div>
-
+      <%= text_field_tag :captcha, '', :placeholder => 'Please enter the letters displayed' %><br />
+      <%= hidden_field_tag :captcha_id, @captcha_id %>
       <%= submit_tag 'Send Now', :class => 'new_button_bg button_shadow' %>
     <% end %>
   </div>

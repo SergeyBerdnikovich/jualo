@@ -1,5 +1,11 @@
 Jualo::Application.routes.draw do
 
+  resources :spam_reports
+
+
+  resources :abuse_reports
+
+
   resources :attach_tokens
 
 
