@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626171654) do
+ActiveRecord::Schema.define(:version => 20130717101706) do
+
+  create_table "abuse_reports", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.integer  "ad_id"
+    t.string   "ip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -246,6 +256,16 @@ ActiveRecord::Schema.define(:version => 20130626171654) do
     t.integer  "badcount"
     t.boolean  "alive"
     t.string   "parser"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "spam_reports", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.integer  "ad_id"
+    t.string   "ip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -27,6 +27,7 @@ class AdsController < ApplicationController
      @captcha_id = (0...10).map{ ('1'..'9').to_a[rand(9)] }.join
      session[@captcha_id] = captcha_str
      @captcha = generate_captcha(captcha_str)
+
      respond_to do |format|
        format.html # show.html.erb
        format.json { render json: @ad }
@@ -36,8 +37,8 @@ class AdsController < ApplicationController
   def send_email
     if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present? && params[:captcha_id] && params[:captcha]
       if check_captcha(params[:captcha_id], params[:captcha])
-      Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
-      flash[:notice] = 'Email has been sended'
+        Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
+        flash[:notice] = 'Email has been sended'
       else
         flash[:alert] = 'Wrong captcha '
       end
@@ -52,13 +53,13 @@ class AdsController < ApplicationController
 
   # GET /ads/new
   # GET /ads/new.json
-  def check_captcha(captcha, captcha_id)
+  def check_captcha(captcha_id, captcha)
     if session
-    return true if session[captcha_id] == captcha  
+      return true if session[captcha_id] == captcha
     end
     return false
-
   end
+
   def new
     @ad = Ad.new
     @ad.build_detail

@@ -157,7 +157,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
      Hubungi Penjual
      <span>
        <%= image_tag '/assets/vertical_line.png', :style => 'height:34px;margin:0px 3px 0 0; float:ri', :class => 'hidden-phone' %>
-       <%= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %>
+       <%#= image_tag '/assets/right_arrow.png', :style => 'height:25px;margin-top:-2px;', :class => 'hidden-phone' %>
      </span>
    </span>
  </a>
@@ -290,7 +290,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <%= text_field_tag :subyek, '', :placeholder => 'Masukkan subyek *' %><br />
       <%= text_area_tag :pesan, '', :placeholder => 'Masukkan pesan anda *', :size => '60x6' %><br />
       <span>Please enter the letters displayed:</span>
-      <div class='capcha'>
+      <div class='captcha'>
         <%= @captcha.html_safe %>
       </div>
       <%= text_field_tag :captcha, '', :placeholder => 'Please enter the letters displayed' %><br />
@@ -305,23 +305,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h2>Laporan Penyalahgunaan</h2>
     <span class='report-content'>Jika menurut anda konten di halaman ini tidak layak/pantas ditampilkan, silakan sampaikan keluhan anda ke Jualo menggunakan formulir ini. </span>
-    <%= form_tag '' do %>
+    <%= form_for AbuseReport.new do |f| %>
+      <%= f.hidden_field :ad_id, :value => @ad.id %>
+      <%= f.hidden_field :ip, :value => request.remote_ip %>
       <table>
         <tr>
           <td>Nama <span class='red'>*</span></td>
-          <td><%= text_field_tag :nama %></td>
+          <td><%= f.text_field :name %></td>
         </tr>
         <tr>
           <td>email <span class='red'>*</span></td>
-          <td><%= email_field_tag :email %></td>
+          <td><%= f.email_field :email %></td>
         </tr>
         <tr>
           <td>Pesan <span class='red'>*</span></td>
-          <td><%= text_area_tag :pesan, '', :size => '60x6' %></td>
+          <td><%= f.text_area :message, :size => '60x6' %></td>
         </tr>
         <tr>
           <td></td>
-          <td><%= submit_tag 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
+          <td><%= f.submit 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
         </tr>
       </table>
     <% end %>
@@ -333,23 +335,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h2>Laporan Spam</h2>
     <span class='report-content'>Jika anda menemukan spam pada halaman produk ini, silakan lapor ke Jualo menggunakan formulir ini.</span>
-    <%= form_tag '' do %>
+    <%= form_for SpamReport.new do |f| %>
+      <%= f.hidden_field :ad_id, :value => @ad.id %>
+      <%= f.hidden_field :ip, :value => request.remote_ip %>
       <table>
         <tr>
           <td>Nama <span class='red'>*</span></td>
-          <td><%= text_field_tag :nama %></td>
+          <td><%= f.text_field :name %></td>
         </tr>
         <tr>
           <td>email <span class='red'>*</span></td>
-          <td><%= email_field_tag :email %></td>
+          <td><%= f.email_field :email %></td>
         </tr>
         <tr>
           <td>Pesan <span class='red'>*</span></td>
-          <td><%= text_area_tag :pesan, '', :size => '60x6' %></td>
+          <td><%= f.text_area :message, :size => '60x6' %></td>
         </tr>
         <tr>
           <td></td>
-          <td><%= submit_tag 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
+          <td><%= f.submit 'kirim sekarang', :class => 'new_button_bg button_shadow' %></td>
         </tr>
       </table>
     <% end %>
