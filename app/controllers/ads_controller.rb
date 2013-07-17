@@ -16,6 +16,7 @@ class AdsController < ApplicationController
   def show
     require 'securerandom'
 
+
      @ad = Ad.find(params[:id])
      #@category = Category.find(@ad.category_id)
      begin
@@ -28,10 +29,11 @@ class AdsController < ApplicationController
      session[@captcha_id] = captcha_str
      @captcha = generate_captcha(captcha_str)
 
-     respond_to do |format|
-       format.html # show.html.erb
-       format.json { render json: @ad }
-     end
+ render :layout => 'application3' if params[:layout] == 'false'
+     # respond_to do |format|
+     #   format.html # show.html.erb
+     #   format.json { render json: @ad }
+     # end
   end
 
   def send_email

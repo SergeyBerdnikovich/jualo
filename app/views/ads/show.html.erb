@@ -216,7 +216,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
          <div class="tab-pane active" id="print">
            <!-- <div class="print-but"> -->
              <!-- <input type="button" onclick="print_page("http://jualo.com","products/product_print/603921/print")" value="Print"> -->
-             <a href="#" class='new_button_bg button_shadow' onclick="window.print();return false;">Print</a>
+             <!-- <a href="#" class='new_button_bg button_shadow' onclick="window.print();return false;">Print</a> -->
+             <%= link_to 'Print', ad_path(:state => @ad.state, :city => @ad.city, :category => @ad.category, :id => @ad.id, :layout => false), :target => "_blank", :class => 'new_button_bg button_shadow' %>
            <!-- </div> -->
          </div>
         <div class="tab-pane" id="send_to_friend">
@@ -385,3 +386,29 @@ google.maps.event.addDomListener(window, 'load', initialize);
       catch(err){alert('Sorry. Your browser does not support this bookmark action. Please bookmark this page manually.');}
   }
 </script>
+<% if params[:layout] == 'false' %>
+  <script type="text/javascript">
+  $( document ).ready(function() {
+    window.print();
+    return false;
+  })
+</script>
+<style type="text/css">
+  .comments, .js_tabs_block, #send_mail {
+    display: none;
+  }
+  .main-inner.container_12 {
+    width: 900px !important;
+  }
+  .club {
+    width: 600px !important;
+    margin-right: 5px !important;
+  }
+  #getfixed {
+    width: 250px !important;
+  }
+  .ad-nav {
+    width: 570px !important;
+  }
+</style>
+<% end %>
