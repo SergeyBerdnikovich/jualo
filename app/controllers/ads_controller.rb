@@ -14,6 +14,8 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
   def show
+    require 'securerandom'
+
      @ad = Ad.find(params[:id])
      #@category = Category.find(@ad.category_id)
      begin
@@ -21,7 +23,10 @@ class AdsController < ApplicationController
      rescue
        @parent_category = nil
      end
-
+     captcha_str = (0...7).map{ ('A'..'Z').to_a[rand(26)] }.join
+     @captcha_id = (0...10).map{ ('1'..'9').to_a[rand(9)] }.join
+     session[@captcha_id] = captcha_str
+     @captcha = generate_captcha(captcha_str)
      respond_to do |format|
        format.html # show.html.erb
        format.json { render json: @ad }
@@ -29,20 +34,31 @@ class AdsController < ApplicationController
   end
 
   def send_email
-    if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present?
+    if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present? && params[:captcha_id] && params[:captcha]
+      if check_captcha(params[:captcha_id], params[:captcha])
       Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
       flash[:notice] = 'Email has been sended'
+      else
+        flash[:alert] = 'Wrong captcha '
+      end
     elsif params[:nama].present? && params[:email_a_friend].present? && params[:your_email].present? && params[:pesan].present?
       Mailer.send_message_to_friend(params).deliver
       flash[:notice] = 'Email has been sended to your friend'
     else
-      flash[:error] = 'Please fill out the fields correctly'
+      flash[:error] = 'Please fill out fields correctly'
     end
     redirect_to ad_path(:state => params[:state], :city => params[:city], :category => params[:category], :id => params[:ad_id])
   end
 
   # GET /ads/new
   # GET /ads/new.json
+  def check_captcha(captcha, captcha_id)
+    if session
+    return true if session[captcha_id] == captcha  
+    end
+    return false
+
+  end
   def new
     @ad = Ad.new
     @ad.build_detail
