@@ -35,7 +35,7 @@ class AdsController < ApplicationController
 
   def send_email
     if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present? && params[:captcha_id] && params[:captcha]
-      if session[params[:captcha_id]] == params[:captcha]
+      if check_captcha(params[:captcha_id], params[:captcha])
       Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
       flash[:notice] = 'Email has been sended'
       else
@@ -52,6 +52,13 @@ class AdsController < ApplicationController
 
   # GET /ads/new
   # GET /ads/new.json
+  def check_captcha(captcha, captcha_id)
+    if session
+    return true if session[captcha_id] == captcha  
+    end
+    return false
+
+  end
   def new
     @ad = Ad.new
     @ad.build_detail
