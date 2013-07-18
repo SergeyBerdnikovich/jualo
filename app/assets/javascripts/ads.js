@@ -55,7 +55,7 @@ $("#contact_form").submit(function(){
        var result = data['result'];
        $('.name_div .modal_alert').remove();
        if (result != true){
-         $('.name_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>"+ result +"</div>");
+         $('.name_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>"+ result +"</div>");
        } else {
        return name_ok = true;
        }
@@ -68,7 +68,7 @@ $("#contact_form").submit(function(){
        var result = data['result'];
        $('.email_div .modal_alert').remove();
        if (result != true){
-         $('.email_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>"+ result +"</div>");
+         $('.email_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>"+ result +"</div>");
        } else {
        return email_ok = true;
        }
@@ -81,7 +81,7 @@ $("#contact_form").submit(function(){
        var result = data['result'];
        $('.phone_number_div .modal_alert').remove();
        if (result != true){
-         $('.phone_number_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>"+ result +"</div>");
+         $('.phone_number_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>"+ result +"</div>");
        } else {
        return phone_number_ok = true;
        }
@@ -94,7 +94,7 @@ $("#contact_form").submit(function(){
        var result = data['result'];
        $('.subject_div .modal_alert').remove();
        if (result != true){
-         $('.subject_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>"+ result +"</div>");
+         $('.subject_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>"+ result +"</div>");
        } else {
        return subject_ok = true;
        }
@@ -107,7 +107,7 @@ $("#contact_form").submit(function(){
        var result = data['result'];
        $('.message_div .modal_alert').remove();
        if (result != true){
-         $('.message_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>"+ result +"</div>");
+         $('.message_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>"+ result +"</div>");
        } else {
        return message_ok = true;
        }
@@ -119,7 +119,7 @@ $("#contact_form").submit(function(){
      }).success(function( data ) {
        $('.captcha_div .modal_alert').remove();
        if (data['result'] == false){
-         $('.captcha_div').prepend("<div class='modal_alert' style='color: red;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;'>Wrong Captcha</div>");
+         $('.captcha_div').prepend("<div class='modal_alert' style='color: #337DAB;padding: 5px;border: 2px solid #FF3E47;margin:2px 0;background-color: #FFD2D3;'>Wrong Captcha</div>");
        } else {
        return captcha_ok = true;
        }

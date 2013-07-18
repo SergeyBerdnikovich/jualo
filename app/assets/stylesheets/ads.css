@@ -11,7 +11,7 @@
   font-size:10px;
 }
 
- 
+
 .ad_new {
   width: 80%;
   margin: 0 auto;
@@ -319,8 +319,4 @@ input#paypal_address {
 }
 #abuse_reports td, #spam_reports td {
   vertical-align: top;
-}
-#modal_block .red {
-  color: red !important;
-  margin-right: 5px;
 }
