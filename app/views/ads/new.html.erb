@@ -1,3 +1,15 @@
+
+<%= form_for Image.new, :html => {:style=>"display:none",:class => 'form-horizontal', :multipart => true }, :remote => true do |f| %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, :id=>"choose_image" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :id=>"submit_image" %>
+  </div>
+<% end %>
+
+
 <%- model_class = Ad -%>
 <style type="text/css">
   div.container {
@@ -84,39 +96,21 @@
     </div>
     <div>
       <div class="picture">
-        <ol class=" upload-list clearfix">
-          <li id="list_uploader0">
-            <div class="product-img">
 
-            </div>
-            <div class="js-overlabel">
-              <div class="input text overlabel-wrapper">
-                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
-              </div>
-            </div>
-          </li>
-          <li id="list_uploader1">
-            <div class="product-img">
 
-            </div>
-            <div class="js-overlabel">
-              <div class="input text overlabel-wrapper">
-                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
-              </div>
-            </div>
-          </li>
-          <li id="list_uploader2">
-            <div class="product-img">
 
-            </div>
-            <div class="js-overlabel">
-              <div class="input text overlabel-wrapper">
-                <input id="ProductPhoto0Caption" type="text" value="" maxlength="255" name="data[ProductPhoto][0][caption]" placeholder='Judul'>
-              </div>
-            </div>
-          </li>
-        </ol>
-        <a id="upload_more" onclick="diplay_more_uploder(6);" href="javascript:;">Add More</a>
+        <div id='images' class='image_bar'>
+<div class='image_block'>
+<table width="100%" height="100%" align="center" valign="center">
+   <tr><td><center class='nohover'>
+    <a href="#" onclick='upload_image()'>Add image</a>
+</center>
+ </td></tr>
+  </table>
+</div>
+   </div>
+
+       
       </div>
     </div>
     <div class='label'>
@@ -124,5 +118,16 @@
       <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
     </div>
   <% end %>
+        <div id='captcha_img' style=' line-height: 8px !important;  margin:10px;  font-thickness:900;  font-size:10px;cursor:pointer' >
+        <%= @captcha.html_safe %>
+      </div>
+      <%= text_field_tag :captcha, '', :placeholder => 'Please enter the letters displayed' %><br />
 </div>
 </div>
+
+
+<%= javascript_tag do %>
+  window.subcategories = <%= raw @subcategories.to_json %>;
+  window.options = <%= raw @options.to_json %>;
+  window.cities = <%= raw @cities.to_json %>;
+<% end %>

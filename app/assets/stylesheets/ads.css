@@ -1,0 +1,326 @@
+// Place all the styles related to the ads controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*ad new*/
+
+.capt {
+  line-height: 8px !important;
+  margin:5px;
+  font-thickness:900;
+  font-size:10px;
+}
+
+ 
+.ad_new {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+}
+div.main-top {
+    background: url("/assets/main-top-bg.png") repeat-x scroll left top transparent;
+    margin: 0;
+    padding: 10px 0;
+}
+div.main-top h2 {
+  width: 50%;
+  float: left;
+  margin: 0;
+  font-family: CenturyGothic, sans-serif;
+  font-size: 26px;
+  font-weight: 100;
+  line-height: 30px;
+  padding: 3px 0 10px 10px;
+}
+.price_btn {
+  float: right;
+  margin: 0 20px !important;
+  padding: 7px 5px !important;
+}
+.ad_new label.title {
+  background: url("/assets/title-bullet.png") no-repeat scroll 0 3px #FFFFFF;
+  color: #333333;
+  font-size: 20px !important;
+  font-weight: 400;
+  padding: 0 0 10px 20px;
+}
+.ad_new div {
+  margin: 0;
+}
+.ad_new input {
+  width: 431px !important;
+  border-color: #CCCCCC !important;
+  margin-left: 20px;
+}
+.ad_new select {
+  margin: 15px 20px;
+  width: 280px !important;
+}
+.ad_new textarea {
+  margin-left: 20px;
+  width: 431px !important;
+  height: 200px !important;
+}
+.harga select {
+  width: 170px !important;
+  margin: 0 0 10px 20px !important;
+}
+.harga input {
+  width: 247px !important;
+  margin-left: 10px;
+}
+.pembayaran input {
+  width: 202px !important;
+}
+div.photo {
+  width: 70px;
+  height: 70px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  float: left;
+  margin-left: 23px;
+}
+div.inputs {
+  float: left;
+}
+div.inputs input{
+  width: 339px !important;
+}
+.clear {
+  clear: both;
+}
+.links a.back_btn {
+  border: 1px solid #c2c2c2;
+  border-left-color: #999999;
+  border-top-color: white;
+  border-radius: 3px;
+  padding: 5px 10px !important;
+  background: none !important;
+  color: white !important;
+  padding-left: 17px !important;
+
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 1%, rgba(0,0,0,0.21) 18%, rgba(0,0,0,0.34) 40%, rgba(0,0,0,0.4) 49%, rgba(0,0,0,0.4) 69%) !important; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(0,0,0,0)), color-stop(18%,rgba(0,0,0,0.21)), color-stop(40%,rgba(0,0,0,0.34)), color-stop(49%,rgba(0,0,0,0.4)), color-stop(69%,rgba(0,0,0,0.4))) !important; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 1%,rgba(0,0,0,0.21) 18%,rgba(0,0,0,0.34) 40%,rgba(0,0,0,0.4) 49%,rgba(0,0,0,0.4) 69%) !important; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 1%,rgba(0,0,0,0.21) 18%,rgba(0,0,0,0.34) 40%,rgba(0,0,0,0.4) 49%,rgba(0,0,0,0.4) 69%) !important; /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 1%,rgba(0,0,0,0.21) 18%,rgba(0,0,0,0.34) 40%,rgba(0,0,0,0.4) 49%,rgba(0,0,0,0.4) 69%) !important; /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 1%,rgba(0,0,0,0.21) 18%,rgba(0,0,0,0.34) 40%,rgba(0,0,0,0.4) 49%,rgba(0,0,0,0.4) 69%) !important; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=0 ) !important; /* IE6-9 */
+}
+.back_btn_prev {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 13px 10px 13px 0;
+  border-color: transparent #999999 transparent transparent;
+  float: left;
+  margin-right: -5px;
+  margin-top: 10px;
+}
+.triangle {
+  float: left;
+  margin-left: 4px;
+  margin-top: 10px;
+  position: absolute;
+}
+#top_triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 14px 13px 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+#bottom_triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 13px 0 0 13px;
+  border-color: transparent transparent transparent #ffffff;
+}
+.nav-tabs {
+  border-bottom: none !important;
+}
+.links span.c.last {
+  color: black !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+}
+ol.upload-list li {
+    display: inline-block;
+    float: left;
+    margin: 15px 9px 5px 0;
+    text-align: center;
+    width: 150px;
+}
+div.side2-add ol.upload-list li {
+    width: 135px !important;
+}
+.js-overlabel {
+    margin: 0 0 0 5px;
+    position: relative;
+}
+ol.upload-list li {
+    text-align: center;
+}
+form.normal div.picture div.input {
+    background: url("/assets/caption.png") no-repeat scroll 0 0 transparent;
+    height: 25px;
+    left: 25px;
+    margin: -6px 0 0;
+    position: relative;
+    width: 140px !important;
+    z-index: 1;
+}
+form.normal ol.upload-list li div.input {
+    left: 3px;
+}
+label.overlabel-apply, form.normal .overlabel-wrapper label.overlabel-apply {
+    color: #4F4E4E;
+    font-size: 12px;
+    left: 4px;
+    position: absolute;
+    text-align: left;
+    top: 9px;
+    width: auto;
+    z-index: 1;
+}
+form.normal .overlabel-wrapper label.overlabel-apply {
+    background: none repeat scroll 0 0 transparent;
+    color: #7F7D7D;
+    font-size: 13px;
+    text-align: left !important;
+}
+form.normal div.overlabel-wrapper label {
+    padding: 0;
+}
+form.normal div.picture div.input label {
+    left: 50px;
+    top: -3px;
+}
+
+form.normal div.picture div.input input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #999999;
+    font-size: 11px;
+    height: 20px;
+    margin: -3px 0 0;
+    padding: 0;
+    width: 120px !important;
+}
+#send_to_friend h2 {
+    background: url("/assets/title-bullet.png") no-repeat scroll 0 3px #FFFFFF;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 0 10px 20px;
+    line-height: 20px !important;
+}
+#send_to_friend input {
+  border-color: #cccccc !important;
+  margin-left: 5px !important;
+}
+#send_to_friend textarea {
+  margin-left: 5px !important;
+}
+.js-overlabel input {
+  width: 130px !important;
+  margin-left: 25px !important;
+  margin-top: -12px !important;
+}
+.js-overlabel {
+  margin: 0;
+}
+div.picture div.product-img {
+    background: url("/assets/upload-background-image.png") no-repeat scroll 0 0 transparent;
+    height: 104px;
+    margin: 0 0 0 25px;
+    padding: 16px 0 0;
+    position: relative;
+    text-align: center;
+    width: 142px;
+    z-index: 2;
+}
+div.side2-add div.picture div.product-img {
+    margin: 0 0 0 8px;
+}
+.picture ol {
+  margin: 0;
+}
+.picture ol li {
+  margin: 0;
+}
+.picture a#upload_more {
+  float: right;
+}
+div.label {
+  width: 100% !important;
+  background: url("/assets/title-bg.png") repeat-x scroll left 9px transparent;
+  padding: 0;
+}
+div.label label {
+  float: left;
+}
+.ad_new form {
+  width: 58% !important;
+}
+a.tool-tip {
+    background: url("/assets/tool-tip-icon.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9999em;
+    width: 20px;
+    float: right;
+}
+span#title {
+  margin-left: 20px;
+}
+input[type="radio"] {
+  margin: -6px 4px 3px 4px !important;
+}
+input#paypal_address {
+  margin-left: 3px;
+  width: 231px !important;
+}
+
+
+/*modal*/
+#send_email_modal {
+  max-width: 400px;
+}
+#modal_block {
+  padding: 10px 15px;
+}
+#modal_block h2 {
+    background: url("/assets/title-bullet.png") no-repeat scroll 0 3px #FFFFFF;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 0 10px 20px;
+    line-height: 20px !important;
+}
+.report-content {
+  color: #337DAB;
+  padding: 5px 0px;
+}
+.avatar {
+    background: none repeat scroll 0 0 #FFF7EF;
+    border: 1px solid #FFC48F;
+    margin: 10px 0;
+    padding: 10px;
+    min-height: 55px;
+}
+.avatar img {
+  float: left;
+  margin-right: 5px;
+}
+#modal_block input {
+  border-color: #cccccc !important;
+}
+#abuse_reports td, #spam_reports td {
+  vertical-align: top;
+}
+#modal_block .red {
+  color: red !important;
+  margin-right: 5px;
+}

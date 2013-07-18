@@ -13,40 +13,59 @@ class AdsController < ApplicationController
 
   # GET /ads/1
   # GET /ads/1.json
-  def show
+
+  def get_new_captcha
+    respond_to do |format|
+      data = form_captcha
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+  def verify_captcha
+
+    respond_to do |format|
+      data = {"result" => check_captcha(params[:captcha_id], params[:captcha]) }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+
+  def form_captcha
     require 'securerandom'
+    captcha_str = (0...7).map{ ('A'..'Z').to_a[rand(26)] }.join
+    captcha_id = (0...10).map{ ('1'..'9').to_a[rand(9)] }.join
+    session[captcha_id] = captcha_str
+    captcha = generate_captcha(captcha_str)
+    return captcha, captcha_id
+  end
+  def show
+    @ad = Ad.find(params[:id])
+    #@category = Category.find(@ad.category_id)
+    begin
+      @parent_category = Category.find(@category.parent)
+    rescue
+      @parent_category = nil
+    end
+    @captcha, @captcha_id = form_captcha
 
-
-     @ad = Ad.find(params[:id])
-     #@category = Category.find(@ad.category_id)
-     begin
-       @parent_category = Category.find(@category.parent)
-     rescue
-       @parent_category = nil
-     end
-     captcha_str = (0...7).map{ ('A'..'Z').to_a[rand(26)] }.join
-     @captcha_id = (0...10).map{ ('1'..'9').to_a[rand(9)] }.join
-     session[@captcha_id] = captcha_str
-     @captcha = generate_captcha(captcha_str)
-
- render :layout => 'application3' if params[:layout] == 'false'
-     # respond_to do |format|
-     #   format.html # show.html.erb
-     #   format.json { render json: @ad }
-     # end
+    render :layout => 'application3' if params[:layout] == 'false'
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @ad }
+    # end
   end
 
   def send_email
     if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present? && params[:captcha_id] && params[:captcha]
       if check_captcha(params[:captcha_id], params[:captcha])
         Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
-        flash[:notice] = 'Email has been sended'
+        flash[:notice] = 'Email has been sent'
       else
         flash[:alert] = 'Wrong captcha '
       end
     elsif params[:nama].present? && params[:email_a_friend].present? && params[:your_email].present? && params[:pesan].present?
       Mailer.send_message_to_friend(params).deliver
-      flash[:notice] = 'Email has been sended to your friend'
+      flash[:notice] = 'Email has been sent to your friend'
     else
       flash[:error] = 'Please fill out fields correctly'
     end
@@ -56,8 +75,9 @@ class AdsController < ApplicationController
   # GET /ads/new
   # GET /ads/new.json
   def check_captcha(captcha_id, captcha)
+    
     if session
-      return true if session[captcha_id] == captcha
+      return true if session[captcha_id].strip.upcase == captcha.upcase
     end
     return false
   end
@@ -66,6 +86,8 @@ class AdsController < ApplicationController
     @ad = Ad.new
     @ad.build_detail
     @ad.images.build
+    @captcha, @captcha_id = form_captcha
+
     @subcategories = Hash.new
     subcategories = Category.where('parent > 1')
     subcategories.each do |subcat|
@@ -89,9 +111,9 @@ class AdsController < ApplicationController
         @cities[state.id] = state.cities.select('id, name')
       end
       if current_user
-      @user = current_user
+        @user = current_user
       else
-      @user = User.new()
+        @user = User.new()
       end
 
     end
@@ -165,7 +187,7 @@ class AdsController < ApplicationController
             if user_exist
               redirect_to new_user_session_path(:user => {:email => params[:user][:email]}), notice: "Please log in to post your ad"
             else
-             redirect_to users_register_path(), notice: 'Ad was successfully created.'
+              redirect_to users_register_path(), notice: 'Ad was successfully created.'
             end
           end
 

@@ -135,5 +135,8 @@ devise_for :admin_users, ActiveAdmin::Devise.config
 
 
 
-  match '/(:state)(/:city)(/:category)(/:id)' => 'ads#show', :as => :ad
+  match '/(:state)(/:city)(/:category)(/:id)/' => 'ads#show', :as => :ad
+  match '/(:state)(/:city)(/:category)(/:id)/get_new_captcha' => 'ads#get_new_captcha', :as => :ad_new_captcha
+  match '/(:state)(/:city)(/:category)(/:id)/verify_captcha' => 'ads#verify_captcha', :as => :ad_verify_captcha
+  
 end
