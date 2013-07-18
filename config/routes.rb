@@ -137,6 +137,11 @@ devise_for :admin_users, ActiveAdmin::Devise.config
 
   match '/(:state)(/:city)(/:category)(/:id)/' => 'ads#show', :as => :ad
   match '/(:state)(/:city)(/:category)(/:id)/get_new_captcha' => 'ads#get_new_captcha', :as => :ad_new_captcha
+
+  match '/(:state)(/:city)(/:category)(/:id)/verify_name' => 'ads#verify_name', :as => :ad_verify_name
+  match '/(:state)(/:city)(/:category)(/:id)/verify_email' => 'ads#verify_email', :as => :ad_verify_email
+  match '/(:state)(/:city)(/:category)(/:id)/verify_phone_number' => 'ads#verify_phone_number', :as => :ad_verify_phone_number
+  match '/(:state)(/:city)(/:category)(/:id)/verify_subject' => 'ads#verify_subject', :as => :ad_verify_subject
+  match '/(:state)(/:city)(/:category)(/:id)/verify_message' => 'ads#verify_message', :as => :ad_verify_message
   match '/(:state)(/:city)(/:category)(/:id)/verify_captcha' => 'ads#verify_captcha', :as => :ad_verify_captcha
-  
 end

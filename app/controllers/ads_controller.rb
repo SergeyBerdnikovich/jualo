@@ -22,13 +22,58 @@ class AdsController < ApplicationController
   end
 
   def verify_captcha
-
     respond_to do |format|
       data = {"result" => check_captcha(params[:captcha_id], params[:captcha]) }
       format.json  { render :json => data } # don't do msg.to_json
     end
   end
 
+  def verify_name
+    respond_to do |format|
+      params[:name].blank? ? result = 'Name can not be blank' : result = true
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+  def verify_email
+    respond_to do |format|
+      email = params[:email]
+      result = true
+      regexp = /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/
+      if email.present?
+        result = 'Incorrect data' unless email =~ regexp
+      else
+        result = 'Email can not be blank'
+      end
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+  def verify_phone_number
+    respond_to do |format|
+      params[:phone_number].blank? ? result = 'Phone Number can not be blank' : result = true
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+  def verify_subject
+    respond_to do |format|
+      params[:subject].blank? ? result = 'Subject can not be blank' : result = true
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
+  def verify_message
+    respond_to do |format|
+      params[:message].blank? ? result = 'Message can not be blank' : result = true
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
 
   def form_captcha
     require 'securerandom'
@@ -58,7 +103,7 @@ class AdsController < ApplicationController
   def send_email
     if params[:modal] == 'true' && params[:nama].present? && params[:email].present? && params[:phone_number].present? && params[:subyek].present? && params[:pesan].present? && params[:captcha_id] && params[:captcha]
       if check_captcha(params[:captcha_id], params[:captcha])
-        Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
+        #Mailer.send_message_to_ad_user(params, params[:ad_user_email]).deliver
         flash[:notice] = 'Email has been sent'
       else
         flash[:alert] = 'Wrong captcha '
@@ -75,7 +120,7 @@ class AdsController < ApplicationController
   # GET /ads/new
   # GET /ads/new.json
   def check_captcha(captcha_id, captcha)
-    
+
     if session
       return true if session[captcha_id].strip.upcase == captcha.upcase
     end
