@@ -38,8 +38,8 @@ function upload_image(){
 		if (subcategories[ad_category_id] != undefined ){
 			html = "";
 
-			html += '<label class="control-label" for="ad_ad_type_id">Sub Categories</label>'
-			html += '<div class="controls">'
+			html += '<label class="title" for="ad_ad_type_id">Sub Categories</label>'
+			html += '<div class="">'
 			html += '<select id="ad_ad_subcategory_id" name="ad[subcategory_id]"><option value="">Please Select</option>'
 			$.each(subcategories[ad_category_id], function(index,value){
 				html += '<option value="'+value[0]+'">'+value[1]+'</option>'
@@ -56,18 +56,18 @@ function upload_image(){
 		if (options[ad_category_id] != undefined ){
 			html = "";
 
-			html += '<label class="control-label" >Additional information<p></label>'
-			html += '<div class="controls">'
+			//html += '<label class="title" >Additional information<p></label>'
+//			html += '<div class="">'
 			 
 			$.each(options[ad_category_id], function(index,value){
-				html += '<label style="display:block" for="ad_ad_options_id'+index+'">'+index+'</label>'
+				html += '<label style="display:block" class="title" for="ad_ad_options_id'+index+'">'+index+'</label><br>'
 				html += '<select id="ad_ad_options_id'+index+'" name="ad[options['+index+']]"><option value="">'+index+'</option>'
 				$.each(value, function(index,value){
 					html += '<option value="'+value['id']+'">'+value['value']+'</option>'
 				})
 				html += '</select><p>'
 			})
-			html += '</div>'
+//			html += '</div>'
 
 			$("#options").html(html)
 			$("#options").show()
@@ -85,8 +85,8 @@ $("#ad_state_id").change(function(){
 		if (cities[state_id] != undefined ){
 			html = "";
 
-			html += '<label class="control-label" for="city_id">City</label>'
-			html += '<div class="controls">'
+			html += '<label class="title" for="city_id">City</label>'
+			html += '<div class="">'
 			html += '<select id="city_id" name="ad[city_id]"><option value="">Please Select</option>'
 			$.each(cities[state_id], function(index,value){
 

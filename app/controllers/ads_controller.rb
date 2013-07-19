@@ -79,7 +79,8 @@ class AdsController < ApplicationController
     require 'securerandom'
     captcha_str = (0...7).map{ ('A'..'Z').to_a[rand(26)] }.join
     captcha_id = (0...10).map{ ('1'..'9').to_a[rand(9)] }.join
-    session[captcha_id] = captcha_str
+    session['captcha'] = Hash.new unless session['captcha']
+    session['captcha'][captcha_id] = captcha_str
     captcha = generate_captcha(captcha_str)
     return captcha, captcha_id
   end
@@ -87,7 +88,7 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
     #@category = Category.find(@ad.category_id)
     begin
-      @parent_category = Category.find(@category.parent)
+      @parent_category = Category.find(@ad.category.parent)
     rescue
       @parent_category = nil
     end
@@ -122,7 +123,11 @@ class AdsController < ApplicationController
   def check_captcha(captcha_id, captcha)
 
     if session
-      return true if session[captcha_id].strip.upcase == captcha.upcase
+      session['captcha'] = Hash.new unless session['captcha']
+      if session['captcha'][captcha_id].strip.upcase == captcha.upcase
+        session['captcha'] = nil
+        return true 
+      end
     end
     return false
   end
@@ -232,7 +237,7 @@ class AdsController < ApplicationController
             if user_exist
               redirect_to new_user_session_path(:user => {:email => params[:user][:email]}), notice: "Please log in to post your ad"
             else
-              redirect_to users_register_path(), notice: 'Ad was successfully created.'
+              redirect_to users_register_path(), notice: 'Please register to finalize posting.'
             end
           end
 
