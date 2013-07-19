@@ -14,6 +14,15 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
 
+  def verify_for_emptiness
+    object = params[:obj]
+    respond_to do |format|
+      params[:obj].blank? ? result = "#{params[:field]} can not be blank" : result = true
+      data = {"result" => result }
+      format.json  { render :json => data } # don't do msg.to_json
+    end
+  end
+
   def get_new_captcha
     respond_to do |format|
       data = form_captcha
@@ -121,12 +130,11 @@ class AdsController < ApplicationController
   # GET /ads/new
   # GET /ads/new.json
   def check_captcha(captcha_id, captcha)
-
     if session
       session['captcha'] = Hash.new unless session['captcha']
       if session['captcha'][captcha_id].strip.upcase == captcha.upcase
-        session['captcha'] = nil
-        return true 
+        #session['captcha'] = nil
+        return true
       end
     end
     return false
@@ -165,9 +173,7 @@ class AdsController < ApplicationController
       else
         @user = User.new()
       end
-
     end
-
 
     respond_to do |format|
       format.html # new.html.erb
@@ -240,7 +246,6 @@ class AdsController < ApplicationController
               redirect_to users_register_path(), notice: 'Please register to finalize posting.'
             end
           end
-
         }
         format.json { render json: @ad, status: :created, location: @ad }
       else

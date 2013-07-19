@@ -42,7 +42,8 @@ div.main-top h2 {
   color: #333333;
   font-size: 20px !important;
   font-weight: 400;
-  padding: 0 0 10px 20px;
+  padding: 0 0 0px 20px;
+  margin-bottom: 10px !important;
 }
 .ad_new div {
   margin: 0;
@@ -53,7 +54,7 @@ div.main-top h2 {
   margin-left: 20px;
 }
 .ad_new select {
-  margin: 15px 20px;
+  margin: 1px 20px 10px 20px;
   width: 280px !important;
 }
 .ad_new textarea {
@@ -82,9 +83,10 @@ div.photo {
 }
 div.inputs {
   float: left;
+  width: 370px;
 }
 div.inputs input{
-  width: 339px !important;
+  width: 337px !important;
 }
 .clear {
   clear: both;
@@ -262,7 +264,8 @@ div.label label {
   float: left;
 }
 .ad_new form {
-  width: 58% !important;
+  /*width: 58% !important;*/
+  max-width: 470px;
 }
 a.tool-tip {
     background: url("/assets/tool-tip-icon.png") no-repeat scroll 0 0 transparent;

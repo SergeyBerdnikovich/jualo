@@ -29,20 +29,20 @@
       <%= ff.label :name, "Product Title", :class => 'title' %>
       <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
     </div>
-    <div>
+    <div id='product_title_div'>
           <%= ff.text_field :name, :placeholder => "Enter a title for your product *" %>
     </div>
      <% end %>
     <div>
       <%= f.label :ad_type_id, "Product Type", :class => 'title' %>
     </div>
-    <div>
+    <div id='product_type_div'>
        <%= f.select(:ad_type_id, options_from_collection_for_select(AdType.all, "id", "name") , :class => '', :prompt => "Please Select") %>
     </div>
     <div>
       <%= f.label :category_id, "Category" , :class => 'title' %>
     </div>
-    <div>
+    <div id='category_div'>
       <%= f.select(:category_id, options_from_collection_for_select(Category.where('parent = 1').all, "id", "name"), :class => '', :prompt => "Please Select") %>
     </div>
 
@@ -55,35 +55,32 @@
     <div>
         <%= f.label :state_id, "Province", :class => 'title' %>
     </div>
-      <div>
+    <div id='state_div'>
       <%= f.select(:state_id, options_from_collection_for_select(State.all, "id", "name") , :prompt => 'Please select') %>
     </div>
-  
 
-  <div class="control-group" id='cities' style='display:none'>
-  </div>
-
-
+    <div class="control-group" id='cities' style='display:none'>
+    </div>
 
   <%= f.fields_for :detail do |ff| %>
     <div class='label'>
        <%= ff.label :description, "Desciption", :class => 'title' %>
       <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
     </div>
-    <div>
+    <div id='description_div'>
     <%= ff.text_area :description, :class => '', :placeholder => "Enter a description here *" %>
     </div>
   <% end %>
 
     <div class='label'>
-      <%= f.label :price, :class => 'title' %>    
+      <%= f.label :price, :class => 'title' %>
       <a class="tool-tip" title="" href="#" bt-xtitle="Masukkan deskripsi <br/>*Diperlukan. Gunakan tombol toolbar untuk mengubah sebagian teks anda.">?</a>
     </div>
     <div class='harga'>
      <%= f.select(:currency_id, options_from_collection_for_select(Currency.all, "id", "code")) %>
      <%= f.text_field :price, :class => 'text_field', :placeholder => 'Enter your price' %>
     </div>
-    
+
     <%= fields_for @user do |ff| %>
     <div class='label'>
       <%= label_tag :data_pribadi, nil, :class => 'title' %>
@@ -94,10 +91,10 @@
       <img alt="" title="Gambar Penjual" src="/assets/personal-background-image.png">
     </div>
     <div class='inputs'>
-      <%= ff.text_field :name, :class => 'number_field' , :placeholder => 'Massukan nama anda *'%>
-       <%= ff.text_field :email, :class => 'number_field', :placeholder => 'Enter your personal e-mail address *' %>
-      <%= ff.text_field :phone, :class => 'number_field' , :placeholder => 'Enter your phone number *'%>
-      <%= ff.text_field :blackberry_pin, :class => 'number_field', :placeholder => 'Blackberry Pin' %>
+      <div id='in_name'><%= ff.text_field :name, :class => 'number_field' , :placeholder => 'Massukan nama anda *'%></div>
+      <div id='in_email'><%= ff.text_field :email, :class => 'number_field', :placeholder => 'Enter your personal e-mail address *' %></div>
+      <div id='in_phone_number'><%= ff.text_field :phone, :class => 'number_field' , :placeholder => 'Enter your phone number *'%></div>
+      <div id='in_blackberry_pin'><%= ff.text_field :blackberry_pin, :class => 'number_field', :placeholder => 'Blackberry Pin' %></div>
     </div>
 
     <% end %>
@@ -122,7 +119,7 @@
 </div>
    </div>
 
-       
+
       </div>
     </div>
     <div class='label'>
@@ -133,13 +130,16 @@
         <div id='captcha_img' style=' line-height: 8px !important;  margin:10px;  font-thickness:900;  font-size:10px;cursor:pointer' >
         <%= @captcha.html_safe %>
       </div>
-      <%= text_field_tag :captcha, '', :placeholder => 'Please enter the letters displayed' %><br />
+      <div id ='new_ad_captch_div'>
+        <%= text_field_tag :captcha, '', :placeholder => 'Please enter the letters displayed' %>
+        <%= hidden_field_tag :captcha_id, @captcha_id %>
+      </div>
 
-  
+
  <div class='inputs'><p><br>
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <p><br>
-  
+
   </div>
 
 
@@ -149,7 +149,7 @@
 
 
 </div>
-  
+
 
   <% end %>
 

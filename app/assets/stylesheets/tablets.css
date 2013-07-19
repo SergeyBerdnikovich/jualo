@@ -408,4 +408,33 @@ ol.grid-list > li:hover div.list-inner{background:none !important;-webkit-box-sh
 ol.grid-list > li:hover{border:1px solid #ffad64 !important;background:#fff5ec !important;}
 ol.grid-list li div.list-inner div.product-description-right-block div.other-items-outer{max-height:30px !important;}
 
+
+  /*Ad new*/
+  .ad_new input {
+    max-width: 220px !important;
+  }
+  .ad_new select {
+    max-width: 233px !important;
+  }
+  .ad_new textarea {
+    max-width: 220px !important;
+  }
+  div.main-top h2 {
+    font-size: 14px !important;
+  }
+  .ad_new .harga select {
+    margin: 0 0 10px 10px !important;
+    width: 100% !important;
+  }
+  .ad_new .harga {
+    margin-left: 10px !important;
+  }
+  .ad_new .photo {
+    margin: 0 0 5px 23px !important;
+  }
+  div.inputs {
+    width: 100% !important;
+  }
+
+
 }
