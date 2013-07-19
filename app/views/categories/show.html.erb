@@ -50,26 +50,24 @@
     </h2>
       <!-- Bread Crumb ends-->
     <div class="paging_counter-block">
+    <!-- <div class="page_info">
+      <%#= page_entries_info @ads %>
+    </div> -->
       <p class="page-counter">
-        Page 1 of 983, showing 20 records out of 19660 total, starting on record 1, ending on 20
+        Page <%= params[:page] || '1' %> of <%= @ads.total_pages %>, showing <%= params[:per_page] || '30' %> records out of <%= @ads.count %> total, starting on record <%= @ads.offset + 1 %>, ending on <%= @ads.offset + 1 + (params[:per_page].blank? ? 30 : params[:per_page].to_i) %>
       </p>
     </div>
   </div>
-  
+
   <% if @view == "table" %>
   <%= render '/categories/table_view', :ads => @ads %>
   <% else %>
   <%= render '/categories/grid_view', :ads => @ads %>
-  <% end %> 
-  <div class="js-pagination"><div class="paging">
-<span class="prev">&laquo; Sebelumnya</span>
-<span class="current">1</span>
-<span><a href="/products/page:2/c:40">2</a></span>
-<span><a href="/products/page:3/c:40">3</a></span><span class="skip">&hellip;.</span>
-<span><a href="/products/page:982/c:40">982</a></span>
-<span><a href="/products/page:983/c:40">983</a></span>
-<a href="/products/page:2/c:40" class="next">Lanjut &raquo;</a>
-</div>
+  <% end %>
+   <div class="js-pagination">
+                <div class="paging">
+                  <%= will_paginate @ads %>
+              </div>
 </div>
   <p class="view-page-info"> View this page in    <a href="/products/c:40.rss" target="_blank">RSS
 </a>  </p>

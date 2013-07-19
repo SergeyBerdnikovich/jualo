@@ -26,14 +26,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffdfc', end
 
 
 }
-
+span.disabled {
+  border: 1px solid #A6A6A6;
+  border-radius: 3px 3px 3px 3px;
+  background: #EBEBEB;
+  padding: 5px 10px;
+}
+em.current {
+  border: 1px solid #A6A6A6;
+  border-radius: 3px 3px 3px 3px;
+  background: #EBEBEB;
+  padding: 7px 10px;
+  font-weight: bold;
+}
 
 
 .image_bar{
-    
+
 	height: 120px;
 	overflow:hidden;
-	
+
 
 }
 
@@ -54,11 +66,11 @@ box-shadow:         6px 6px 9px rgba(170, 168, 170, 0.83);
 
  image_div{
 	height:93px;
-	width: 93px; 
+	width: 93px;
  }
  	img{
 	margin:0 auto;
-	max-width:100%; 
+	max-width:100%;
 	max-height:100%;
 	}
 

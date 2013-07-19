@@ -13,8 +13,8 @@ class Ad < ActiveRecord::Base
   has_many :images
   has_and_belongs_to_many  :variants
   has_many :options, through: :category
-  
 
+  self.per_page = 30
 
   attr_accessor :name
 

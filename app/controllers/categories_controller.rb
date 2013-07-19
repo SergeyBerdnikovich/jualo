@@ -132,14 +132,14 @@ class CategoriesController < ApplicationController
         filters += " AND " if filters != ""
         filters += " id IN (SELECT ad_id AS id FROM ads_variants WHERE variant_id = #{filter[1]})"
      end
-      @ads = @category.ads.where(filters).order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+      @ads = @category.ads.where(filters).order('created_at DESC').paginate(:page => params[:page], :per_page => params[:per_page])
    else
-      @ads = @category.ads.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+      @ads = @category.ads.order('created_at DESC').paginate(:page => params[:page], :per_page => params[:per_page])
     end
 @ad_type = nil
 case params[:ad_type]
 when "new"
-  @ad_type = 1 
+  @ad_type = 1
 when "second"
 @ad_type = 2
 when "searched"
@@ -155,7 +155,7 @@ else
 end
 
 
-  
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
